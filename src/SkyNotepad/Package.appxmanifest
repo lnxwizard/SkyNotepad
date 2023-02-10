@@ -8,13 +8,13 @@
 
   <Identity
     Name="778ade44-7283-4a36-a7ba-ecd392206e35"
-    Publisher="CN=Alper"
-    Version="1.0.0.0" />
+    Publisher="CN=AlperAkca79"
+    Version="0.1.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="778ade44-7283-4a36-a7ba-ecd392206e35" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>SkyNotepad</DisplayName>
+    <DisplayName>Sky Notepad</DisplayName>
     <PublisherDisplayName>Alper</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -32,13 +32,15 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="SkyNotepad.App">
       <uap:VisualElements
-        DisplayName="SkyNotepad"
+        DisplayName="Sky Notepad"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
-        Description="SkyNotepad"
+        Description="Simple, Modern, Free and Open Source Notepad for Windows."
         BackgroundColor="transparent">
-        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square71x71Logo="Assets\SmallTile.png" Square310x310Logo="Assets\LargeTile.png"/>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
+        <uap:InitialRotationPreference>
+          <uap:Rotation Preference="landscape"/></uap:InitialRotationPreference>
       </uap:VisualElements>
     </Application>
   </Applications>
