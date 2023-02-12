@@ -24,6 +24,18 @@ NOTE: Sky Notepad is still in development and preview. If you see an bug please 
 # Features
 - Word Wrapping
 
+# How to Download?
+- Download **.cer** and **.msixbundle** files from below.
+- Double click to open **.cer** file.
+- Click **"Install Certificate..."**.
+- Select **"Local Machine"** and click **"Next"**.
+- Click **"Yes"** from the Admin permission screen.
+- Select **"Place all certificates in the following store"** and click **"Browse"**.
+- Select **"Trusted Root Certification Authorities"** and click **"OK"**.
+- Click **"Next"** and after click **"Finish"**.
+- Click **"OK"**.
+- Finally double click to **.msixbundle** file and install the **Sky Notepad**
+
 # Getting Started
 Prerequisites:
 - Your computer must be running Windows 10, build 19041.0 or newer.
@@ -31,8 +43,7 @@ Prerequisites:
     - Install the "Universal Windows Platform Development" workload.
     - Install the Windows 10 SDK (10.0.19041.0).
     ![](res/getting-started-sky-notepad.png "Visual Studio Installer")
-- Install the 2.8.2 version of Microsoft.XAML.UI nuget package.
-- Open CMD and type this:
+- Open Command Prompt(CMD) and type this:
     ```shell
     git clone https://github.com/AlperAkca79/SkyNotepad.git
     ```
