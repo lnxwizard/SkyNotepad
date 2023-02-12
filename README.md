@@ -18,7 +18,7 @@ NOTE: Sky Notepad is still in development and preview. If you see an bug please 
 - Required OS Build: 19041.0 (21H2)
 - Supported Language: English (United States) 
 
-# Screen Shots
+# Screenshots
 ![](res/main-ui-sky-notepad.png "Main UI")
 
 # Features
@@ -48,6 +48,12 @@ Prerequisites:
     git clone https://github.com/AlperAkca79/SkyNotepad.git
     ```
 - Open [src/SkyNotepad.sln](https://github.com/AlperAkca79/SkyNotepad/blob/master/src/SkyNotepad.sln) in Visual Studio 2019 or higher to build and run the SkyNotepad application.
+
+# Contributing
+- [How to Contribute?](https://github.com/AlperAkca79/SkyNotepad/blob/master/CONTRIBUTING.MD)
+
+# Dependencies and References
+- [Windows UI Library or WinUI 2](https://github.com/Microsoft/microsoft-ui-xaml)
 
 # Code of Conduct
 Click [here](CODE_OF_CONDUCT.md) for view Code of Conduct.
