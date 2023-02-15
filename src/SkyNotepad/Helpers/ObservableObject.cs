@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿// Librarys
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 namespace SkyNotepad.Helpers

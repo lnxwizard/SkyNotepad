@@ -1,4 +1,5 @@
-﻿using SkyNotepad.Helpers;
+﻿// Project Librarys
+using SkyNotepad.Helpers;
 
 namespace SkyNotepad.Models
 {

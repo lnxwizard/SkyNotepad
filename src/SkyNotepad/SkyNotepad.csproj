@@ -135,6 +135,7 @@
     <Compile Include="ViewModels\FileViewModel.cs" />
     <Compile Include="ViewModels\FormatViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\WebSearchViewModel.cs" />
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>

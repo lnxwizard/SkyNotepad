@@ -5,7 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d" RequestedTheme="Light"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    Background="White"
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     xmlns:viewmodel="using:SkyNotepad.ViewModels">
 
@@ -23,33 +23,39 @@
         </Grid.RowDefinitions>
 
         <!-- Menu Bar -->
-        <muxc:MenuBar x:Name="MenuBar" x:Uid="MenuBar" Grid.Row="0" Background="White" Height="40" CornerRadius="0">
+        <muxc:MenuBar x:Name="MenuBar" x:Uid="MenuBar" Grid.Row="0" Background="White" VerticalAlignment="Stretch" HorizontalAlignment="Left" CornerRadius="0">
             <!-- File Menu -->
             <muxc:MenuBarItem x:Name="MenuFile" x:Uid="MenuFile" Title="File" DataContext="{Binding File}">
-                <MenuFlyoutItem x:Name="MenuItemNew" x:Uid="MenuItemNew" Text="New" Command="{Binding NewCommand}"/>
-                <MenuFlyoutItem x:Name="MenuItemOpen" x:Uid="MenuItemOpen" Text="Open..." Command="{Binding OpenCommand}"/>
-                <MenuFlyoutItem x:Name="MenuItemSave" x:Uid="MenuItemSave" Text="Save" Command="{Binding SaveCommand}"/>
-                <MenuFlyoutItem x:Name="MenuItemSaveAs" x:Uid="MenuItemSaveAs" Text="Save As..." Command="{Binding SaveAsCommand}"/>
+                <MenuFlyoutItem x:Name="MenuItemNew" x:Uid="MenuItemNew" Text="New" Command="{Binding NewCommand}" Icon="Page2"/>
+                <MenuFlyoutItem x:Name="MenuItemOpen" x:Uid="MenuItemOpen" Text="Open..." Command="{Binding OpenCommand}" Icon="OpenFile"/>
+                <MenuFlyoutItem x:Name="MenuItemSave" x:Uid="MenuItemSave" Text="Save" Command="{Binding SaveCommand}" Icon="Save"/>
+                <MenuFlyoutItem x:Name="MenuItemSaveAs" x:Uid="MenuItemSaveAs" Text="Save As..." Command="{Binding SaveAsCommand}" Icon="SaveLocal"/>
                 <MenuFlyoutSeparator/>
                 <MenuFlyoutItem x:Name="MenuItemExit" x:Uid="MenuItemExit" Text="Exit" Command="{Binding ExitCommand}"/>
             </muxc:MenuBarItem>
 
             <!-- Edit Menu -->
             <muxc:MenuBarItem x:Name="MenuEdit" x:Uid="MenuEdit" Title="Edit">
-                <MenuFlyoutItem x:Name="MenuItemUndo" x:Uid="MenuItemUndo" Text="Undo" Click="MenuItemUndo_Click"/>
-                <MenuFlyoutItem x:Name="MenuItemRedo" x:Uid="MenuItemRedo" Text="Redo" Click="MenuItemRedo_Click"/>
+                <MenuFlyoutItem x:Name="MenuItemUndo" x:Uid="MenuItemUndo" Text="Undo" Click="MenuItemUndo_Click" Icon="Undo"/>
+                <MenuFlyoutItem x:Name="MenuItemRedo" x:Uid="MenuItemRedo" Text="Redo" Click="MenuItemRedo_Click" Icon="Redo"/>
                 <MenuFlyoutSeparator/>
-                <MenuFlyoutItem x:Name="MenuItemCut" x:Uid="MenuItemCut" Text="Cut" Click="MenuItemCut_Click"/>
-                <MenuFlyoutItem x:Name="MenuItemCopy" x:Uid="MenuItemCopy" Text="Copy" Click="MenuItemCopy_Click"/>
-                <MenuFlyoutItem x:Name="MenuItemPaste" x:Uid="MenuItemPaste" Text="Paste" Click="MenuItemPaste_Click"/>
+                <MenuFlyoutItem x:Name="MenuItemCut" x:Uid="MenuItemCut" Text="Cut" Click="MenuItemCut_Click" Icon="Cut"/>
+                <MenuFlyoutItem x:Name="MenuItemCopy" x:Uid="MenuItemCopy" Text="Copy" Click="MenuItemCopy_Click" Icon="Copy"/>
+                <MenuFlyoutItem x:Name="MenuItemPaste" x:Uid="MenuItemPaste" Text="Paste" Click="MenuItemPaste_Click" Icon="Paste"/>
                 <MenuFlyoutSeparator/>
-                <MenuFlyoutItem x:Name="MenuItemSelectAll" x:Uid="MenuItemSelectAll" Text="SelectAll" Click="MenuItemSelectAll_Click"/>
-                <MenuFlyoutItem x:Name="MenuItemTimeDate" x:Uid="MenuItemTimeDate" Text="Time/Date" Click="MenuItemTimeDate_Click"/>
+                <MenuFlyoutSubItem x:Name="MenuSubItemSearch" x:Uid="MenuSubItemSearch" Text="Search With..." DataContext="{Binding WebSearch}" Icon="Find">
+                    <MenuFlyoutItem x:Name="MenuItemMicrosoftBing" x:Uid="MenuItemMicrosoftBing" Text="Microsoft Bing" Command="{Binding SearchMSBingCommand}"/>
+                    <MenuFlyoutItem x:Name="MenuItemMicrosoftGoogle" x:Uid="MenuItemMicrosoftGoogle" Text="Microsoft Google" Command="{Binding SearchGoogleCommand}"/>
+                </MenuFlyoutSubItem>
+                <MenuFlyoutSeparator/>
+                <MenuFlyoutItem x:Name="MenuItemSelectAll" x:Uid="MenuItemSelectAll" Text="SelectAll" Click="MenuItemSelectAll_Click" Icon="SelectAll"/>
+                <MenuFlyoutItem x:Name="MenuItemTimeDate" x:Uid="MenuItemTimeDate" Text="Time/Date" Click="MenuItemTimeDate_Click" Icon="Calendar"/>
             </muxc:MenuBarItem>
 
             <!-- Format Menu -->
             <muxc:MenuBarItem x:Name="MenuFormat" x:Uid="MenuFormat" Title="Format" DataContext="{Binding Format}">
                 <ToggleMenuFlyoutItem x:Name="MenuItemWordWrap" x:Uid="MenuItemWordWrap" Text="Word Wrap" Command="{Binding WordWrap}"/>
+                <ToggleMenuFlyoutItem x:Name="MenuItemSpellCheck" x:Uid="MenuItemSpellCheck" Text="Spell Check" Click="MenuItemSpellCheck_Click"/>
             </muxc:MenuBarItem>
         </muxc:MenuBar>
 

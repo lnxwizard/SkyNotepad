@@ -1,5 +1,8 @@
-﻿using SkyNotepad.Helpers;
+﻿// Librarys
 using Windows.UI.Xaml;
+
+// Project Librarys 
+using SkyNotepad.Helpers;
 
 namespace SkyNotepad.Models
 {

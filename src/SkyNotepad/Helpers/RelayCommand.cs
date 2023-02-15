@@ -1,4 +1,5 @@
-﻿using System;
+﻿// Librarys
+using System;
 using System.Windows.Input;
 
 namespace SkyNotepad.Helpers

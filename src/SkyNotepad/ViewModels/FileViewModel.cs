@@ -1,4 +1,5 @@
-﻿using System;
+﻿// Librarys
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Input;
@@ -8,18 +9,16 @@ using Windows.Storage.Pickers;
 using Windows.Storage.Provider;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
+using Windows.UI.ViewManagement;
+
+// From Project
 using SkyNotepad.Helpers;
 using SkyNotepad.Models;
-using Windows.UI.ViewManagement;
-using SkyNotepad.Views;
 
 namespace SkyNotepad.ViewModels
 {
     public class FileViewModel
     {
-        // Application View
-        private ApplicationView appView = ApplicationView.GetForCurrentView();
-
         // Document Model
         public DocumentModel Document { get; private set; }
 
@@ -85,7 +84,7 @@ namespace SkyNotepad.ViewModels
                     Document.FileToken = StorageApplicationPermissions.FutureAccessList.Add(storageFile);
                     Document.FileName = storageFile.Name;
                     Document.FilePath = storageFile.Path;
-                    Document.IsSaved = true;  
+                    Document.IsSaved = true;
                 }
             }
             catch

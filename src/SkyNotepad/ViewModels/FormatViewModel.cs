@@ -1,7 +1,11 @@
-﻿using System.Windows.Input;
+﻿// Librarys
+using Windows.UI.Xaml;
+using Windows.UI.Text;
+using System.Windows.Input;
+
+// Project Librarys
 using SkyNotepad.Helpers;
 using SkyNotepad.Models;
-using Windows.UI.Xaml;
 
 namespace SkyNotepad.ViewModels
 {
@@ -22,7 +26,7 @@ namespace SkyNotepad.ViewModels
         }
 
         // Word Wrap Command
-        public void Wrap()
+        private void Wrap()
         {
             if (Format.Wrap == TextWrapping.Wrap)
                 Format.Wrap = TextWrapping.NoWrap;

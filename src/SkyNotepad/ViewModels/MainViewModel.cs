@@ -1,4 +1,5 @@
-﻿using SkyNotepad.Models;
+﻿// Project Librarys
+using SkyNotepad.Models;
 
 namespace SkyNotepad.ViewModels
 {
@@ -8,12 +9,14 @@ namespace SkyNotepad.ViewModels
 
         public FileViewModel File { get; set; }
         public FormatViewModel Format { get; set; }
+        public WebSearchViewModel WebSearch { get; set; }
 
         public MainViewModel()
         {
             _document = new DocumentModel();
             File = new FileViewModel(_document);
             Format = new FormatViewModel(_document);
+            WebSearch = new WebSearchViewModel();
         }
     }
 }
