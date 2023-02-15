@@ -9,23 +9,24 @@ Sky Notepad is Simple, Modern, Free and Open Source **Text Editor** for Windows.
 NOTE: Sky Notepad is still in development and preview. If you see an bug please create a new issue from [here](https://github.com/AlperAkca79/SkyNotepad/issues/new).
 
 # About
-- Version: Preview v0.1.0.0
+- Version: Preview v0.4.0.0
 - First Build Date: Friday, February 10, 2023
-- Last Update: Friday, February 10, 2023
+- Last Update: Thursday, February 16, 2023
 - License: [MIT License](https://github.com/AlperAkca79/SkyNotepad#License)
 - Platform Architecture: x86, x64
 - Supported OS: Windows 10/11
-- Required OS Build: 19041.0 (21H2)
-- Supported Language: English (United States) 
+- Required OS Build: 17763.0 (1809)
+- Supported Language: English (United States)
 
 # Screenshots
 ![](res/main-ui-sky-notepad.png "Main UI")
 
 # Features
 - Word Wrapping
+- Spell Checking
 
 # How to Download?
-- Download **.cer** and **.msixbundle** files from below.
+- Download **.cer** and **.msixbundle** files from [here](https://github.com/AlperAkca79/SkyNotepad/releases/tag/0.4.0.0).
 - Double click to open **.cer** file.
 - Click **"Install Certificate..."**.
 - Select **"Local Machine"** and click **"Next"**.
@@ -39,7 +40,7 @@ NOTE: Sky Notepad is still in development and preview. If you see an bug please 
 # Getting Started
 Prerequisites:
 - Your computer must be running Windows 10, build 19041.0 or newer.
-- Install the Visual Studio 2019/2022.
+- Install the Visual Studio 2019 or higher.
     - Install the "Universal Windows Platform Development" workload.
     - Install the Windows 10 SDK (10.0.19041.0).
     ![](res/getting-started-sky-notepad.png "Visual Studio Installer")
@@ -53,7 +54,7 @@ Prerequisites:
 - [How to Contribute?](https://github.com/AlperAkca79/SkyNotepad/blob/master/CONTRIBUTING.MD)
 
 # Dependencies and References
-- [Windows UI Library or WinUI 2](https://github.com/Microsoft/microsoft-ui-xaml)
+- [Windows UI Library (WinUI 2)](https://github.com/Microsoft/microsoft-ui-xaml)
 
 # Code of Conduct
 Click [here](CODE_OF_CONDUCT.md) for view Code of Conduct.
