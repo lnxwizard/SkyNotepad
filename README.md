@@ -11,7 +11,7 @@ NOTE: Sky Notepad is still in development and preview. If you see an bug please 
 # About
 - Version: Preview v0.4.0.0
 - First Build Date: Friday, February 10, 2023
-- Last Update: Thursday, February 16, 2023
+- Last Update: Friday, February 17, 2023
 - License: [MIT License](https://github.com/AlperAkca79/SkyNotepad#License)
 - Platform Architecture: x86, x64
 - Supported OS: Windows 10/11
@@ -19,14 +19,19 @@ NOTE: Sky Notepad is still in development and preview. If you see an bug please 
 - Supported Language: English (United States)
 
 # Screenshots
-![](res/main-ui-sky-notepad.png "Main UI")
+![](res/image-sky-notepad.png "Main UI")
+
+![](res/feature-search-in-web.png "Search in Web")
+
+![](res/feature-word-wrap-and-spell-check.png "Word Wraping & Spell Checking")
 
 # Features
 - Word Wrapping
 - Spell Checking
+- Search in Web
 
 # How to Download?
-- Download **.cer** and **.msixbundle** files from [here](https://github.com/AlperAkca79/SkyNotepad/releases/tag/0.4.0.0).
+- Download **.cer** and **.msixbundle** files from [here](https://github.com/AlperAkca79/SkyNotepad/releases/tag/0.4.5.0).
 - Double click to open **.cer** file.
 - Click **"Install Certificate..."**.
 - Select **"Local Machine"** and click **"Next"**.
