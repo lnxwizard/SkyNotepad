@@ -43,9 +43,9 @@
                 <MenuFlyoutItem x:Name="MenuItemCopy" x:Uid="MenuItemCopy" Text="Copy" Click="MenuItemCopy_Click" Icon="Copy"/>
                 <MenuFlyoutItem x:Name="MenuItemPaste" x:Uid="MenuItemPaste" Text="Paste" Click="MenuItemPaste_Click" Icon="Paste"/>
                 <MenuFlyoutSeparator/>
-                <MenuFlyoutSubItem x:Name="MenuSubItemSearch" x:Uid="MenuSubItemSearch" Text="Search With..." DataContext="{Binding WebSearch}" Icon="Find">
-                    <MenuFlyoutItem x:Name="MenuItemMicrosoftBing" x:Uid="MenuItemMicrosoftBing" Text="Microsoft Bing" Command="{Binding SearchMSBingCommand}"/>
-                    <MenuFlyoutItem x:Name="MenuItemMicrosoftGoogle" x:Uid="MenuItemMicrosoftGoogle" Text="Microsoft Google" Command="{Binding SearchGoogleCommand}"/>
+                <MenuFlyoutSubItem x:Name="MenuSubItemSearch" x:Uid="MenuSubItemSearch" Text="Search With..." Icon="Find">
+                    <MenuFlyoutItem x:Name="MenuItemMicrosoftBing" x:Uid="MenuItemMicrosoftBing" Text="Microsoft Bing" Click="MenuItemMicrosoftBing_Click"/>
+                    <MenuFlyoutItem x:Name="MenuItemGoogle" x:Uid="MenuItemGoogle" Text="Microsoft Google" Click="MenuItemGoogle_Click"/>
                 </MenuFlyoutSubItem>
                 <MenuFlyoutSeparator/>
                 <MenuFlyoutItem x:Name="MenuItemSelectAll" x:Uid="MenuItemSelectAll" Text="SelectAll" Click="MenuItemSelectAll_Click" Icon="SelectAll"/>
