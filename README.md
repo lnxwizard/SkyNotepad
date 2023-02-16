@@ -9,7 +9,7 @@ Sky Notepad is Simple, Modern, Free and Open Source **Text Editor** for Windows.
 NOTE: Sky Notepad is still in development and preview. If you see an bug please create a new issue from [here](https://github.com/AlperAkca79/SkyNotepad/issues/new).
 
 # About
-- Version: Preview v0.4.0.0
+- Version: Preview v0.4.5.0
 - First Build Date: Friday, February 10, 2023
 - Last Update: Friday, February 17, 2023
 - License: [MIT License](https://github.com/AlperAkca79/SkyNotepad#License)
