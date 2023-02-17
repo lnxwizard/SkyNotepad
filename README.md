@@ -1,7 +1,11 @@
 # Sky Notepad
-<p align="center">
+<p align="left">
     <img height="440" width="*" src="res/repo-preview-image-sky-notepad.png">
 </p>
+
+<a href="https://github.com/AlperAkca79/SkyNotepad/releases/tag/0.6.0.0">
+    <img src="res/badge-github.png" height="85" width="250">
+</a>
 
 # What is Sky Notepad?
 Sky Notepad is Simple, Modern, Free and Open Source **Text Editor** for Windows.
