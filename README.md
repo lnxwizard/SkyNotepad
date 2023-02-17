@@ -9,29 +9,35 @@ Sky Notepad is Simple, Modern, Free and Open Source **Text Editor** for Windows.
 NOTE: Sky Notepad is still in development and preview. If you see an bug please create a new issue from [here](https://github.com/AlperAkca79/SkyNotepad/issues/new).
 
 # About
-- Version: Preview v0.4.5.0
+- Version: Preview v0.6.0.0
 - First Build Date: Friday, February 10, 2023
-- Last Update: Friday, February 17, 2023
+- Last Update: Friday, February 17, 2023 10:07 PM (UTC +03:00)
 - License: [MIT License](https://github.com/AlperAkca79/SkyNotepad#License)
 - Platform Architecture: x86, x64
-- Supported OS: Windows 10/11
-- Required OS Build: 17763.0 (1809)
+- Supported OS(s): Windows 10/11
+- Minimum Required OS Build: 17763.0 (1809)
 - Supported Language: English (United States)
 
 # Screenshots
-![](res/image-sky-notepad.png "Main UI")
+![](res/sky-notepad-ui.png "Main UI")
 
-![](res/feature-search-in-web.png "Search in Web")
+![](res/new-fluent-menu-item-icons.png "Fluent Icons")
 
-![](res/feature-word-wrap-and-spell-check.png "Word Wraping & Spell Checking")
+![](res/edit-menu-items.png "Search in Web")
+
+![](res/word-wrap-and-spell-check.png "Word Wraping & Spell Checking")
 
 # Features
 - Word Wrapping
 - Spell Checking
 - Search in Web
+    - Supported Search Engines
+        - Microsoft Bing
+        - Google
+        - DuckDuckGo
 
 # How to Download?
-- Download **.cer** and **.msixbundle** files from [here](https://github.com/AlperAkca79/SkyNotepad/releases/tag/0.4.5.0).
+- Download **.cer** and **.msixbundle** files from [here](https://github.com/AlperAkca79/SkyNotepad/releases/tag/0.6.0.0).
 - Double click to open **.cer** file.
 - Click **"Install Certificate..."**.
 - Select **"Local Machine"** and click **"Next"**.
@@ -41,6 +47,8 @@ NOTE: Sky Notepad is still in development and preview. If you see an bug please 
 - Click **"Next"** and after click **"Finish"**.
 - Click **"OK"**.
 - Finally double click to **.msixbundle** file and install the **Sky Notepad**
+
+NOTE: Download **Segoe.Fluent.Icons.ttf** file from [here](https://github.com/AlperAkca79/SkyNotepad/releases/download/0.6.0.0/Segoe.Fluent.Icons.ttf) for new _fluent_ icons. 
 
 # Getting Started
 Prerequisites:
@@ -60,9 +68,12 @@ Prerequisites:
 
 # Dependencies and References
 - [Windows UI Library (WinUI 2)](https://github.com/Microsoft/microsoft-ui-xaml)
+- [Segoe Fluent Icon](https://github.com/microsoft/fluentui-system-icons)
 
 # Code of Conduct
 Click [here](CODE_OF_CONDUCT.md) for view Code of Conduct.
 
 # License
+Copyright © 2023 AlperAkca79
+
 Sky Notepad is under licensed [MIT License](https://mit-license.org).
