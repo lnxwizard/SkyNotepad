@@ -74,6 +74,9 @@ Prerequisites:
 - [Windows UI Library (WinUI 2)](https://github.com/Microsoft/microsoft-ui-xaml)
 - [Segoe Fluent Icon](https://github.com/microsoft/fluentui-system-icons)
 
+# Security Policy
+See [here](https://github.com/AlperAkca79/SkyNotepad/blob/master/SECURITY.md) for Security Policy.
+
 # Code of Conduct
 Click [here](CODE_OF_CONDUCT.md) for view Code of Conduct.
 
