@@ -9,7 +9,6 @@ using Windows.Storage.Pickers;
 using Windows.Storage.Provider;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
-using Windows.UI.ViewManagement;
 
 // From Project
 using SkyNotepad.Helpers;
@@ -70,7 +69,7 @@ namespace SkyNotepad.ViewModels
             try
             {
                 FileSavePicker savePicker = new FileSavePicker();
-                savePicker.SuggestedFileName = "New Text Document";
+                savePicker.SuggestedFileName = "Untitled Text Document";
                 savePicker.SuggestedStartLocation = PickerLocationId.Desktop;
                 savePicker.FileTypeChoices.Add("Text Document", new List<string>() { ".txt" });
                 savePicker.DefaultFileExtension = ".txt";
@@ -84,6 +83,8 @@ namespace SkyNotepad.ViewModels
                     Document.FileToken = StorageApplicationPermissions.FutureAccessList.Add(storageFile);
                     Document.FileName = storageFile.Name;
                     Document.FilePath = storageFile.Path;
+                    Document.FileType = storageFile.FileType;
+                    Document.DateCreated = storageFile.DateCreated.ToString();
                     Document.IsSaved = true;
                 }
             }
@@ -110,9 +111,11 @@ namespace SkyNotepad.ViewModels
                 using (StreamReader sReader = new StreamReader(stream.AsStream()))
                 {
                     Document.Text = sReader.ReadToEnd();
-                    Document.IsSaved = true;
                     Document.FileName = storageFile.Name;
                     Document.FilePath = storageFile.Path;
+                    Document.FileType = storageFile.FileType;
+                    Document.DateCreated = storageFile.DateCreated.ToString();
+                    Document.IsSaved = true;
                 }
             }
         }

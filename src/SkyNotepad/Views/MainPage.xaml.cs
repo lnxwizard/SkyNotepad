@@ -1,11 +1,9 @@
 ﻿// Librarys
 using System;
+using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
-// From Project
-using SkyNotepad.Models;
-using Windows.System;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -132,6 +130,21 @@ namespace SkyNotepad.Views
             else
             {
                 Uri searchUri = new Uri("https://google.com/search?q=" + searchString);
+                await Launcher.LaunchUriAsync(searchUri);
+            }
+        }
+
+        // Search With DuckDuckGo
+        private async void MenuItemDuckDuckGo_Click(object sender, RoutedEventArgs e)
+        {
+            string searchString = TextBox.SelectedText;
+            if (searchString == string.Empty)
+            {
+                Uri defaultUri = new Uri("https://duckduckgo.com/");
+            }
+            else
+            {
+                Uri searchUri = new Uri("https://duckduckgo.com/" + searchString);
                 await Launcher.LaunchUriAsync(searchUri);
             }
         }

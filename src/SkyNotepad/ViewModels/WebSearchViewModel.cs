@@ -20,12 +20,12 @@ namespace SkyNotepad.ViewModels
 
         private void SearchMSBing()
         {
-
+            
         }
 
         private void SearchGoogle()
         {
-
+            
         }
     }
 }

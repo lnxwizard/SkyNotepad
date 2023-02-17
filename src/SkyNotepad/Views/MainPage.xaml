@@ -26,30 +26,118 @@
         <muxc:MenuBar x:Name="MenuBar" x:Uid="MenuBar" Grid.Row="0" Background="White" VerticalAlignment="Stretch" HorizontalAlignment="Left" CornerRadius="0">
             <!-- File Menu -->
             <muxc:MenuBarItem x:Name="MenuFile" x:Uid="MenuFile" Title="File" DataContext="{Binding File}">
-                <MenuFlyoutItem x:Name="MenuItemNew" x:Uid="MenuItemNew" Text="New" Command="{Binding NewCommand}" Icon="Page2"/>
-                <MenuFlyoutItem x:Name="MenuItemOpen" x:Uid="MenuItemOpen" Text="Open..." Command="{Binding OpenCommand}" Icon="OpenFile"/>
-                <MenuFlyoutItem x:Name="MenuItemSave" x:Uid="MenuItemSave" Text="Save" Command="{Binding SaveCommand}" Icon="Save"/>
-                <MenuFlyoutItem x:Name="MenuItemSaveAs" x:Uid="MenuItemSaveAs" Text="Save As..." Command="{Binding SaveAsCommand}" Icon="SaveLocal"/>
+                <MenuFlyoutItem x:Name="MenuItemNew" x:Uid="MenuItemNew" Text="New" Command="{Binding NewCommand}">
+                    <MenuFlyoutItem.Icon>
+                        <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xE7C3;"/>
+                    </MenuFlyoutItem.Icon>
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Key="N" Modifiers="Control" IsEnabled="True"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
+                <MenuFlyoutItem x:Name="MenuItemOpen" x:Uid="MenuItemOpen" Text="Open..." Command="{Binding OpenCommand}">
+                    <MenuFlyoutItem.Icon>
+                        <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xE8E5;"/>
+                    </MenuFlyoutItem.Icon>
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Key="O" Modifiers="Control" IsEnabled="True"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
+                <MenuFlyoutItem x:Name="MenuItemSave" x:Uid="MenuItemSave" Text="Save" Command="{Binding SaveCommand}">
+                    <MenuFlyoutItem.Icon>
+                        <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xE74E;"/>
+                    </MenuFlyoutItem.Icon>
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Key="S" Modifiers="Control" IsEnabled="True"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
+                <MenuFlyoutItem x:Name="MenuItemSaveAs" x:Uid="MenuItemSaveAs" Text="Save As..." Command="{Binding SaveAsCommand}">
+                    <MenuFlyoutItem.Icon>
+                        <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xE78C;"/>
+                    </MenuFlyoutItem.Icon>
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Key="S" Modifiers="Control, Menu" IsEnabled="True"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
                 <MenuFlyoutSeparator/>
-                <MenuFlyoutItem x:Name="MenuItemExit" x:Uid="MenuItemExit" Text="Exit" Command="{Binding ExitCommand}"/>
+                <MenuFlyoutItem x:Name="MenuItemExit" x:Uid="MenuItemExit" Text="Exit" Command="{Binding ExitCommand}">
+                    <MenuFlyoutItem.Icon>
+                        <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xE89F;"/>
+                    </MenuFlyoutItem.Icon>
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Key="F4" Modifiers="Menu" IsEnabled="True"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
             </muxc:MenuBarItem>
 
             <!-- Edit Menu -->
             <muxc:MenuBarItem x:Name="MenuEdit" x:Uid="MenuEdit" Title="Edit">
-                <MenuFlyoutItem x:Name="MenuItemUndo" x:Uid="MenuItemUndo" Text="Undo" Click="MenuItemUndo_Click" Icon="Undo"/>
-                <MenuFlyoutItem x:Name="MenuItemRedo" x:Uid="MenuItemRedo" Text="Redo" Click="MenuItemRedo_Click" Icon="Redo"/>
+                <MenuFlyoutItem x:Name="MenuItemUndo" x:Uid="MenuItemUndo" Text="Undo" Click="MenuItemUndo_Click">
+                    <MenuFlyoutItem.Icon>
+                        <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xE7A7;"/>
+                    </MenuFlyoutItem.Icon>
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Key="Z" Modifiers="Control" IsEnabled="True"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
+                <MenuFlyoutItem x:Name="MenuItemRedo" x:Uid="MenuItemRedo" Text="Redo" Click="MenuItemRedo_Click">
+                    <MenuFlyoutItem.Icon>
+                        <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xE7A6;"/>
+                    </MenuFlyoutItem.Icon>
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Key="Y" Modifiers="Control" IsEnabled="True"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
                 <MenuFlyoutSeparator/>
-                <MenuFlyoutItem x:Name="MenuItemCut" x:Uid="MenuItemCut" Text="Cut" Click="MenuItemCut_Click" Icon="Cut"/>
-                <MenuFlyoutItem x:Name="MenuItemCopy" x:Uid="MenuItemCopy" Text="Copy" Click="MenuItemCopy_Click" Icon="Copy"/>
-                <MenuFlyoutItem x:Name="MenuItemPaste" x:Uid="MenuItemPaste" Text="Paste" Click="MenuItemPaste_Click" Icon="Paste"/>
+                <MenuFlyoutItem x:Name="MenuItemCut" x:Uid="MenuItemCut" Text="Cut" Click="MenuItemCut_Click">
+                    <MenuFlyoutItem.Icon>
+                        <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xE8C6;"/>
+                    </MenuFlyoutItem.Icon>
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Key="X" Modifiers="Control" IsEnabled="True"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
+                <MenuFlyoutItem x:Name="MenuItemCopy" x:Uid="MenuItemCopy" Text="Copy" Click="MenuItemCopy_Click">
+                    <MenuFlyoutItem.Icon>
+                        <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xE8C8;"/>
+                    </MenuFlyoutItem.Icon>
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Key="C" Modifiers="Control" IsEnabled="True"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
+                <MenuFlyoutItem x:Name="MenuItemPaste" x:Uid="MenuItemPaste" Text="Paste" Click="MenuItemPaste_Click">
+                    <MenuFlyoutItem.Icon>
+                        <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xE77F;"/>
+                    </MenuFlyoutItem.Icon>
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Key="V" Modifiers="Control" IsEnabled="True"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
                 <MenuFlyoutSeparator/>
-                <MenuFlyoutSubItem x:Name="MenuSubItemSearch" x:Uid="MenuSubItemSearch" Text="Search With..." Icon="Find">
+                <MenuFlyoutSubItem x:Name="MenuSubItemSearch" x:Uid="MenuSubItemSearch" Text="Search In Web With...">
+                    <MenuFlyoutSubItem.Icon>
+                        <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xF6FA;"/>
+                    </MenuFlyoutSubItem.Icon>
                     <MenuFlyoutItem x:Name="MenuItemMicrosoftBing" x:Uid="MenuItemMicrosoftBing" Text="Microsoft Bing" Click="MenuItemMicrosoftBing_Click"/>
                     <MenuFlyoutItem x:Name="MenuItemGoogle" x:Uid="MenuItemGoogle" Text="Microsoft Google" Click="MenuItemGoogle_Click"/>
+                    <MenuFlyoutItem x:Name="MenuItemDuckDuckGo" x:Uid="MenuItemDuckDuckGo" Text="DuckDuckGo" Click="MenuItemDuckDuckGo_Click"/>
                 </MenuFlyoutSubItem>
                 <MenuFlyoutSeparator/>
-                <MenuFlyoutItem x:Name="MenuItemSelectAll" x:Uid="MenuItemSelectAll" Text="SelectAll" Click="MenuItemSelectAll_Click" Icon="SelectAll"/>
-                <MenuFlyoutItem x:Name="MenuItemTimeDate" x:Uid="MenuItemTimeDate" Text="Time/Date" Click="MenuItemTimeDate_Click" Icon="Calendar"/>
+                <MenuFlyoutItem x:Name="MenuItemSelectAll" x:Uid="MenuItemSelectAll" Text="SelectAll" Click="MenuItemSelectAll_Click">
+                    <MenuFlyoutItem.Icon>
+                        <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xE8B3;"/>
+                    </MenuFlyoutItem.Icon>
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Key="A" Modifiers="Control" IsEnabled="True"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
+                <MenuFlyoutItem x:Name="MenuItemTimeDate" x:Uid="MenuItemTimeDate" Text="Time/Date" Click="MenuItemTimeDate_Click">
+                    <MenuFlyoutItem.Icon>
+                        <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xE787;"/>
+                    </MenuFlyoutItem.Icon>
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Key="F5" IsEnabled="True"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
             </muxc:MenuBarItem>
 
             <!-- Format Menu -->

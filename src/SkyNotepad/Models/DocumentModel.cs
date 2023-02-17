@@ -29,6 +29,20 @@ namespace SkyNotepad.Models
 
         }
 
+        private string _fileType;
+        public string FileType
+        {
+            get { return _fileType; }
+            set { OnPropertyChanged(ref _fileType, value); }
+        }
+
+        private string _dateCreated;
+        public string DateCreated
+        {
+            get { return _dateCreated; }
+            set { OnPropertyChanged(ref _dateCreated, value); }
+        }
+
         public bool isEmpty
         {
             get
