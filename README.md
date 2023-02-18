@@ -40,6 +40,20 @@ NOTE: Sky Notepad is still in development and preview. If you see an bug please 
         - Google
         - DuckDuckGo
 
+# Shortcuts
+- **(CTRL + N)** Create New File
+- **(CTRL + O)** Open File
+- **(CTRL + S)** Save
+- **(CTRL + ALT + S)** Save As...
+- **(ALT + F4)** Exit from Sky Notepad
+- **(CTRL + Z)** Undo Changes
+- **(CTRL + Y)** Redo Changes
+- **(CTRL + X)** Cut
+- **(CTRL + C)** Copy
+- **(CTRL + V)** Paste
+- **(CTRL + A)** Select All Text
+- **(F5)** Put System Date/Time
+
 # How to Download?
 - Download **.cer** and **.msixbundle** files from [here](https://github.com/AlperAkca79/SkyNotepad/releases/tag/0.6.0.0).
 - Double click to open **.cer** file.
