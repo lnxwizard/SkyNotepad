@@ -1,10 +1,12 @@
 # Sky Notepad
-<p align="left">
+<a href="https://github.com/AlperAkca79/SkyNotepad/">
     <img height="440" width="*" src="res/repo-preview-image-sky-notepad.png">
-</p>
-
-<a href="https://github.com/AlperAkca79/SkyNotepad/releases/tag/0.6.0.0">
+</a>
+<a href="https://github.com/AlperAkca79/SkyNotepad/releases/tag/0.6.2.0">
     <img src="res/badge-github.png" height="85" width="250">
+</a>
+<a href="">
+    <img src="res/badge-microsoft-store.png" height="85" width="250" style="margin-left: 375px;">
 </a>
 
 # What is Sky Notepad?
@@ -13,9 +15,9 @@ Sky Notepad is Simple, Modern, Free and Open Source **Text Editor** for Windows.
 NOTE: Sky Notepad is still in development and preview. If you see an bug please create a new issue from [here](https://github.com/AlperAkca79/SkyNotepad/issues/new).
 
 # About
-- Version: Preview v0.6.0.0
+- Version: Preview v0.6.2.0
 - First Build Date: Friday, February 10, 2023
-- Last Update: Friday, February 17, 2023 10:07 PM (UTC +03:00)
+- Last Update: Saturday, February 18, 2023 3:48 PM (UTC +03:00)
 - License: [MIT License](https://github.com/AlperAkca79/SkyNotepad#License)
 - Platform Architecture: x86, x64
 - Supported OS(s): Windows 10/11
@@ -52,10 +54,10 @@ NOTE: Sky Notepad is still in development and preview. If you see an bug please 
 - **(CTRL + C)** Copy
 - **(CTRL + V)** Paste
 - **(CTRL + A)** Select All Text
-- **(F5)** Put System Date/Time
+- **(F5)** Puts Systems Date/Time
 
 # How to Download?
-- Download **.cer** and **.msixbundle** files from [here](https://github.com/AlperAkca79/SkyNotepad/releases/tag/0.6.0.0).
+- Download **.cer** and **.msixbundle** files from [here](https://github.com/AlperAkca79/SkyNotepad/releases/tag/0.6.2.0).
 - Double click to open **.cer** file.
 - Click **"Install Certificate..."**.
 - Select **"Local Machine"** and click **"Next"**.
@@ -66,7 +68,7 @@ NOTE: Sky Notepad is still in development and preview. If you see an bug please 
 - Click **"OK"**.
 - Finally double click to **.msixbundle** file and install the **Sky Notepad**
 
-NOTE: Download **Segoe.Fluent.Icons.ttf** file from [here](https://github.com/AlperAkca79/SkyNotepad/releases/download/0.6.0.0/Segoe.Fluent.Icons.ttf) for new _fluent_ icons. 
+NOTE **(Just for Preview v0.6.0.0)**: Download **Segoe.Fluent.Icons.ttf** file from [here](https://github.com/AlperAkca79/SkyNotepad/releases/download/0.6.0.0/Segoe.Fluent.Icons.ttf) for new _fluent_ icons. 
 
 # Getting Started
 Prerequisites:
@@ -82,14 +84,14 @@ Prerequisites:
 - Open [src/SkyNotepad.sln](https://github.com/AlperAkca79/SkyNotepad/blob/master/src/SkyNotepad.sln) in Visual Studio 2019 or higher to build and run the SkyNotepad application.
 
 # Contributing
-- [How to Contribute?](https://github.com/AlperAkca79/SkyNotepad/blob/master/CONTRIBUTING.MD)
+- See [here](https://github.com/AlperAkca79/SkyNotepad/blob/master/CONTRIBUTING.md) for How to Contribute?
 
 # Dependencies and References
 - [Windows UI Library (WinUI 2)](https://github.com/Microsoft/microsoft-ui-xaml)
-- [Segoe Fluent Icon](https://github.com/microsoft/fluentui-system-icons)
+- [Segoe Fluent Icon (No Longer Available for Preview v0.6.2.0 and Above)](https://github.com/microsoft/fluentui-system-icons)
 
 # Security Policy
-See [here](https://github.com/AlperAkca79/SkyNotepad/blob/master/SECURITY.md) for Security Policy.
+See [here](https://github.com/AlperAkca79/SkyNotepad/blob/master/SECURITY.md) for Version support and more.
 
 # Code of Conduct
 Click [here](CODE_OF_CONDUCT.md) for view Code of Conduct.
@@ -97,4 +99,4 @@ Click [here](CODE_OF_CONDUCT.md) for view Code of Conduct.
 # License
 Copyright © 2023 AlperAkca79
 
-Sky Notepad is under licensed [MIT License](https://mit-license.org).
+Sky Notepad is under licensed [MIT License](https://mit-license.org). See [here](LICENSE.md) for more information.
