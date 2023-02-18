@@ -5,7 +5,7 @@
 <a href="https://github.com/AlperAkca79/SkyNotepad/releases/tag/0.6.2.0">
     <img src="res/badge-github.png" height="85" width="250">
 </a>
-<a href="">
+<a href="404.md">
     <img src="res/badge-microsoft-store.png" height="85" width="250" style="margin-left: 375px;">
 </a>
 
