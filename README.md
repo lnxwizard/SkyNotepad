@@ -61,7 +61,7 @@ NOTE: Sky Notepad is still in development and preview. If you see an bug please 
 
 # Changelog
 
-See the changelog for all versions [here](docs/changelog.md).
+See the changelog for all versions [here](docs/CHANGELOG.md).
 
 # How to Download?
 - Download **.cer** and **.msixbundle** files from [here](https://github.com/AlperAkca79/SkyNotepad/releases/tag/0.7.0.0).
