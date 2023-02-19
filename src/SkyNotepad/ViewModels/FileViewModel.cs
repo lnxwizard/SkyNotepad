@@ -7,12 +7,12 @@ using Windows.Storage;
 using Windows.Storage.AccessCache;
 using Windows.Storage.Pickers;
 using Windows.Storage.Provider;
-using Windows.UI.Popups;
 using Windows.UI.Xaml;
 
 // From Project
 using SkyNotepad.Helpers;
 using SkyNotepad.Models;
+using Windows.UI.Xaml.Controls;
 
 namespace SkyNotepad.ViewModels
 {
@@ -68,11 +68,13 @@ namespace SkyNotepad.ViewModels
         {
             try
             {
-                FileSavePicker savePicker = new FileSavePicker();
-                savePicker.SuggestedFileName = "Untitled Text Document";
-                savePicker.SuggestedStartLocation = PickerLocationId.Desktop;
+                FileSavePicker savePicker = new FileSavePicker()
+                {
+                    SuggestedFileName = "Untitled Text Document",
+                    SuggestedStartLocation = PickerLocationId.DocumentsLibrary,
+                    DefaultFileExtension = ".txt"
+                };
                 savePicker.FileTypeChoices.Add("Text Document", new List<string>() { ".txt" });
-                savePicker.DefaultFileExtension = ".txt";
 
                 StorageFile storageFile = await savePicker.PickSaveFileAsync();
                 if (storageFile != null)
@@ -90,33 +92,60 @@ namespace SkyNotepad.ViewModels
             }
             catch
             {
-                var message = new MessageDialog("File couldn't save! Try Again.");
-                _ = message.ShowAsync();
+                ContentDialog FileSaveUnsuccesfullDialog = new ContentDialog()
+                {
+                    Title = "Error",
+                    CloseButtonText = "OK",
+                    PrimaryButtonText = "Try Again",
+                    DefaultButton = ContentDialogButton.Close,
+                    Content = "File Couldn't Saved! Try Again.",
+                    PrimaryButtonCommand = SaveAsCommand
+                };
+
+                await FileSaveUnsuccesfullDialog.ShowAsync();
             }
         }
 
         // Open... Command
         private async void OpenFile()
         {
-            FileOpenPicker openPicker = new FileOpenPicker();
-            openPicker.ViewMode = PickerViewMode.Thumbnail;
-            openPicker.SuggestedStartLocation = PickerLocationId.Desktop;
-            openPicker.FileTypeFilter.Add(".txt");
-
-            StorageFile storageFile = await openPicker.PickSingleFileAsync();
-
-            if (storageFile != null)
+            try
             {
-                var stream = await storageFile.OpenAsync(FileAccessMode.Read);
-                using (StreamReader sReader = new StreamReader(stream.AsStream()))
+                FileOpenPicker openPicker = new FileOpenPicker()
                 {
-                    Document.Text = sReader.ReadToEnd();
-                    Document.FileName = storageFile.Name;
-                    Document.FilePath = storageFile.Path;
-                    Document.FileType = storageFile.FileType;
-                    Document.DateCreated = storageFile.DateCreated.ToString();
-                    Document.IsSaved = true;
+                    ViewMode = PickerViewMode.Thumbnail,
+                    SuggestedStartLocation = PickerLocationId.DocumentsLibrary
+                };
+                openPicker.FileTypeFilter.Add(".txt");
+
+                StorageFile storageFile = await openPicker.PickSingleFileAsync();
+                if (storageFile != null)
+                {
+                    var stream = await storageFile.OpenAsync(FileAccessMode.Read);
+                    using (StreamReader sReader = new StreamReader(stream.AsStream()))
+                    {
+                        Document.Text = sReader.ReadToEnd();
+                        Document.FileName = storageFile.Name;
+                        Document.FilePath = storageFile.Path;
+                        Document.FileType = storageFile.FileType;
+                        Document.DateCreated = storageFile.DateCreated.ToString();
+                        Document.IsSaved = true;
+                    }
                 }
+            }
+            catch
+            {
+                ContentDialog FileOpenUnsuccesfullDialog = new ContentDialog()
+                {
+                    Title = "Error",
+                    CloseButtonText = "OK",
+                    PrimaryButtonText = "Try Again",
+                    DefaultButton = ContentDialogButton.Close,
+                    Content = "File Couldn't Opened! Try Again.",
+                    PrimaryButtonCommand = OpenCommand
+                };
+
+                await FileOpenUnsuccesfullDialog.ShowAsync();
             }
         }
 

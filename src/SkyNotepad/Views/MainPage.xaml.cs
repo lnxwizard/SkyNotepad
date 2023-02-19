@@ -4,6 +4,11 @@ using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
+// From Project
+using SkyNotepad.Views.Dialogs;
+using Windows.ApplicationModel.DataTransfer;
+using Windows.UI.ViewManagement;
+
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -43,7 +48,7 @@ namespace SkyNotepad.Views
         private void MenuItemCut_Click(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(TextBox.SelectedText))
-            { 
+            {
                 
             }
             else

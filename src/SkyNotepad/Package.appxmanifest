@@ -9,7 +9,7 @@
   <Identity
     Name="778ade44-7283-4a36-a7ba-ecd392206e35"
     Publisher="CN=AlperAkca79"
-    Version="0.6.2.0" />
+    Version="0.7.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="778ade44-7283-4a36-a7ba-ecd392206e35" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 

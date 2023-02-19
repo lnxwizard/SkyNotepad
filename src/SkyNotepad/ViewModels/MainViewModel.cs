@@ -5,18 +5,20 @@ namespace SkyNotepad.ViewModels
 {
     public class MainViewModel
     {
-        private DocumentModel _document;
+        public DocumentModel Document;
 
         public FileViewModel File { get; set; }
         public FormatViewModel Format { get; set; }
         public WebSearchViewModel WebSearch { get; set; }
+        public HelpViewModel Help { get; set; }
 
         public MainViewModel()
         {
-            _document = new DocumentModel();
-            File = new FileViewModel(_document);
-            Format = new FormatViewModel(_document);
+            Document = new DocumentModel();
+            File = new FileViewModel(Document);
+            Format = new FormatViewModel(Document);
             WebSearch = new WebSearchViewModel();
+            Help = new HelpViewModel();
         }
     }
 }
