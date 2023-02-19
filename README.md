@@ -94,8 +94,7 @@ Prerequisites:
 - See [here](https://github.com/AlperAkca79/SkyNotepad/blob/master/CONTRIBUTING.md) for How to Contribute?
 
 # Dependencies and References
-- [Windows UI Library (WinUI 2)](https://github.com/Microsoft/microsoft-ui-xaml)
-<img src="res/microsoft-xaml-ui.png" height="20" width="20">
+- [Windows UI Library (WinUI 2)](https://github.com/Microsoft/microsoft-ui-xaml) <img src="res/microsoft-xaml-ui.png" height="20" width="20">
 
 - [Segoe Fluent Icon (No Longer Available for Preview v0.6.2.0 and Above)](https://github.com/microsoft/fluentui-system-icons)
 - [Windows Community Toolkit🧰](https://github.com/CommunityToolkit/WindowsCommunityToolkit)
