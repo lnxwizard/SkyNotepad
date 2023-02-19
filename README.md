@@ -5,8 +5,8 @@
 <a href="https://github.com/AlperAkca79/SkyNotepad/releases/tag/0.6.2.0">
     <img src="res/badge-github.png" height="85" width="250">
 </a>
-<a href="404.md">
-    <img src="res/badge-microsoft-store.png" height="85" width="250" style="margin-left: 375px;">
+<a href="docs/404.md">
+    <img src="res/badge-microsoft-store.png" height="85" width="250" style="float: right;">
 </a>
 
 # What is Sky Notepad?
@@ -15,9 +15,9 @@ Sky Notepad is Simple, Modern, Free and Open Source **Text Editor** for Windows.
 NOTE: Sky Notepad is still in development and preview. If you see an bug please create a new issue from [here](https://github.com/AlperAkca79/SkyNotepad/issues/new).
 
 # About
-- Version: Preview v0.6.2.0
+- Version: Preview v0.7.0.0
 - First Build Date: Friday, February 10, 2023
-- Last Update: Saturday, February 18, 2023 3:48 PM (UTC +03:00)
+- Last Update: Sunday, February 19, 2023 7:11 PM (UTC +03:00)
 - License: [MIT License](https://github.com/AlperAkca79/SkyNotepad#License)
 - Platform Architecture: x86, x64
 - Supported OS(s): Windows 10/11
@@ -27,11 +27,11 @@ NOTE: Sky Notepad is still in development and preview. If you see an bug please 
 # Screenshots
 ![](res/sky-notepad-ui.png "Main UI")
 
-![](res/new-fluent-menu-item-icons.png "Fluent Icons")
+![](res/edit-menu-sky-notepad.png "Search in Web")
 
-![](res/edit-menu-items.png "Search in Web")
+![](res/help-menu-sky-notepad.png "Help Menu")
 
-![](res/word-wrap-and-spell-check.png "Word Wraping & Spell Checking")
+![](res/about-sky-notepad.png "Word Wraping & Spell Checking")
 
 # Features
 - Word Wrapping
@@ -41,6 +41,7 @@ NOTE: Sky Notepad is still in development and preview. If you see an bug please 
         - Microsoft Bing
         - Google
         - DuckDuckGo
+- Fluent Desing
 
 # Shortcuts
 - **(CTRL + N)** Create New File
@@ -55,9 +56,15 @@ NOTE: Sky Notepad is still in development and preview. If you see an bug please 
 - **(CTRL + V)** Paste
 - **(CTRL + A)** Select All Text
 - **(F5)** Puts Systems Date/Time
+- **(ALT + Z)** Toggle Word Wrapping
+- **(ALT + X)** Toggle Spell Checking
+
+# Changelog
+
+See the changelog for all versions [here](docs/changelog.md).
 
 # How to Download?
-- Download **.cer** and **.msixbundle** files from [here](https://github.com/AlperAkca79/SkyNotepad/releases/tag/0.6.2.0).
+- Download **.cer** and **.msixbundle** files from [here](https://github.com/AlperAkca79/SkyNotepad/releases/tag/0.7.0.0).
 - Double click to open **.cer** file.
 - Click **"Install Certificate..."**.
 - Select **"Local Machine"** and click **"Next"**.
@@ -88,7 +95,10 @@ Prerequisites:
 
 # Dependencies and References
 - [Windows UI Library (WinUI 2)](https://github.com/Microsoft/microsoft-ui-xaml)
+<img src="res/microsoft-xaml-ui.png" height="20" width="20">
+
 - [Segoe Fluent Icon (No Longer Available for Preview v0.6.2.0 and Above)](https://github.com/microsoft/fluentui-system-icons)
+- [Windows Community Toolkit🧰](https://github.com/CommunityToolkit/WindowsCommunityToolkit)
 
 # Security Policy
 See [here](https://github.com/AlperAkca79/SkyNotepad/blob/master/SECURITY.md) for Version support and more.
