@@ -136,6 +136,7 @@
     <Compile Include="ViewModels\FormatViewModel.cs" />
     <Compile Include="ViewModels\HelpViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\ScreenViewModel.cs" />
     <Compile Include="ViewModels\WebSearchViewModel.cs" />
     <Compile Include="Views\Dialogs\AboutDialog.xaml.cs">
       <DependentUpon>AboutDialog.xaml</DependentUpon>

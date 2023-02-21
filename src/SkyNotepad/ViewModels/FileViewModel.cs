@@ -13,6 +13,8 @@ using Windows.UI.Xaml;
 using SkyNotepad.Helpers;
 using SkyNotepad.Models;
 using Windows.UI.Xaml.Controls;
+using System.Runtime.CompilerServices;
+using System.ComponentModel;
 
 namespace SkyNotepad.ViewModels
 {
@@ -37,6 +39,15 @@ namespace SkyNotepad.ViewModels
             SaveAsCommand = new RelayCommand(SaveFileAs);
             OpenCommand = new RelayCommand(OpenFile);
             ExitCommand = new RelayCommand(Exit);
+        }
+
+        // Create new file while first run
+        public void CreateNewFile()
+        {
+            Document.FileName = "Untitled Text Document";
+            Document.FilePath = string.Empty;
+            Document.Text = string.Empty;
+            Document.IsSaved = false;
         }
 
         // New Command 

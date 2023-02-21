@@ -3,11 +3,14 @@ using System;
 using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.ViewManagement;
+using Windows.ApplicationModel.DataTransfer;
 
 // From Project
 using SkyNotepad.Views.Dialogs;
-using Windows.ApplicationModel.DataTransfer;
-using Windows.UI.ViewManagement;
+using SkyNotepad.ViewModels;
+using SkyNotepad.Models;
+using System.Collections.Generic;
 
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
@@ -22,6 +25,12 @@ namespace SkyNotepad.Views
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        // Load Event
+        private void MainPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            
         }
 
         // Undo Command
@@ -150,6 +159,21 @@ namespace SkyNotepad.Views
             else
             {
                 Uri searchUri = new Uri("https://duckduckgo.com/" + searchString);
+                await Launcher.LaunchUriAsync(searchUri);
+            }
+        }
+
+        // Search With Yandex
+        private async void MenuItemYandex_Click(object sender, RoutedEventArgs e)
+        {
+            string searchString = TextBox.SelectedText;
+            if (searchString == string.Empty)
+            {
+                Uri defaultUri = new Uri("https://yandex.com/");
+            }
+            else
+            {
+                Uri searchUri = new Uri("https://yandex.com/search/?text=" + searchString);
                 await Launcher.LaunchUriAsync(searchUri);
             }
         }

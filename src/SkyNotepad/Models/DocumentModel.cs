@@ -1,5 +1,7 @@
 ﻿// Project Librarys
 using SkyNotepad.Helpers;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace SkyNotepad.Models
 {

@@ -1,6 +1,8 @@
-﻿using Windows.UI.Xaml;
+﻿// Librarys
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.ApplicationModel;
+using SkyNotepad.Models;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -13,11 +15,12 @@ namespace SkyNotepad.Views.Dialogs
     {
         public AboutDialog()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+        private void AboutDialog_Loaded(object sender, RoutedEventArgs e)
         {
+            DocumentModel document = new DocumentModel();
             // Application Version Info
             int AppVersionMajor = Package.Current.Id.Version.Major;
             int AppVersionMinor = Package.Current.Id.Version.Minor;
@@ -28,6 +31,9 @@ namespace SkyNotepad.Views.Dialogs
 
             // Application Author
             DeveloperInfo.Text = "Developer: AlperAkca79";
+
+            // Insider Channel
+            InsiderChannel.Text = "Insider Channel: Preview";
         }
     }
 }
