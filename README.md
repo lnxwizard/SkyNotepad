@@ -63,7 +63,7 @@ Sky Notepad is Simple, Modern, Free and Open Source **Text Editor** for Windows.
 
 # Changelog
 
-See the changelog for all versions [here](docs/changelog.md).
+See the changelog for all versions [here](docs/CHANGELOG.md).
 
 # How to Download?
 - Download **.cer** and **.msixbundle** files from [here](https://github.com/AlperAkca79/SkyNotepad/releases/tag/0.7.4.0).
