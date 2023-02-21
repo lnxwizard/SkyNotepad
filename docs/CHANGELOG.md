@@ -38,3 +38,12 @@ First version of Sky Notepad.
 - Added "Repository" item to help menu.
 - Added "License" item to help menu
 - Added "Report an Issue" item to help menu
+
+***
+
+### Version Preview v0.7.4.0
+- Added "Yandex" to Search in Web.
+- Added Full Screen Mode support.
+- Changed Application Icon for Preview.
+- Added new "preview" icons.
+- Updated About page contents.
