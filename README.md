@@ -30,8 +30,6 @@ Sky Notepad is Simple, Modern, Free and Open Source **Text Editor** for Windows.
 
 ![](res/new-full-screen-mode.png "Full Screen")
 
-![](res/help-menu-sky-notepad.png "About Menu")
-
 ![](res/about-page.png "About")
 
 # Features
