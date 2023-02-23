@@ -8,13 +8,11 @@ using Windows.Storage.AccessCache;
 using Windows.Storage.Pickers;
 using Windows.Storage.Provider;
 using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 
 // From Project
 using SkyNotepad.Helpers;
 using SkyNotepad.Models;
-using Windows.UI.Xaml.Controls;
-using System.Runtime.CompilerServices;
-using System.ComponentModel;
 
 namespace SkyNotepad.ViewModels
 {
@@ -31,32 +29,39 @@ namespace SkyNotepad.ViewModels
         public ICommand ExitCommand { get; }
 
         // File View Model Method
-        public FileViewModel(DocumentModel document)
+        public FileViewModel(DocumentModel _document)
         {
-            Document = document;
+            Document = _document;
             NewCommand = new RelayCommand(NewFile);
             SaveCommand = new RelayCommand(SaveFile);
             SaveAsCommand = new RelayCommand(SaveFileAs);
             OpenCommand = new RelayCommand(OpenFile);
             ExitCommand = new RelayCommand(Exit);
+            
+            // Creates new file while first run
+            CreateNewFile();
         }
 
         // Create new file while first run
-        public void CreateNewFile()
+        private void CreateNewFile()
         {
-            Document.FileName = "Untitled Text Document";
+            Document.FileName = "Untitled";
             Document.FilePath = string.Empty;
             Document.Text = string.Empty;
             Document.IsSaved = false;
+            Document.DateCreated = string.Empty;
+            Document.AppTitle = Document.FileName + " - SkyNotepad Preview";
         }
 
         // New Command 
         private void NewFile()
         {
-            Document.FileName = "Untitled Text Document";
+            Document.FileName = "Untitled";
             Document.FilePath = string.Empty;
             Document.Text = string.Empty;
             Document.IsSaved = false;
+            Document.DateCreated = string.Empty;
+            Document.AppTitle = Document.FileName + " - SkyNotepad Preview";
         }
 
         // Save Command
@@ -81,7 +86,7 @@ namespace SkyNotepad.ViewModels
             {
                 FileSavePicker savePicker = new FileSavePicker()
                 {
-                    SuggestedFileName = "Untitled Text Document",
+                    SuggestedFileName = "Untitled",
                     SuggestedStartLocation = PickerLocationId.DocumentsLibrary,
                     DefaultFileExtension = ".txt"
                 };
@@ -99,6 +104,7 @@ namespace SkyNotepad.ViewModels
                     Document.FileType = storageFile.FileType;
                     Document.DateCreated = storageFile.DateCreated.ToString();
                     Document.IsSaved = true;
+                    Document.AppTitle = Document.FileName + " - SkyNotepad Preview";
                 }
             }
             catch
@@ -141,6 +147,7 @@ namespace SkyNotepad.ViewModels
                         Document.FileType = storageFile.FileType;
                         Document.DateCreated = storageFile.DateCreated.ToString();
                         Document.IsSaved = true;
+                        Document.AppTitle = Document.FileName + " - SkyNotepad Preview";
                     }
                 }
             }

@@ -28,7 +28,6 @@ namespace SkyNotepad.Models
         {
             get { return _fileName; }
             set { OnPropertyChanged(ref _fileName, value); }
-
         }
 
         private string _fileType;
@@ -45,11 +44,18 @@ namespace SkyNotepad.Models
             set { OnPropertyChanged(ref _dateCreated, value); }
         }
 
+        private string _appTitle;
+        public string AppTitle
+        {
+            get { return _appTitle; }
+            set { OnPropertyChanged(ref _appTitle, value); }
+        }
+
         public bool isEmpty
         {
             get
             {
-                if (string.IsNullOrEmpty(FileName) || string.IsNullOrEmpty(FilePath))
+                if (string.IsNullOrEmpty(FileName) || string.IsNullOrEmpty(FilePath) || string.IsNullOrEmpty(AppTitle))
                     return true;
 
                 return false;

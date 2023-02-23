@@ -6,7 +6,7 @@ namespace SkyNotepad.ViewModels
     public class MainViewModel
     {
         // Model
-        public DocumentModel Document;
+        private DocumentModel Document;
 
         // View Model(s)
         public FileViewModel File { get; set; }

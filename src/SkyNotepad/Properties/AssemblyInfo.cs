@@ -5,8 +5,8 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Sky Notepad")]
-[assembly: AssemblyDescription("Sky Notepad: Simple, Modern, Free and Open Source Text Editor for Windows.")]
+[assembly: AssemblyTitle("SkyNotepad")]
+[assembly: AssemblyDescription("SkyNotepad: Simple, Modern, Free and Open Source Text Editor for Windows.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("SkyNotepad")]
@@ -24,6 +24,6 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.7.4.0")]
-[assembly: AssemblyFileVersion("0.7.4.0")]
+[assembly: AssemblyVersion("0.8.3.0")]
+[assembly: AssemblyFileVersion("0.8.3.0")]
 [assembly: ComVisible(false)]

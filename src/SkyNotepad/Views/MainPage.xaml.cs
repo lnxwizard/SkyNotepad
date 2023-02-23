@@ -1,16 +1,19 @@
 ﻿// Librarys
 using System;
+using Windows.Foundation;
 using Windows.System;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.ViewManagement;
+using Windows.ApplicationModel;
+using Windows.ApplicationModel.Core;
 using Windows.ApplicationModel.DataTransfer;
 
 // From Project
 using SkyNotepad.Views.Dialogs;
 using SkyNotepad.ViewModels;
 using SkyNotepad.Models;
-using System.Collections.Generic;
 
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
@@ -31,6 +34,21 @@ namespace SkyNotepad.Views
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
             
+        }
+
+        // Application Title Bar Drag Region Loaded Event
+        private void DragRegion_Loaded(object sender, RoutedEventArgs e)
+        {
+            // Hide default title bar.
+            CoreApplicationViewTitleBar coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
+            coreTitleBar.ExtendViewIntoTitleBar = true;
+
+            // Set caption buttons background to transparent.
+            ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
+            titleBar.ButtonBackgroundColor = Colors.Transparent;
+
+            // Set XAML element as a drag region.
+            Window.Current.SetTitleBar(DragRegion);
         }
 
         // Undo Command
