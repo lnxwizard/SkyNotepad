@@ -47,3 +47,11 @@ First version of Sky Notepad.
 - Changed Application Icon for Preview.
 - Added new "preview" icons.
 - Updated About page contents.
+
+***
+
+### Version Preview v0.8.3.0
+- Added App Command Bar.
+- Updated Menu Bar UI.
+- Added file name in title.
+- Added acrylic to background of menu bar and app command bar.
