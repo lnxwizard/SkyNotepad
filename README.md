@@ -24,7 +24,7 @@ Sky Notepad is Simple, Modern, Free and Open Source **Text Editor** for Windows.
 - Supported Language: English (United States)
 
 # Screenshots
-![](res/new-ui.png "Main UI")
+![](res/new-fluent-ui.png "Main UI")
 
 ![](res/about-sky-notepad.png "About")
 
