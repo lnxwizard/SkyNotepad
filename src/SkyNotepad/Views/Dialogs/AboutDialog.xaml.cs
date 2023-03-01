@@ -20,7 +20,6 @@ namespace SkyNotepad.Views.Dialogs
 
         private void AboutDialog_Loaded(object sender, RoutedEventArgs e)
         {
-            DocumentModel document = new DocumentModel();
             // Application Version Info
             int AppVersionMajor = Package.Current.Id.Version.Major;
             int AppVersionMinor = Package.Current.Id.Version.Minor;

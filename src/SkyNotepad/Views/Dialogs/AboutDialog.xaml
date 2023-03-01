@@ -9,6 +9,10 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     Loaded="AboutDialog_Loaded">
 
+    <Page.DataContext>
+        <viewmodel:MainViewModel/>
+    </Page.DataContext>
+
     <!-- Content -->
     <Grid Background="White">
         <!-- Version -->

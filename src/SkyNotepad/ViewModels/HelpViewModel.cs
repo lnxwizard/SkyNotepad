@@ -7,6 +7,8 @@ using Windows.System;
 using SkyNotepad.Helpers;
 using SkyNotepad.Views.Dialogs;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml;
+using SkyNotepad.Views.Settings;
 
 namespace SkyNotepad.ViewModels
 {
@@ -16,12 +18,12 @@ namespace SkyNotepad.ViewModels
         public ICommand RepositoryCommand { get; }
         public ICommand CreateIssueCommand { get; }
         public ICommand ViewLicenseCommand { get; }
-        public ICommand AboutCommand { get; }
+        public ICommand SettingsCommand { get; }
 
         // Main Method
         public HelpViewModel()
         {
-            AboutCommand = new RelayCommand(ViewAbout);
+            SettingsCommand = new RelayCommand(ViewSettings);
             RepositoryCommand = new RelayCommand(OpenRepository);
             CreateIssueCommand = new RelayCommand(CreateIssue);
             ViewLicenseCommand = new RelayCommand(ViewLicense);
@@ -48,18 +50,13 @@ namespace SkyNotepad.ViewModels
             await Launcher.LaunchUriAsync(viewLicenseUri);
         }
 
-        // About
-        private async void ViewAbout()
+        // Settings
+        private void ViewSettings()
         {
-            ContentDialog dialog = new ContentDialog()
+            if (Window.Current.Content is Frame rootFrame)
             {
-                Title = "About",
-                CloseButtonText = "OK",
-                DefaultButton = ContentDialogButton.Close,
-                Content = new AboutDialog()
-            };
-
-            await dialog.ShowAsync();
+                rootFrame.Navigate(typeof(SettingsPage));
+            }
         }
     }
 }

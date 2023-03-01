@@ -10,7 +10,7 @@ using Windows.Storage.Provider;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
-// From Project
+// Project Folders
 using SkyNotepad.Helpers;
 using SkyNotepad.Models;
 
@@ -19,7 +19,7 @@ namespace SkyNotepad.ViewModels
     public class FileViewModel
     {
         // Document Model
-        public DocumentModel Document { get; private set; }
+        public DocumentModel Document { get; set; }
 
         // Menu Items Commands
         public ICommand NewCommand { get; }
@@ -37,12 +37,13 @@ namespace SkyNotepad.ViewModels
             SaveAsCommand = new RelayCommand(SaveFileAs);
             OpenCommand = new RelayCommand(OpenFile);
             ExitCommand = new RelayCommand(Exit);
-            
-            // Creates new file while first run
+
             CreateNewFile();
         }
 
-        // Create new file while first run
+        /// <summary>
+        /// Creates new file while first run on application
+        /// </summary>
         private void CreateNewFile()
         {
             Document.FileName = "Untitled";
@@ -79,7 +80,7 @@ namespace SkyNotepad.ViewModels
 
         }
 
-        // Save As... Command
+        // Save As Command
         private async void SaveFileAs()
         {
             try
@@ -123,7 +124,9 @@ namespace SkyNotepad.ViewModels
             }
         }
 
-        // Open... Command
+        /// <summary>
+        /// Open a text file
+        /// </summary>
         private async void OpenFile()
         {
             try
@@ -138,7 +141,7 @@ namespace SkyNotepad.ViewModels
                 StorageFile storageFile = await openPicker.PickSingleFileAsync();
                 if (storageFile != null)
                 {
-                    var stream = await storageFile.OpenAsync(FileAccessMode.Read);
+                    var stream = await storageFile.OpenAsync(FileAccessMode.ReadWrite);
                     using (StreamReader sReader = new StreamReader(stream.AsStream()))
                     {
                         Document.Text = sReader.ReadToEnd();
@@ -167,7 +170,9 @@ namespace SkyNotepad.ViewModels
             }
         }
 
-        // Exit Command
+        /// <summary>
+        /// Exits from application
+        /// </summary>
         private void Exit()
         {
             Application.Current.Exit();

@@ -5,10 +5,10 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d" RequestedTheme="Light"
-    Background="{ThemeResource SystemControlAcrylicWindowBrush}"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     xmlns:viewmodel="using:SkyNotepad.ViewModels" Loaded="MainPage_Loaded"
-    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls">
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls" xmlns:animatedvisuals="using:Microsoft.UI.Xaml.Controls.AnimatedVisuals">
 
     <!-- Data Context for Main Page -->
     <Page.DataContext>
@@ -25,7 +25,7 @@
         </Grid.RowDefinitions>
 
         <!-- Application Title Bar -->
-        <Grid x:Name="AppTitleBar" Grid.Row="0" Background="{ThemeResource SystemControlAcrylicWindowBrush}">
+        <Grid x:Name="AppTitleBar" Grid.Row="0" Background="Transparent">
             <!-- Column Definitions for Application Title Bar -->
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -62,7 +62,7 @@
                         </MenuFlyoutItem.KeyboardAccelerators>
                     </MenuFlyoutItem>
                     <MenuFlyoutSeparator/>
-                    <MenuFlyoutItem x:Name="MenuItemExit" x:Uid="MenuItemExit" Text="Exit" Command="{Binding ExitCommand}" Icon="OpenPane">
+                    <MenuFlyoutItem x:Name="MenuItemExit" x:Uid="MenuItemExit" Text="Exit" Command="{Binding ExitCommand}" Icon="Cancel">
                         <MenuFlyoutItem.KeyboardAccelerators>
                             <KeyboardAccelerator Key="F4" Modifiers="Menu" IsEnabled="True"/>
                         </MenuFlyoutItem.KeyboardAccelerators>
@@ -103,9 +103,10 @@
                             <FontIcon Glyph="&#xf6fa;"/>
                         </MenuFlyoutSubItem.Icon>
                         <MenuFlyoutItem x:Name="MenuItemMicrosoftBing" x:Uid="MenuItemMicrosoftBing" Text="Microsoft Bing" Click="MenuItemMicrosoftBing_Click"/>
-                        <MenuFlyoutItem x:Name="MenuItemGoogle" x:Uid="MenuItemGoogle" Text="Microsoft Google" Click="MenuItemGoogle_Click"/>
+                        <MenuFlyoutItem x:Name="MenuItemGoogle" x:Uid="MenuItemGoogle" Text="Google" Click="MenuItemGoogle_Click"/>
                         <MenuFlyoutItem x:Name="MenuItemDuckDuckGo" x:Uid="MenuItemDuckDuckGo" Text="DuckDuckGo" Click="MenuItemDuckDuckGo_Click"/>
                         <MenuFlyoutItem x:Name="MenuItemYandex" x:Uid="MenuItemYandex" Text="Yandex" Click="MenuItemYandex_Click"/>
+                        <MenuFlyoutItem x:Name="MenuItemYahoo" x:Uid="MenuItemYahoo" Text="Yahoo" Click="MenuItemYahoo_Click"/>
                     </MenuFlyoutSubItem>
                     <MenuFlyoutSeparator/>
                     <MenuFlyoutItem x:Name="MenuItemSelectAll" x:Uid="MenuItemSelectAll" Text="SelectAll" Click="MenuItemSelectAll_Click" Icon="SelectAll">
@@ -157,7 +158,7 @@
                     </MenuFlyoutItem>
                     <MenuFlyoutItem x:Name="MenuItemCreateIssue" x:Uid="MenuItemCreateIssue" Text="Report an Issue" Command="{Binding CreateIssueCommand}">
                         <MenuFlyoutItem.Icon>
-                            <FontIcon Glyph="&#xe730;"/>
+                            <FontIcon Glyph="&#xE730;"/>
                         </MenuFlyoutItem.Icon>
                     </MenuFlyoutItem>
                 </muxc:MenuBarItem>
@@ -166,9 +167,9 @@
             <Grid x:Name="DragRegion" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="48" Background="Transparent" Loaded="DragRegion_Loaded"/>
         </Grid>
 
-        
+
         <!-- App Bar -->
-        <Grid x:Name="AppBar" Grid.Row="1" Background="{ThemeResource SystemControlAcrylicWindowBrush}">
+        <Grid x:Name="AppBar" Grid.Row="1" Background="Transparent">
             <AppBarButton x:Name="AppBarButtonNew" x:Uid="AppBarButtonNew" Command="{Binding File.NewCommand}" HorizontalAlignment="Left" Grid.Row="1" Icon="Page2" Width="48" VerticalAlignment="Center"/>
             <AppBarButton x:Name="AppBarButtonOpen" x:Uid="AppBarButtonOpen" Command="{Binding File.OpenCommand}" Grid.Row="1" Icon="OpenFile" Width="48" Margin="48,0,0,0" VerticalAlignment="Center"/>
             <AppBarButton x:Name="AppBarButtonSave" x:Uid="AppBarButtonSave" Command="{Binding File.SaveCommand}" Grid.Row="1" Icon="Save" Width="48" Margin="96,0,0,0" VerticalAlignment="Center"/>
@@ -181,18 +182,29 @@
             <AppBarButton x:Name="AppBarButtonCopy" x:Uid ="AppBarButtonCopy" Click="MenuItemCopy_Click" Icon="Copy" Width="48" Margin="336,0,0,0" VerticalAlignment="Center"/>
             <AppBarButton x:Name="AppBarButtonPaste" x:Uid ="AppBarButtonPaste" Click="MenuItemPaste_Click" Icon="Paste" Width="48" Margin="384,0,0,0" VerticalAlignment="Center"/>
 
-            <AppBarButton x:Name="AppBarButtonAbout" x:Uid ="AppBarButtonAbout" Command="{Binding Help.AboutCommand}" Width="48" HorizontalAlignment="Right" VerticalAlignment="Center">
-                <AppBarButton.Icon>
-                    <FontIcon Glyph="&#xe946;"/>
-                </AppBarButton.Icon>
+            <AppBarButton x:Name="AppBarButtonSettings" x:Uid ="AppBarButtonAbout" Command="{Binding Help.SettingsCommand}" Width="48" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <muxc:AnimatedIcon x:Name="SettingsAnimatedIcon" Height="16" Width="16">
+                    <muxc:AnimatedIcon.Source>
+                        <animatedvisuals:AnimatedSettingsVisualSource/>
+                    </muxc:AnimatedIcon.Source>
+                    <muxc:AnimatedIcon.FallbackIconSource>
+                        <muxc:FontIconSource Glyph="&#xE713;"/>
+                    </muxc:AnimatedIcon.FallbackIconSource>
+                </muxc:AnimatedIcon>
+                <AppBarButton.KeyboardAccelerators>
+                    <KeyboardAccelerator Key="S" Modifiers="Menu"/>
+                </AppBarButton.KeyboardAccelerators>
             </AppBarButton>
         </Grid>
 
-        <!-- Text Box -->
-        <TextBox x:Name="TextBox" x:Uid="TextBox" DataContext="{Binding Format}" Grid.Row="2"
+        <!-- Text Area -->
+        <Grid x:Name="TextArea" Grid.Row="2">
+            <!-- Text Box -->
+            <TextBox x:Name="TextBox" x:Uid="TextBox" DataContext="{Binding Format}" Grid.Row="2"
                  AcceptsReturn="True" Text="{Binding Document.Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                  TextWrapping="{Binding Format.Wrap}" CornerRadius="0" IsSpellCheckEnabled="False"
                  FontSize="14" FontFamily="Segoe UI" FontStyle="Normal" FontWeight="Normal" Foreground="Black"
                  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        </Grid>
     </Grid>
 </Page>

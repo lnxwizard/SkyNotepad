@@ -1,4 +1,4 @@
-﻿// Project Librarys
+﻿// Project Folders
 using SkyNotepad.Models;
 
 namespace SkyNotepad.ViewModels
@@ -14,8 +14,9 @@ namespace SkyNotepad.ViewModels
         public WebSearchViewModel WebSearch { get; set; }
         public ScreenViewModel Screen { get; set; }
         public HelpViewModel Help { get; set; }
+        public SettingsPageViewModel SettingsPage { get; set; }
 
-        // Main Method
+        // Constructor Method
         public MainViewModel()
         {
             Document = new DocumentModel();
@@ -24,6 +25,7 @@ namespace SkyNotepad.ViewModels
             WebSearch = new WebSearchViewModel();
             Screen = new ScreenViewModel();
             Help = new HelpViewModel();
+            SettingsPage = new SettingsPageViewModel();
         }
     }
 }

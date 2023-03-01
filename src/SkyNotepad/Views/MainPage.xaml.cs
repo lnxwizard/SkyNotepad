@@ -1,14 +1,19 @@
 ﻿// Librarys
 using System;
+using System.IO;
 using Windows.Foundation;
+using Windows.Storage;
+using Windows.Storage.Streams;
 using Windows.System;
 using Windows.UI;
 using Windows.UI.Xaml;
+using Windows.UI.Xaml.Navigation;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.ViewManagement;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Core;
 using Windows.ApplicationModel.DataTransfer;
+using Windows.ApplicationModel.Activation;
 
 // From Project
 using SkyNotepad.Views.Dialogs;
@@ -33,7 +38,10 @@ namespace SkyNotepad.Views
         // Load Event
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            
+            ApplicationView appView = ApplicationView.GetForCurrentView();
+            appView.TitleBar.ButtonForegroundColor = Colors.Black;
+            appView.TitleBar.ButtonHoverForegroundColor = Colors.Black;
+            appView.TitleBar.ButtonHoverBackgroundColor = Colors.LightGray;
         }
 
         // Application Title Bar Drag Region Loaded Event
@@ -192,6 +200,21 @@ namespace SkyNotepad.Views
             else
             {
                 Uri searchUri = new Uri("https://yandex.com/search/?text=" + searchString);
+                await Launcher.LaunchUriAsync(searchUri);
+            }
+        }
+
+        // Search With Yahoo
+        private async void MenuItemYahoo_Click(object sender, RoutedEventArgs e)
+        {
+            string searchString = TextBox.SelectedText;
+            if (searchString == string.Empty)
+            {
+                Uri defaultUri = new Uri("https://yahoo.com/");
+            }
+            else
+            {
+                Uri searchUri = new Uri("https://search.yahoo.com/search?p=" + searchString);
                 await Launcher.LaunchUriAsync(searchUri);
             }
         }
