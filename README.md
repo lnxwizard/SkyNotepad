@@ -2,7 +2,7 @@
 <a href="https://github.com/AlperAkca79/SkyNotepad/">
     <img height="440" width="*" src="res/repo-preview-image-sky-notepad.png">
 </a>
-<a href="https://github.com/AlperAkca79/SkyNotepad/releases/tag/0.8.3.0">
+<a href="https://github.com/AlperAkca79/SkyNotepad/releases/tag/0.8.5.0">
     <img src="res/badge-github.png" height="85" width="250">
 </a>
 <a href="docs/404.md">
@@ -14,9 +14,9 @@ Sky Notepad is Simple, Modern, Free and Open Source **Text Editor** for Windows.
 
 # About
 - Developer: [AlperAkca79](https://github.com/AlperAkca79)
-- Version: Preview v0.8.3.0
+- Version: Preview v0.8.5.0
 - First Build Date: Friday, February 10, 2023
-- Last Update: Thursday, February 23, 2023 10:38 PM (UTC +03:00)
+- Last Update: Wednesday, March 1, 2023 10:25 PM (UTC +03:00)
 - License: [MIT License](https://github.com/AlperAkca79/SkyNotepad#License)
 - Platform Architecture: x86, x64
 - Supported OS(s): Windows 10/11
@@ -24,9 +24,9 @@ Sky Notepad is Simple, Modern, Free and Open Source **Text Editor** for Windows.
 - Supported Language: English (United States)
 
 # Screenshots
-![](res/new-fluent-ui.png "Main UI")
+![](res/Main-UI.png "Main UI")
 
-![](res/about-sky-notepad.png "About")
+![](res/menu-about.png "About")
 
 # Features
 - Word Wrapping
@@ -37,6 +37,7 @@ Sky Notepad is Simple, Modern, Free and Open Source **Text Editor** for Windows.
         - Google
         - DuckDuckGo
         - Yandex
+        - Yahoo (**New**)
 - Fluent Desing
 - Lightweight
 - Full Screen Mode
@@ -57,6 +58,7 @@ Sky Notepad is Simple, Modern, Free and Open Source **Text Editor** for Windows.
 - **(ALT + Z)** Toggle Word Wrapping
 - **(ALT + X)** Toggle Spell Checking
 - **(F11)** Full Screen Mode
+- **(ALT + S)** Open Settings
 
 # Changelog
 

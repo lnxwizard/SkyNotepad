@@ -55,3 +55,12 @@ First version of Sky Notepad.
 - Updated Menu Bar UI.
 - Added file name in title.
 - Added acrylic to background of menu bar and app command bar.
+
+***
+
+### Version Preview v0.8.5.0
+- Added Yahoo support for Search in Web
+- Added new settings page.
+- Moved about page into settings page.
+- Updated About page.
+- Removed Acrylic in title bar.
