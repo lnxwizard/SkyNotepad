@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d" RequestedTheme="Light"
+    mc:Ignorable="d" RequestedTheme="Light" NavigationCacheMode="Required"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     xmlns:viewmodel="using:SkyNotepad.ViewModels" Loaded="MainPage_Loaded"
@@ -141,25 +141,6 @@
                         <MenuFlyoutItem.KeyboardAccelerators>
                             <KeyboardAccelerator Key="F11" IsEnabled="True"/>
                         </MenuFlyoutItem.KeyboardAccelerators>
-                    </MenuFlyoutItem>
-                </muxc:MenuBarItem>
-
-                <!-- Help Menu -->
-                <muxc:MenuBarItem x:Name="MenuHelp" x:Uid="MenuHelp" Title="Help" DataContext="{Binding Help}">
-                    <MenuFlyoutItem x:Name="MenuItemRepository" x:Uid="MenuItemRepository" Text="Repository" Command="{Binding RepositoryCommand}">
-                        <MenuFlyoutItem.Icon>
-                            <FontIcon Glyph="&#xe82d;"/>
-                        </MenuFlyoutItem.Icon>
-                    </MenuFlyoutItem>
-                    <MenuFlyoutItem x:Name="MenuItemViewLicense" x:Uid="MenuItemViewLicense" Text="License" Command="{Binding ViewLicenseCommand}">
-                        <MenuFlyoutItem.Icon>
-                            <FontIcon Glyph="&#xe729;"/>
-                        </MenuFlyoutItem.Icon>
-                    </MenuFlyoutItem>
-                    <MenuFlyoutItem x:Name="MenuItemCreateIssue" x:Uid="MenuItemCreateIssue" Text="Report an Issue" Command="{Binding CreateIssueCommand}">
-                        <MenuFlyoutItem.Icon>
-                            <FontIcon Glyph="&#xE730;"/>
-                        </MenuFlyoutItem.Icon>
                     </MenuFlyoutItem>
                 </muxc:MenuBarItem>
             </muxc:MenuBar>

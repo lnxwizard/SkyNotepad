@@ -16,7 +16,6 @@ using Windows.ApplicationModel.DataTransfer;
 using Windows.ApplicationModel.Activation;
 
 // From Project
-using SkyNotepad.Views.Dialogs;
 using SkyNotepad.ViewModels;
 using SkyNotepad.Models;
 
@@ -131,7 +130,11 @@ namespace SkyNotepad.Views
             TextBox.SelectedText = dateTime.ToString();
         }
 
-        // Spell Check Command
+        /// <summary>
+        /// Toggle Spell Checking feature
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MenuItemSpellCheck_Click(object sender, RoutedEventArgs e)
         {
             if (MenuItemSpellCheck.IsChecked == true)

@@ -64,7 +64,7 @@
                 <muxc:NavigationViewItem x:Name="NavigationItemHelp" Content="Help" Tag="NavItemHelp" Icon="Help"/>
 
                 <!-- Navigation Item About -->
-                <muxc:NavigationViewItem x:Name="NavigationItemAbout" Content="About" Tag="NavItemAbout">
+                <muxc:NavigationViewItem x:Name="NavigationItemAbout" Content="About" Tag="NavItemAbout" IsSelected="True">
                     <muxc:NavigationViewItem.Icon>
                         <FontIcon Glyph="&#xE946;"/>
                     </muxc:NavigationViewItem.Icon>

@@ -10,59 +10,61 @@
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls">
 
     <Grid x:Name="MainGrid">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="128"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="125"/>
-            <RowDefinition Height="320"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+        <ScrollViewer>
+            <Grid x:Name="AboutContent">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="128"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="125"/>
+                    <RowDefinition Height="320"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
 
-        <!-- Logo -->
-        <Image Source="/Assets/Square44x44Logo.targetsize-256.png" Height="128" Width="128" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+                <!-- Logo -->
+                <Image Source="/Assets/Square44x44Logo.targetsize-256.png" Height="128" Width="128" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center"/>
 
-        <!-- About Text -->
-        <TextBlock x:Name="AboutText" x:Uid="AboutText" Grid.Row="1" Text="About SkyNotepad" 
+                <!-- About Text -->
+                <TextBlock x:Name="AboutText" x:Uid="AboutText" Grid.Row="1" Text="About SkyNotepad" 
                    VerticalAlignment="Center" HorizontalAlignment="Center"
                    TextWrapping="Wrap" FontSize="36"/>
 
-        <StackPanel x:Name="StackPanelDeveloper" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White" CornerRadius="10" Margin="5">
-            <TextBlock x:Name="TextBlockDeveloper" Text="Developer: AlperAkca79" 
+                <StackPanel x:Name="StackPanelDeveloper" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White" CornerRadius="10" Margin="5">
+                    <TextBlock x:Name="TextBlockDeveloper" Text="Developer: AlperAkca79" 
                        HorizontalAlignment="Left"  FontSize="18" Margin="13"/>
-        </StackPanel>
+                </StackPanel>
 
-        <StackPanel x:Name="StackPanelInsiderChannel" Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White" CornerRadius="10" Margin="5">
-            <TextBlock x:Name="TextBlockInsiderChannel" Text="Insider Channel: Preview" 
+                <StackPanel x:Name="StackPanelInsiderChannel" Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White" CornerRadius="10" Margin="5">
+                    <TextBlock x:Name="TextBlockInsiderChannel" Text="Insider Channel: Preview" 
                        HorizontalAlignment="Left"  FontSize="18" Margin="13"/>
-        </StackPanel>
+                </StackPanel>
 
-        <StackPanel x:Name="StackPanelVersion" Grid.Row="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White" CornerRadius="10" Margin="5">
-            <TextBlock x:Name="TextBlockVersion" Text="Version: v0.0.0.0" 
+                <StackPanel x:Name="StackPanelVersion" Grid.Row="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White" CornerRadius="10" Margin="5">
+                    <TextBlock x:Name="TextBlockVersion" Text="Version: v0.0.0.0" 
                        HorizontalAlignment="Left" Margin="13" FontSize="18"/>
-        </StackPanel>
+                </StackPanel>
 
-        <StackPanel x:Name="StackPanelDepNRef" Grid.Row="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White" CornerRadius="10" Margin="5">
-            <TextBlock x:Name="TextBlockDepNRef" Text="Dependencies and References" 
+                <StackPanel x:Name="StackPanelDepNRef" Grid.Row="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White" CornerRadius="10" Margin="5">
+                    <TextBlock x:Name="TextBlockDepNRef" Text="Dependencies and References" 
                        HorizontalAlignment="Left" Margin="13" FontSize="18"/>
 
-            <HyperlinkButton x:Name="HyperLinkButtonWindowsUI"
+                    <HyperlinkButton x:Name="HyperLinkButtonWindowsUI"
                              NavigateUri="https://github.com/Microsoft/microsoft-ui-xaml" 
                              HorizontalAlignment="Left" Content="Windows UI Library (WinUI 2)"/>
 
-            <HyperlinkButton x:Name="HyperLinkButtonWindowsCommunityToolkit"
+                    <HyperlinkButton x:Name="HyperLinkButtonWindowsCommunityToolkit"
                              NavigateUri="https://github.com/CommunityToolkit/WindowsCommunityToolkit" 
                              HorizontalAlignment="Left" Content="Windows Community Toolkit"/>
-        </StackPanel>
+                </StackPanel>
 
-        <StackPanel x:Name="StackPanelLicense" Grid.Row="6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White" CornerRadius="10" Margin="5">
-            <TextBlock x:Name="TextBlockLicense" Text="License" 
+                <StackPanel x:Name="StackPanelLicense" Grid.Row="6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White" CornerRadius="10" Margin="5">
+                    <TextBlock x:Name="TextBlockLicense" Text="License" 
                        HorizontalAlignment="Left" Margin="13" FontSize="18"/>
 
-            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
-                <TextBox x:Name="TextBoxLicense" TextWrapping="Wrap"
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                        <TextBox x:Name="TextBoxLicense" TextWrapping="Wrap"
                      HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                      FontSize="12" IsReadOnly="True"
                      Text="The MIT License (MIT)
@@ -81,7 +83,9 @@
                      &#x0a;NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
                      &#x0a;DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
                      &#x0a;FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."/>
-            </ScrollViewer>
-        </StackPanel>
+                    </ScrollViewer>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
     </Grid>
 </Page>

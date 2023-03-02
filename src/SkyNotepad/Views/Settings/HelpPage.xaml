@@ -11,16 +11,82 @@
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls">
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="36"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        
-        <TextBlock x:Name="TitleHelp" Text="Help" 
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="48"/>
+                    <RowDefinition Height="130"/>
+                    <RowDefinition Height="380"/>
+                    <RowDefinition Height="130"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock x:Name="TitleHelp" Text="Help" 
                    HorizontalAlignment="Center" VerticalAlignment="Top"
                    FontSize="36" Grid.Row="0"/>
 
-        <TextBlock Text="Help page is not available for now. Wait for next update."
-                   Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <StackPanel x:Name="StackPanelBugReport" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White" CornerRadius="10" Margin="5">
+                    <TextBlock x:Name="TextBlockBugReport" Text="Found a Bug?" 
+                       HorizontalAlignment="Left"  FontSize="18" Margin="13"/>
+
+                    <TextBlock Text="If you found a bug on SkyNotepad create a new issue from below." 
+                       VerticalAlignment="Stretch" HorizontalAlignment="Left" Margin="13, 0, 0, 0"/>
+
+                    <HyperlinkButton x:Name="HyperLinkButtonReportBug" Content="Report Bug" 
+                             HorizontalAlignment="Right" VerticalAlignment="Center"
+                             Margin="0, 10, 10, 0" NavigateUri="https://github.com/AlperAkca79/SkyNotepad/issues/new"/>
+                </StackPanel>
+
+                <Grid x:Name="StackPanelShortcuts" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White" CornerRadius="10" Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="350"/>
+                        <ColumnDefinition Width="350"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="48"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock x:Name="TextBlockShortcuts" Text="Shortcuts" Grid.ColumnSpan="2" Grid.Column="0"
+                       HorizontalAlignment="Left" VerticalAlignment="Top"  FontSize="18" Margin="13"/>
+
+                    <!-- Right ListBox -->
+                    <ListBox IsHitTestVisible="False" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" Background="White">
+                        <x:String>(CTRL + N) Create New File</x:String>
+                        <x:String>(CTRL + O) Open File</x:String>
+                        <x:String>(CTRL + S) Save Current File</x:String>
+                        <x:String>(CTRL + ALT + S) Save a Copy of Current File</x:String>
+                        <x:String>(ALT + F4) Exit from SkyNotepad</x:String>
+                        <x:String>(CTRL + Z) Undo Changes</x:String>
+                        <x:String>(CTRL + Y) Redo Changes</x:String>
+                        <x:String>(CTRL + X) Cut Telected Text</x:String>
+                    </ListBox>
+
+                    <!-- Left ListBox -->
+                    <ListBox IsHitTestVisible="False" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="1" Background="White">
+                        <x:String>(CTRL + C) Copy Telected Text</x:String>
+                        <x:String>(CTRL + V) Paste From Clipboard</x:String>
+                        <x:String>(CTRL + A) Select All Text</x:String>
+                        <x:String>(F5) Puts The System Date/Time</x:String>
+                        <x:String>(ALT + Z) Toggle Word Wrapping</x:String>
+                        <x:String>(ALT + X) Toggle Spell Checking</x:String>
+                        <x:String>(F11) Open Full Screen Mode</x:String>
+                        <x:String>(ALT + S) Open Settings Menu</x:String>
+                    </ListBox>
+                </Grid>
+
+                <StackPanel Grid.Row="3" Background="White" Margin="5" CornerRadius="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <TextBlock x:Name="TextBlockOtherLinks" Text="Other Links"
+                       HorizontalAlignment="Left" VerticalAlignment="Top"  FontSize="18" Margin="13"/>
+
+                    <HyperlinkButton Content="Repository" 
+                                     NavigateUri="https://github.com/AlperAkca79/SkyNotepad/"
+                                     HorizontalAlignment="Left" VerticalAlignment="Top" Margin="13, 0, 0, 0"/>
+                    <HyperlinkButton Content="Dev's GitHub Profile" 
+                                     NavigateUri="https://github.com/AlperAkca79/"
+                                     HorizontalAlignment="Left" VerticalAlignment="Top" Margin="13, 0, 0, 0"/>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
     </Grid>
 </Page>

@@ -46,7 +46,7 @@ namespace SkyNotepad.ViewModels
         /// </summary>
         private void CreateNewFile()
         {
-            Document.FileName = "Untitled";
+            Document.FileName = "Untitled.txt";
             Document.FilePath = string.Empty;
             Document.Text = string.Empty;
             Document.IsSaved = false;
@@ -54,10 +54,12 @@ namespace SkyNotepad.ViewModels
             Document.AppTitle = Document.FileName + " - SkyNotepad Preview";
         }
 
-        // New Command 
+        /// <summary>
+        /// Create new file
+        /// </summary>
         private void NewFile()
         {
-            Document.FileName = "Untitled";
+            Document.FileName = "Untitled.txt";
             Document.FilePath = string.Empty;
             Document.Text = string.Empty;
             Document.IsSaved = false;
@@ -65,7 +67,9 @@ namespace SkyNotepad.ViewModels
             Document.AppTitle = Document.FileName + " - SkyNotepad Preview";
         }
 
-        // Save Command
+        /// <summary>
+        /// Save current file
+        /// </summary>
         private async void SaveFile()
         {
             if (Document.IsSaved == true)
@@ -80,7 +84,9 @@ namespace SkyNotepad.ViewModels
 
         }
 
-        // Save As Command
+        /// <summary>
+        /// Save copy of current file
+        /// </summary>
         private async void SaveFileAs()
         {
             try
