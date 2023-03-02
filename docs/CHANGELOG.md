@@ -64,3 +64,11 @@ First version of Sky Notepad.
 - Moved about page into settings page.
 - Updated About page.
 - Removed Acrylic in title bar.
+
+***
+
+### Version Preview v0.8.8.0
+- Added new help menu in settings page.
+- Fixed page reset bug by @AlperAkca79 in #6.
+- Removed Help menu item. (because moved in settings menu)
+- Added scroll bars to settings menu.
