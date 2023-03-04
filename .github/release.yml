@@ -1,0 +1,14 @@
+# Release Template
+# Created By AlperAkca79
+
+changelog:
+  categories:
+    - title: Bug Fixes
+      labels:
+        - bug-fix
+    - title: Major Changes
+      labels:
+        - major-changes
+    - title: Minor Changes
+      labels:
+        - minor-changes
