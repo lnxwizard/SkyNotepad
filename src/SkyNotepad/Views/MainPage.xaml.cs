@@ -15,7 +15,7 @@ using Windows.ApplicationModel.Core;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.ApplicationModel.Activation;
 
-// From Project
+// Project Folders
 using SkyNotepad.ViewModels;
 using SkyNotepad.Models;
 
@@ -34,16 +34,36 @@ namespace SkyNotepad.Views
             InitializeComponent();
         }
 
-        // Load Event
+        /// <summary>
+        /// Changes application title bar buttons background/foreground colors when Main Page loadeds
+        /// </summary>
+        /// <param name="sender">Page</param>
+        /// <param name="e"></param>
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
             ApplicationView appView = ApplicationView.GetForCurrentView();
+            
+            // Default
             appView.TitleBar.ButtonForegroundColor = Colors.Black;
+            
+            // Hover
             appView.TitleBar.ButtonHoverForegroundColor = Colors.Black;
             appView.TitleBar.ButtonHoverBackgroundColor = Colors.LightGray;
+
+            // Inactive
+            appView.TitleBar.ButtonInactiveBackgroundColor = Colors.White;
+            appView.TitleBar.ButtonInactiveForegroundColor = Colors.Black;
+
+            // Pressed
+            appView.TitleBar.ButtonPressedBackgroundColor = Color.FromArgb(255, 225, 225, 225);
+            appView.TitleBar.ButtonPressedForegroundColor = Colors.Black;
         }
 
-        // Application Title Bar Drag Region Loaded Event
+        /// <summary>
+        /// Hides default titlebar and replaces with custom titlebar
+        /// </summary>
+        /// <param name="sender">Grid</param>
+        /// <param name="e"></param>
         private void DragRegion_Loaded(object sender, RoutedEventArgs e)
         {
             // Hide default title bar.
@@ -58,7 +78,11 @@ namespace SkyNotepad.Views
             Window.Current.SetTitleBar(DragRegion);
         }
 
-        // Undo Command
+        /// <summary>
+        /// Undo changes from textbox
+        /// </summary>
+        /// <param name="sender">Menu Flyout Item</param>
+        /// <param name="e">Menu Flyout Item</param>
         private void MenuItemUndo_Click(object sender, RoutedEventArgs e)
         {
             if(TextBox.CanUndo == true)
@@ -68,7 +92,11 @@ namespace SkyNotepad.Views
             else { }
         }
 
-        // Redo Command
+        /// <summary>
+        /// Redo changes from textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">Menu Flyout Item</param>
         private void MenuItemRedo_Click(object sender, RoutedEventArgs e)
         {
             if (TextBox.CanRedo == true)
@@ -78,7 +106,11 @@ namespace SkyNotepad.Views
             else { }
         }
 
-        // Cut Command
+        /// <summary>
+        /// Cut selected text in textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">Menu Flyout Item</param>
         private void MenuItemCut_Click(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(TextBox.SelectedText))
@@ -91,7 +123,11 @@ namespace SkyNotepad.Views
             }
         }
 
-        // Copy Command
+        /// <summary>
+        /// Copy selected text in textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">Menu Flyout Item</param>
         private void MenuItemCopy_Click(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(TextBox.SelectedText))
@@ -104,13 +140,21 @@ namespace SkyNotepad.Views
             }
         }
 
-        // Paste Command
+        /// <summary>
+        /// Paste from clipboard to textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">Menu Flyout Item</param>
         private void MenuItemPaste_Click(object sender, RoutedEventArgs e)
         {
             TextBox.PasteFromClipboard();
         }
 
-        // Select All Command
+        /// <summary>
+        /// Select all text in textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">Menu Flyout Item</param>
         private void MenuItemSelectAll_Click(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(TextBox.Text))
@@ -123,7 +167,11 @@ namespace SkyNotepad.Views
             }
         }
 
-        // Time Date Command
+        /// <summary>
+        /// Puts system time and date
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">Menu Flyout Item</param>
         private void MenuItemTimeDate_Click(object sender, RoutedEventArgs e)
         {
             DateTime dateTime = DateTime.Now;
@@ -131,10 +179,10 @@ namespace SkyNotepad.Views
         }
 
         /// <summary>
-        /// Toggle Spell Checking feature
+        /// Toggle Spell Checking feature on or off
         /// </summary>
         /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="e">Toggle Menu Flyout Item</param>
         private void MenuItemSpellCheck_Click(object sender, RoutedEventArgs e)
         {
             if (MenuItemSpellCheck.IsChecked == true)
@@ -147,7 +195,11 @@ namespace SkyNotepad.Views
             }
         }
 
-        // Search With Microsoft Bing
+        /// <summary>
+        /// Search selected text in Microsoft Bing
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">Menu Flyout Item</param>
         private async void MenuItemMicrosoftBing_Click(object sender, RoutedEventArgs e)
         {
             string searchString = TextBox.SelectedText;
@@ -162,7 +214,11 @@ namespace SkyNotepad.Views
             }
         }
 
-        // Search With Google
+        /// <summary>
+        /// Search selected text in Google
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">Menu Flyout Item</param>
         private async void MenuItemGoogle_Click(object sender, RoutedEventArgs e)
         {
             string searchString = TextBox.SelectedText;
@@ -177,7 +233,11 @@ namespace SkyNotepad.Views
             }
         }
 
-        // Search With DuckDuckGo
+        /// <summary>
+        /// Search selected text in DuckDuckGo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">Menu Flyout Item</param>
         private async void MenuItemDuckDuckGo_Click(object sender, RoutedEventArgs e)
         {
             string searchString = TextBox.SelectedText;
@@ -192,7 +252,11 @@ namespace SkyNotepad.Views
             }
         }
 
-        // Search With Yandex
+        /// <summary>
+        /// Search selected text in Yandex
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">Menu Flyout Item</param>
         private async void MenuItemYandex_Click(object sender, RoutedEventArgs e)
         {
             string searchString = TextBox.SelectedText;
@@ -207,7 +271,11 @@ namespace SkyNotepad.Views
             }
         }
 
-        // Search With Yahoo
+        /// <summary>
+        /// Search selected text in Yahoo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">Menu Flyout Item</param>
         private async void MenuItemYahoo_Click(object sender, RoutedEventArgs e)
         {
             string searchString = TextBox.SelectedText;
@@ -219,6 +287,23 @@ namespace SkyNotepad.Views
             {
                 Uri searchUri = new Uri("https://search.yahoo.com/search?p=" + searchString);
                 await Launcher.LaunchUriAsync(searchUri);
+            }
+        }
+
+        /// <summary>
+        /// Toggle Compact Overlay mode on or off
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">Menu Flyout Item</param>
+        private async void MenuItemCompactOverlay_Click(object sender, RoutedEventArgs e)
+        {
+            if (ApplicationView.GetForCurrentView().ViewMode == ApplicationViewMode.CompactOverlay)
+            {
+                await ApplicationView.GetForCurrentView().TryEnterViewModeAsync(ApplicationViewMode.Default);
+            }
+            else
+            {
+                await ApplicationView.GetForCurrentView().TryEnterViewModeAsync(ApplicationViewMode.CompactOverlay);
             }
         }
     }

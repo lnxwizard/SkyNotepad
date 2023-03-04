@@ -13,13 +13,17 @@ namespace SkyNotepad.ViewModels
         // Commands
         public ICommand GoBackCommand { get; }
 
-        // Constructor Method
+        /// <summary>
+        /// Loads Commands
+        /// </summary>
         public SettingsPageViewModel()
         {
             GoBackCommand = new RelayCommand(GoBack);
         }
 
-        // Go Back from Settings Page Command
+        /// <summary>
+        /// Go back from settings menu to main page
+        /// </summary>
         private void GoBack()
         {
             if (Window.Current.Content is Frame rootFrame && rootFrame.CanGoBack)

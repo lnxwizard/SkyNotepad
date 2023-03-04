@@ -28,7 +28,10 @@ namespace SkyNotepad.ViewModels
         public ICommand OpenCommand { get; }
         public ICommand ExitCommand { get; }
 
-        // File View Model Method
+        /// <summary>
+        /// Loads Commands
+        /// </summary>
+        /// <param name="_document"></param>
         public FileViewModel(DocumentModel _document)
         {
             Document = _document;

@@ -73,7 +73,10 @@
 
             <!-- Auto Suggest Box -->
             <muxc:NavigationView.AutoSuggestBox>
-                <AutoSuggestBox x:Name="AutoSuggest" PlaceholderText="Search in Settings" QueryIcon="Find" AutomationProperties.Name="Search"/>
+                <AutoSuggestBox x:Name="AutoSuggest" PlaceholderText="Search in Settings"
+                                AutomationProperties.Name="Search"
+                                TextChanged="AutoSuggest_TextChanged"
+                                SuggestionChosen="AutoSuggest_SuggestionChosen"/>
             </muxc:NavigationView.AutoSuggestBox>
 
             <!-- Content Frame -->

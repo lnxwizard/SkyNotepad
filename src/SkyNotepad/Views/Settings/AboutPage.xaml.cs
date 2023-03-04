@@ -17,6 +17,11 @@ namespace SkyNotepad.Views.Settings
             this.InitializeComponent();
         }
 
+        /// <summary>
+        /// Sets application version when about page loaded
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AboutPage_Loaded(object sender, RoutedEventArgs e)
         {
             // Application Version Info

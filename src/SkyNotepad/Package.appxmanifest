@@ -9,7 +9,7 @@
   <Identity
     Name="AlperAkca79.SkyNotepad"
     Publisher="CN=AlperAkca79"
-    Version="0.8.8.0" />
+    Version="0.9.4.0" />
 
   <mp:PhoneIdentity PhoneProductId="778ade44-7283-4a36-a7ba-ecd392206e35" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 

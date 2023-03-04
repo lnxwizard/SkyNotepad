@@ -1,9 +1,8 @@
 ﻿// Librarys
 using Windows.UI.Xaml;
-using Windows.UI.Text;
 using System.Windows.Input;
 
-// Project Librarys
+// Project Folders
 using SkyNotepad.Helpers;
 using SkyNotepad.Models;
 
@@ -18,6 +17,10 @@ namespace SkyNotepad.ViewModels
         // Format Menu Items
         public ICommand WordWrap { get; set; }
 
+        /// <summary>
+        /// Loads Commands
+        /// </summary>
+        /// <param name="document"></param>
         public FormatViewModel(DocumentModel document)
         {
             Document = document;
@@ -25,7 +28,9 @@ namespace SkyNotepad.ViewModels
             WordWrap = new RelayCommand(Wrap);
         }
 
-        // Word Wrap Command
+        /// <summary>
+        /// Toggle Word Wrapping on or off
+        /// </summary>
         private void Wrap()
         {
             if (Format.Wrap == TextWrapping.Wrap)

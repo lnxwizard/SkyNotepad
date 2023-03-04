@@ -15,13 +15,17 @@ namespace SkyNotepad.ViewModels
         // Menu Item Commands
         public ICommand FullScreenModeCommand { get; }
 
-        // Main Method
+        /// <summary>
+        /// Loads commands
+        /// </summary>
         public ScreenViewModel()
         {
             FullScreenModeCommand = new RelayCommand(ToggleFullScreen);
         }
 
-        // Toggle Full Screen Mode
+        /// <summary>
+        /// Toggle Full Screen Mode on or off
+        /// </summary>
         private void ToggleFullScreen()
         {
             bool isInFullScreenMode = AppView.IsFullScreenMode;

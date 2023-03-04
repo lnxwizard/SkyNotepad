@@ -15,7 +15,9 @@ namespace SkyNotepad.ViewModels
         public HelpViewModel Help { get; set; }
         public SettingsPageViewModel SettingsPage { get; set; }
 
-        // Constructor Method
+        /// <summary>
+        /// Loads View Models
+        /// </summary>
         public MainViewModel()
         {
             Document = new DocumentModel();

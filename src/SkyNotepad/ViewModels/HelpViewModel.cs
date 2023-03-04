@@ -14,7 +14,9 @@ namespace SkyNotepad.ViewModels
         // Help Menu Items
         public ICommand SettingsCommand { get; }
 
-        // Main Method
+        /// <summary>
+        /// Loads Commands
+        /// </summary>
         public HelpViewModel()
         {
             SettingsCommand = new RelayCommand(ViewSettings);

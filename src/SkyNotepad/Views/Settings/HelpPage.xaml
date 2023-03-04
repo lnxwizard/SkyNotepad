@@ -15,9 +15,11 @@
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="48"/>
-                    <RowDefinition Height="130"/>
+                    <RowDefinition Height="115"/>
                     <RowDefinition Height="380"/>
-                    <RowDefinition Height="130"/>
+                    <RowDefinition Height="165"/>
+                    <RowDefinition Height="125"/>
+                    <RowDefinition Height="160"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
@@ -25,19 +27,20 @@
                    HorizontalAlignment="Center" VerticalAlignment="Top"
                    FontSize="36" Grid.Row="0"/>
 
+                <!-- Bug Report -->
                 <StackPanel x:Name="StackPanelBugReport" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White" CornerRadius="10" Margin="5">
                     <TextBlock x:Name="TextBlockBugReport" Text="Found a Bug?" 
                        HorizontalAlignment="Left"  FontSize="18" Margin="13"/>
 
-                    <TextBlock Text="If you found a bug on SkyNotepad create a new issue from below." 
-                       VerticalAlignment="Stretch" HorizontalAlignment="Left" Margin="13, 0, 0, 0"/>
-
-                    <HyperlinkButton x:Name="HyperLinkButtonReportBug" Content="Report Bug" 
-                             HorizontalAlignment="Right" VerticalAlignment="Center"
-                             Margin="0, 10, 10, 0" NavigateUri="https://github.com/AlperAkca79/SkyNotepad/issues/new"/>
+                    <TextBlock VerticalAlignment="Stretch" HorizontalAlignment="Left" Margin="13, 0, 0, 0">
+                        You can create issues to bug report, feature request or report a security vulnerability. <LineBreak/>
+                        If you found a bug/issue/security vulnerability or want to suggest an idea for this project visit 
+                        <Hyperlink NavigateUri="https://github.com/AlperAkca79/SkyNotepad/issues/new/choose">here</Hyperlink> and select a template for your issue.
+                    </TextBlock>
                 </StackPanel>
 
-                <Grid x:Name="StackPanelShortcuts" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White" CornerRadius="10" Margin="5">
+                <!-- Shortcuts -->
+                <Grid x:Name="GridShortcuts" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White" CornerRadius="10" Margin="5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="350"/>
                         <ColumnDefinition Width="350"/>
@@ -71,19 +74,50 @@
                         <x:String>(ALT + Z) Toggle Word Wrapping</x:String>
                         <x:String>(ALT + X) Toggle Spell Checking</x:String>
                         <x:String>(F11) Open Full Screen Mode</x:String>
-                        <x:String>(ALT + S) Open Settings Menu</x:String>
+                        <x:String>(ALT + I) Open Settings Menu</x:String>
                     </ListBox>
                 </Grid>
 
-                <StackPanel Grid.Row="3" Background="White" Margin="5" CornerRadius="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <!-- How to contribute -->
+                <StackPanel x:Name="StackPanelContributing" Grid.Row="3" Background="White" Margin="5" CornerRadius="10" 
+                            HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+
+                    <TextBlock x:Name="TextBlockHowToContribute" Text="How to Contribute?"
+                       HorizontalAlignment="Left" VerticalAlignment="Top"  FontSize="18" Margin="13"/>
+
+                    <TextBlock x:Name="TextBlockContributing" Margin="13">
+                        You can contribute to SkyNotepad project by: <LineBreak/>
+                        - Report bugs/issues. <LineBreak/> 
+                        - Create a pull request to help me. <LineBreak/>
+                        - To translate SkyNotepad into your local language, create an issue titled "Translate (Language)".
+
+                    </TextBlock>
+                </StackPanel>
+
+                <!-- How to open Discussion -->
+                <StackPanel x:Name="StackPanelDiscussion" Grid.Row="4" Background="White" Margin="5" CornerRadius="10">
+                    <TextBlock x:Name="TextBlockHowToOpenDiscussion" Text="How to Open Discussion?"
+                       HorizontalAlignment="Left" VerticalAlignment="Top"  FontSize="18" Margin="13"/>
+
+                    <TextBlock x:Name="TextBlockDiscussionText" Margin="13">
+                        You can open discussions to share ideas, chat about anything and everything, get votes from the community, and ask the community for help. <LineBreak/>
+                        If you want to open discussion visit <Hyperlink NavigateUri="https://github.com/AlperAkca79/SkyNotepad/discussions/new/choose">here</Hyperlink> and select a template for your discussion.
+                    </TextBlock>
+                </StackPanel>
+
+                <!-- Other Links -->
+                <StackPanel Grid.Row="5" Background="White" Margin="5" CornerRadius="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                     <TextBlock x:Name="TextBlockOtherLinks" Text="Other Links"
                        HorizontalAlignment="Left" VerticalAlignment="Top"  FontSize="18" Margin="13"/>
 
-                    <HyperlinkButton Content="Repository" 
+                    <HyperlinkButton x:Name="HyperLinkButtonRepository" Content="Repository" 
                                      NavigateUri="https://github.com/AlperAkca79/SkyNotepad/"
                                      HorizontalAlignment="Left" VerticalAlignment="Top" Margin="13, 0, 0, 0"/>
-                    <HyperlinkButton Content="Dev's GitHub Profile" 
+                    <HyperlinkButton x:Name="HyperLinkButtonDevsGitHubProfile" Content="Dev's GitHub Profile" 
                                      NavigateUri="https://github.com/AlperAkca79/"
+                                     HorizontalAlignment="Left" VerticalAlignment="Top" Margin="13, 0, 0, 0"/>
+                    <HyperlinkButton x:Name="HyperLinkButtonSecurityPolicy" Content="Security Policy" 
+                                     NavigateUri="https://github.com/AlperAkca79/SkyNotepad/blob/master/SECURITY.md"
                                      HorizontalAlignment="Left" VerticalAlignment="Top" Margin="13, 0, 0, 0"/>
                 </StackPanel>
             </Grid>
