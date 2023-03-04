@@ -10,7 +10,7 @@
 </a>
 
 # What is SkyNotepad?
-SkyNotepad is Simple, Modern, Free and Open Source **Text Editor** for Windows. Sky Notepad is still in development and preview. If you see an bug please create a new issue from [here](https://github.com/AlperAkca79/SkyNotepad/issues/new).
+SkyNotepad is Simple, Modern, Free and Open Source **Text Editor** for Windows. Sky Notepad is still in development and preview. If you see an bug please create a new issue from [here](https://github.com/AlperAkca79/SkyNotepad/issues/new/choose).
 
 # About
 - Developer: [AlperAkca79](https://github.com/AlperAkca79)
@@ -39,11 +39,11 @@ SkyNotepad is Simple, Modern, Free and Open Source **Text Editor** for Windows. 
         - Google
         - DuckDuckGo
         - Yandex
-        - Yahoo (**New**)
+        - Yahoo
 - Fluent Desing
 - Lightweight
 - Full Screen Mode
-- Compact Overlay Mode
+- Compact Overlay Mode (**New**)
 
 # Shortcuts
 - **(CTRL + N)** Create New File
