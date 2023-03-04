@@ -72,3 +72,12 @@ First version of Sky Notepad.
 - Fixed page reset bug by @AlperAkca79 in #6.
 - Removed Help menu item. (because moved in settings menu)
 - Added scroll bars to settings menu.
+
+***
+
+### Version Preview v0.8.8.0
+- Added Compact Overlay mode.
+- Added function to search bar in settings page (now you can search things in settings page).
+- Updated About menu.
+- Updated Help menu.
+- Changed Title Bar buttons hover/inactive/default background and foreground colors.
