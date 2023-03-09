@@ -1,5 +1,5 @@
 # Changelog
-Latest Version: Preview v0.7.0.0
+Latest Version: Preview v0.10.3.0
 
 ### Version Preview v0.1.0.0
 First version of Sky Notepad.

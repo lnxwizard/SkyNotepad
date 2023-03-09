@@ -10,7 +10,7 @@
 </a>
 
 # What is SkyNotepad?
-SkyNotepad is Simple, Modern, Free and Open Source **Text Editor** for Windows. You Can Create/Edit Text Documents and Markdown Source Files. SkyNotepad has a Markdown Preview feature so you can organize your GitHub README files more easily. Sky Notepad is still in development and preview. If you see an bug please create a new issue from [here](https://github.com/AlperAkca79/SkyNotepad/issues/new/choose).
+SkyNotepad is Simple, Modern, Free and Open Source **Text Editor** for Windows. You Can Create/Edit Text Documents and Markdown Source Files. SkyNotepad has a Markdown Preview feature so you can organize your GitHub README files more easily. SkyNotepad is still in development and preview. If you see an bug please create a new issue from [here](https://github.com/AlperAkca79/SkyNotepad/issues/new/choose).
 
 # About
 - Developer: [AlperAkca79](https://github.com/AlperAkca79)
@@ -44,17 +44,17 @@ SkyNotepad is Simple, Modern, Free and Open Source **Text Editor** for Windows. 
 - Fluent Desing
 - Lightweight
 - Full Screen Mode
-- Compact Overlay Mode (**New**)
-- Markdown Source File Support
-- Markdown Preview Support
-- Sharing Service
+- Compact Overlay Mode
+- Markdown Source File Support (**New**)
+- Markdown Preview Support (**New**)
+- Sharing Service (**New**)
 
 # Shortcuts
 - **(CTRL + N)** Create New File
 - **(CTRL + O)** Open File
 - **(CTRL + S)** Save
 - **(CTRL + ALT + S)** Save As...
-- **(ALT + F4)** Exit from Sky Notepad
+- **(ALT + F4)** Exit from SkyNotepad
 - **(CTRL + Z)** Undo Changes
 - **(CTRL + Y)** Redo Changes
 - **(CTRL + X)** Cut
@@ -127,4 +127,4 @@ Click [here](CODE_OF_CONDUCT.md) for view Code of Conduct.
 # License
 Copyright © 2023 AlperAkca79
 
-Sky Notepad is under licensed [MIT License](https://mit-license.org). See [here](LICENSE.md) for more information.
+SkyNotepad is under licensed [MIT License](https://mit-license.org). See [here](LICENSE.md) for more information.
