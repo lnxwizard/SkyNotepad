@@ -2,21 +2,21 @@
 <a href="https://github.com/AlperAkca79/SkyNotepad/">
     <img height="440" width="*" src="res/repo-preview-image-sky-notepad.png">
 </a>
-<a href="https://github.com/AlperAkca79/SkyNotepad/releases/tag/0.9.4.0">
+<a href="https://github.com/AlperAkca79/SkyNotepad/releases/tag/0.10.3.0">
     <img src="res/badge-github.png" height="85" width="250">
 </a>
-<a href="docs/404.md">
+<a href="https://apps.microsoft.com/store/detail/skynotepad/9PN4B4WGKV6H">
     <img src="res/badge-microsoft-store.png" height="85" width="250" style="float: right;">
 </a>
 
 # What is SkyNotepad?
-SkyNotepad is Simple, Modern, Free and Open Source **Text Editor** for Windows. Sky Notepad is still in development and preview. If you see an bug please create a new issue from [here](https://github.com/AlperAkca79/SkyNotepad/issues/new/choose).
+SkyNotepad is Simple, Modern, Free and Open Source **Text Editor** for Windows. You Can Create/Edit Text Documents and Markdown Source Files. SkyNotepad has a Markdown Preview feature so you can organize your GitHub README files more easily. Sky Notepad is still in development and preview. If you see an bug please create a new issue from [here](https://github.com/AlperAkca79/SkyNotepad/issues/new/choose).
 
 # About
 - Developer: [AlperAkca79](https://github.com/AlperAkca79)
-- Version: Preview v0.9.4.0
+- Version: Preview v0.10.3.0
 - First Build Date: Friday, February 10, 2023
-- Last Update: Saturday, March 4, 2023 8:15 PM (UTC +03:00)
+- Last Update: Thursday, March 9, 2023 5:55 PM (UTC +03:00)
 - License: [MIT License](https://github.com/AlperAkca79/SkyNotepad#License)
 - Platform Architecture: x86, x64
 - Supported OS(s): Windows 10/11
@@ -24,11 +24,12 @@ SkyNotepad is Simple, Modern, Free and Open Source **Text Editor** for Windows. 
 - Supported Language: English (United States)
 
 # Screenshots
-![](res/main-page.png "Main UI")
-
-![](res/new-help-menu.png "Help")
-
-![](res/new-auto-suggest-box.png "About")
+![Main UI](res/Main-UI.png)
+![Markdown Preview](res/Markdown-Preview-0.png)
+![What's New](res/Whats-New-Menu.png)
+![Help](res/Help-Menu.png)
+![About](res/About-Menu.png)
+![Markdown Preview](res/Markdown-Preview-1.png)
 
 # Features
 - Word Wrapping
@@ -44,6 +45,9 @@ SkyNotepad is Simple, Modern, Free and Open Source **Text Editor** for Windows. 
 - Lightweight
 - Full Screen Mode
 - Compact Overlay Mode (**New**)
+- Markdown Source File Support
+- Markdown Preview Support
+- Sharing Service
 
 # Shortcuts
 - **(CTRL + N)** Create New File
@@ -68,16 +72,27 @@ SkyNotepad is Simple, Modern, Free and Open Source **Text Editor** for Windows. 
 See the changelog for all versions [here](docs/changelog.md).
 
 # How to Download?
-- Download **.cer** and **.msixbundle** files from [here](https://github.com/AlperAkca79/SkyNotepad/releases/tag/0.9.4.0).
-- Double click to open **.cer** file.
-- Click **"Install Certificate..."**.
-- Select **"Local Machine"** and click **"Next"**.
-- Click **"Yes"** from the Admin permission screen.
-- Select **"Place all certificates in the following store"** and click **"Browse"**.
-- Select **"Trusted Root Certification Authorities"** and click **"OK"**.
-- Click **"Next"** and after click **"Finish"**.
-- Click **"OK"**.
-- Finally double click to **.msixbundle** file and install the **Sky Notepad**
+You can download SkyNotepad in 3 ways:
+
+### First Way (With [Windows Package Manager (aka winget)](https://github.com/microsoft/winget-cli)):
+
+To download with winget, your operating system build number must be greater than 17763.0 (1809)
+
+- Open Command Prompt (CMD) and type this:
+```shell
+winget install skynotepad
+```
+
+- Wait for the installation to complete.
+
+- Done! You can use SkyNotepad now.
+
+### Second Way (From [Microsoft Store](https://apps.microsoft.com))
+Click [here](https://apps.microsoft.com/store/detail/skynotepad/9PN4B4WGKV6H) for download SkyNotepad from Microsoft Store.
+
+### Third Way (From [GitHub](https://github.com))
+- Download **.msixbundle** file from [here](https://github.com/AlperAkca79/SkyNotepad/releases/tag/0.10.3.0).
+- Double click to **.msixbundle** file and install the **SkyNotepad**
 
 NOTE **(Just for Preview v0.6.0.0)**: Download **Segoe.Fluent.Icons.ttf** file from [here](https://github.com/AlperAkca79/SkyNotepad/releases/download/0.6.0.0/Segoe.Fluent.Icons.ttf) for new _fluent_ icons. 
 

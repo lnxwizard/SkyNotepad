@@ -75,9 +75,15 @@ First version of Sky Notepad.
 
 ***
 
-### Version Preview v0.8.8.0
+### Version Preview v0.9.4.0
 - Added Compact Overlay mode.
 - Added function to search bar in settings page (now you can search things in settings page).
 - Updated About menu.
 - Updated Help menu.
 - Changed Title Bar buttons hover/inactive/default background and foreground colors.
+
+### Version Preview v0.10.3.0
+- Added Markdown Source Files support.
+- Added Markdown preview.
+- Added 'Whats New' menu in settings page.
+- Added 'Share' service.
