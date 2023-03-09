@@ -24,11 +24,11 @@
                 </Grid.RowDefinitions>
 
                 <TextBlock x:Name="TitleHelp" Text="Help" 
-                   HorizontalAlignment="Center" VerticalAlignment="Top"
+                   HorizontalAlignment="Center" VerticalAlignment="Center"
                    FontSize="36" Grid.Row="0"/>
 
                 <!-- Bug Report -->
-                <StackPanel x:Name="StackPanelBugReport" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White" CornerRadius="10" Margin="5">
+                <StackPanel x:Name="StackPanelBugReport" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White" CornerRadius="5" Margin="5">
                     <TextBlock x:Name="TextBlockBugReport" Text="Found a Bug?" 
                        HorizontalAlignment="Left"  FontSize="18" Margin="13"/>
 
@@ -40,7 +40,7 @@
                 </StackPanel>
 
                 <!-- Shortcuts -->
-                <Grid x:Name="GridShortcuts" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White" CornerRadius="10" Margin="5">
+                <Grid x:Name="GridShortcuts" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White" CornerRadius="5" Margin="5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="350"/>
                         <ColumnDefinition Width="350"/>
@@ -79,7 +79,7 @@
                 </Grid>
 
                 <!-- How to contribute -->
-                <StackPanel x:Name="StackPanelContributing" Grid.Row="3" Background="White" Margin="5" CornerRadius="10" 
+                <StackPanel x:Name="StackPanelContributing" Grid.Row="3" Background="White" Margin="5" CornerRadius="5" 
                             HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
 
                     <TextBlock x:Name="TextBlockHowToContribute" Text="How to Contribute?"
@@ -95,7 +95,7 @@
                 </StackPanel>
 
                 <!-- How to open Discussion -->
-                <StackPanel x:Name="StackPanelDiscussion" Grid.Row="4" Background="White" Margin="5" CornerRadius="10">
+                <StackPanel x:Name="StackPanelDiscussion" Grid.Row="4" Background="White" Margin="5" CornerRadius="5">
                     <TextBlock x:Name="TextBlockHowToOpenDiscussion" Text="How to Open Discussion?"
                        HorizontalAlignment="Left" VerticalAlignment="Top"  FontSize="18" Margin="13"/>
 
@@ -106,7 +106,7 @@
                 </StackPanel>
 
                 <!-- Other Links -->
-                <StackPanel Grid.Row="5" Background="White" Margin="5" CornerRadius="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <StackPanel Grid.Row="5" Background="White" Margin="5" CornerRadius="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                     <TextBlock x:Name="TextBlockOtherLinks" Text="Other Links"
                        HorizontalAlignment="Left" VerticalAlignment="Top"  FontSize="18" Margin="13"/>
 

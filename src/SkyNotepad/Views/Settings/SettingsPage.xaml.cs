@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 // Project Folders
-using SkyNotepad.DataSource;
+using SkyNotepad.Services;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -19,8 +19,6 @@ namespace SkyNotepad.Views.Settings
     /// </summary>
     public sealed partial class SettingsPage : Page
     {
-        SettingsContents settingsContents = new SettingsContents();
-
         public SettingsPage()
         {
             this.InitializeComponent();
@@ -73,9 +71,11 @@ namespace SkyNotepad.Views.Settings
                     case "Help":
                         ContentFrame.Navigate(typeof(HelpPage));
                         break;
+                    case "What's New":
+                        ContentFrame.Navigate(typeof(WhatIsNewPage));
+                        break;
                 }
             }
-            else { }
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace SkyNotepad.Views.Settings
             {
                 var suitableItems = new List<string>();
                 var splitText = sender.Text.ToLower().Split(" ");
-                foreach (var MenuItem in settingsContents.MenuContents)
+                foreach (var MenuItem in SettingContentsProvider.MenuContents)
                 {
                     var found = splitText.All((key) =>
                     {
@@ -129,10 +129,10 @@ namespace SkyNotepad.Views.Settings
                     case "Developer":
                         ContentFrame.Navigate(typeof(AboutPage));
                         break;
-                    case "Insider Channel":
+                    case "License":
                         ContentFrame.Navigate(typeof(AboutPage));
                         break;
-                    case "License":
+                    case "Last Updated":
                         ContentFrame.Navigate(typeof(AboutPage));
                         break;
                     case "Version":
@@ -157,6 +157,14 @@ namespace SkyNotepad.Views.Settings
                         break;
                     case "Shortcuts":
                         ContentFrame.Navigate(typeof(HelpPage));
+                        break;
+
+                    // In WhatsNewPage.xaml
+                    case "What's New?":
+                        ContentFrame.Navigate(typeof(WhatIsNewPage));
+                        break;
+                    case "Changelog":
+                        ContentFrame.Navigate(typeof(WhatIsNewPage));
                         break;
                 }
             }

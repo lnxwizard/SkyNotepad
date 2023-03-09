@@ -1,4 +1,5 @@
 ﻿// Librarys
+using System;
 using System.Windows.Input;
 using Windows.UI.ViewManagement;
 
@@ -14,6 +15,7 @@ namespace SkyNotepad.ViewModels
 
         // Menu Item Commands
         public ICommand FullScreenModeCommand { get; }
+        public ICommand CompactOverlayCommand { get; }
 
         /// <summary>
         /// Loads commands
@@ -21,6 +23,7 @@ namespace SkyNotepad.ViewModels
         public ScreenViewModel()
         {
             FullScreenModeCommand = new RelayCommand(ToggleFullScreen);
+            CompactOverlayCommand = new RelayCommand(ToggleCompactOverlay);
         }
 
         /// <summary>
@@ -37,6 +40,21 @@ namespace SkyNotepad.ViewModels
             else
             {
                 AppView.TryEnterFullScreenMode();
+            }
+        }
+
+        /// <summary>
+        /// Toggle compact overlay mode on or off
+        /// </summary>
+        private async void ToggleCompactOverlay()
+        {
+            if (ApplicationView.GetForCurrentView().ViewMode == ApplicationViewMode.CompactOverlay)
+            {
+                await ApplicationView.GetForCurrentView().TryEnterViewModeAsync(ApplicationViewMode.Default);
+            }
+            else
+            {
+                await ApplicationView.GetForCurrentView().TryEnterViewModeAsync(ApplicationViewMode.CompactOverlay);
             }
         }
     }

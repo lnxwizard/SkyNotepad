@@ -1,24 +1,11 @@
 ﻿// Librarys
-using System;
-using System.IO;
-using Windows.Foundation;
-using Windows.Storage;
-using Windows.Storage.Streams;
-using Windows.System;
 using Windows.UI;
 using Windows.UI.Xaml;
-using Windows.UI.Xaml.Navigation;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.ViewManagement;
-using Windows.ApplicationModel;
 using Windows.ApplicationModel.Core;
 using Windows.ApplicationModel.DataTransfer;
-using Windows.ApplicationModel.Activation;
-
-// Project Folders
-using SkyNotepad.ViewModels;
-using SkyNotepad.Models;
-
+using Windows.Foundation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -32,15 +19,17 @@ namespace SkyNotepad.Views
         public MainPage()
         {
             InitializeComponent();
+            ShareLoad();
         }
 
         /// <summary>
         /// Changes application title bar buttons background/foreground colors when Main Page loadeds
         /// </summary>
         /// <param name="sender">Page</param>
-        /// <param name="e"></param>
+        /// <param name="e">Loaded</param>
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
+            // Application View
             ApplicationView appView = ApplicationView.GetForCurrentView();
             
             // Default
@@ -63,7 +52,7 @@ namespace SkyNotepad.Views
         /// Hides default titlebar and replaces with custom titlebar
         /// </summary>
         /// <param name="sender">Grid</param>
-        /// <param name="e"></param>
+        /// <param name="e">Loaded</param>
         private void DragRegion_Loaded(object sender, RoutedEventArgs e)
         {
             // Hide default title bar.
@@ -82,42 +71,36 @@ namespace SkyNotepad.Views
         /// Undo changes from textbox
         /// </summary>
         /// <param name="sender">Menu Flyout Item</param>
-        /// <param name="e">Menu Flyout Item</param>
+        /// <param name="e">Click</param>
         private void MenuItemUndo_Click(object sender, RoutedEventArgs e)
         {
             if(TextBox.CanUndo == true)
             {
                 TextBox.Undo();
             }
-            else { }
         }
 
         /// <summary>
         /// Redo changes from textbox
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e">Menu Flyout Item</param>
+        /// <param name="sender">Menu Flyout Item</param>
+        /// <param name="e">Click</param>
         private void MenuItemRedo_Click(object sender, RoutedEventArgs e)
         {
             if (TextBox.CanRedo == true)
             {
                 TextBox.Redo();
             }
-            else { }
         }
 
         /// <summary>
         /// Cut selected text in textbox
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e">Menu Flyout Item</param>
+        /// <param name="sender">Menu Flyout Item</param>
+        /// <param name="e">Click</param>
         private void MenuItemCut_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(TextBox.SelectedText))
-            {
-                
-            }
-            else
+            if (!string.IsNullOrEmpty(TextBox.SelectedText))
             {
                 TextBox.CutSelectionToClipboard();
             }
@@ -126,15 +109,11 @@ namespace SkyNotepad.Views
         /// <summary>
         /// Copy selected text in textbox
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e">Menu Flyout Item</param>
+        /// <param name="sender">Menu Flyout Item</param>
+        /// <param name="e">Click</param>
         private void MenuItemCopy_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(TextBox.SelectedText))
-            {
-
-            }
-            else
+            if (!string.IsNullOrEmpty(TextBox.SelectedText))
             {
                 TextBox.CopySelectionToClipboard();
             }
@@ -143,46 +122,34 @@ namespace SkyNotepad.Views
         /// <summary>
         /// Paste from clipboard to textbox
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e">Menu Flyout Item</param>
+        /// <param name="sender">Menu Flyout Item</param>
+        /// <param name="e">Click</param>
         private void MenuItemPaste_Click(object sender, RoutedEventArgs e)
         {
-            TextBox.PasteFromClipboard();
+            if (TextBox.CanPasteClipboardContent == true)
+            {
+                TextBox.PasteFromClipboard();
+            }
         }
 
         /// <summary>
         /// Select all text in textbox
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e">Menu Flyout Item</param>
+        /// <param name="sender">Menu Flyout Item</param>
+        /// <param name="e">Click</param>
         private void MenuItemSelectAll_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(TextBox.Text))
-            {
-
-            }
-            else
+            if (!string.IsNullOrEmpty(TextBox.Text))
             {
                 TextBox.SelectAll();
             }
         }
 
         /// <summary>
-        /// Puts system time and date
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e">Menu Flyout Item</param>
-        private void MenuItemTimeDate_Click(object sender, RoutedEventArgs e)
-        {
-            DateTime dateTime = DateTime.Now;
-            TextBox.SelectedText = dateTime.ToString();
-        }
-
-        /// <summary>
         /// Toggle Spell Checking feature on or off
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e">Toggle Menu Flyout Item</param>
+        /// <param name="sender">Toggle Menu Flyout Item</param>
+        /// <param name="e">Click</param>
         private void MenuItemSpellCheck_Click(object sender, RoutedEventArgs e)
         {
             if (MenuItemSpellCheck.IsChecked == true)
@@ -196,115 +163,55 @@ namespace SkyNotepad.Views
         }
 
         /// <summary>
-        /// Search selected text in Microsoft Bing
+        /// Toggle Markdown preview on or off
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e">Menu Flyout Item</param>
-        private async void MenuItemMicrosoftBing_Click(object sender, RoutedEventArgs e)
+        /// <param name="sender">App Bar Button</param>
+        /// <param name="e">Click</param>
+        private void AppBarButtonMarkdownPreview_Click(object sender, RoutedEventArgs e)
         {
-            string searchString = TextBox.SelectedText;
-            if (searchString == string.Empty)
+            if (MainSplitView.IsPaneOpen == true)
             {
-                Uri defaultUri = new Uri("https://bing.com/");
+                MainSplitView.IsPaneOpen = false;
+                AppBarButtonMarkdownPreview.Icon = new SymbolIcon(Symbol.ClosePane);
             }
             else
             {
-                Uri searchUri = new Uri("https://bing.com/search?q=" + searchString);
-                await Launcher.LaunchUriAsync(searchUri);
+                MainSplitView.IsPaneOpen = true;
+                AppBarButtonMarkdownPreview.Icon = new SymbolIcon(Symbol.OpenPane);
             }
         }
 
         /// <summary>
-        /// Search selected text in Google
+        /// Loads share service
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e">Menu Flyout Item</param>
-        private async void MenuItemGoogle_Click(object sender, RoutedEventArgs e)
+        private void ShareLoad()
         {
-            string searchString = TextBox.SelectedText;
-            if (searchString == string.Empty)
-            {
-                Uri defaultUri = new Uri("https://google.com/");
-            }
-            else
-            {
-                Uri searchUri = new Uri("https://google.com/search?q=" + searchString);
-                await Launcher.LaunchUriAsync(searchUri);
-            }
+            DataTransferManager dataTransferManager = DataTransferManager.GetForCurrentView();
+            dataTransferManager.DataRequested += new TypedEventHandler<DataTransferManager, DataRequestedEventArgs>(this.DataRequested);
         }
 
         /// <summary>
-        /// Search selected text in DuckDuckGo
+        /// Data request for sharing service
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e">Menu Flyout Item</param>
-        private async void MenuItemDuckDuckGo_Click(object sender, RoutedEventArgs e)
+        /// <param name="sender">Data Transfer Manager</param>
+        /// <param name="e">Data Requested</param>
+        private void DataRequested(DataTransferManager sender, DataRequestedEventArgs e)
         {
-            string searchString = TextBox.SelectedText;
-            if (searchString == string.Empty)
-            {
-                Uri defaultUri = new Uri("https://duckduckgo.com/");
-            }
-            else
-            {
-                Uri searchUri = new Uri("https://duckduckgo.com/" + searchString);
-                await Launcher.LaunchUriAsync(searchUri);
-            }
+            DataRequest request = e.Request;
+            request.Data.Properties.Title = "SkyNotepad Sharing Service";
+            request.Data.Properties.Description = "Share your Document to selected people/E-Mail";
+            request.Data.SetText(TextBox.Text.ToString());
         }
 
         /// <summary>
-        /// Search selected text in Yandex
+        /// Loads share service and shows share UI
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e">Menu Flyout Item</param>
-        private async void MenuItemYandex_Click(object sender, RoutedEventArgs e)
+        /// <param name="sender">App Bar Button</param>
+        /// <param name="e">Click</param>
+        private void AppBarButtonShare_Click(object sender, RoutedEventArgs e)
         {
-            string searchString = TextBox.SelectedText;
-            if (searchString == string.Empty)
-            {
-                Uri defaultUri = new Uri("https://yandex.com/");
-            }
-            else
-            {
-                Uri searchUri = new Uri("https://yandex.com/search/?text=" + searchString);
-                await Launcher.LaunchUriAsync(searchUri);
-            }
-        }
-
-        /// <summary>
-        /// Search selected text in Yahoo
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e">Menu Flyout Item</param>
-        private async void MenuItemYahoo_Click(object sender, RoutedEventArgs e)
-        {
-            string searchString = TextBox.SelectedText;
-            if (searchString == string.Empty)
-            {
-                Uri defaultUri = new Uri("https://yahoo.com/");
-            }
-            else
-            {
-                Uri searchUri = new Uri("https://search.yahoo.com/search?p=" + searchString);
-                await Launcher.LaunchUriAsync(searchUri);
-            }
-        }
-
-        /// <summary>
-        /// Toggle Compact Overlay mode on or off
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e">Menu Flyout Item</param>
-        private async void MenuItemCompactOverlay_Click(object sender, RoutedEventArgs e)
-        {
-            if (ApplicationView.GetForCurrentView().ViewMode == ApplicationViewMode.CompactOverlay)
-            {
-                await ApplicationView.GetForCurrentView().TryEnterViewModeAsync(ApplicationViewMode.Default);
-            }
-            else
-            {
-                await ApplicationView.GetForCurrentView().TryEnterViewModeAsync(ApplicationViewMode.CompactOverlay);
-            }
+            ShareLoad();
+            DataTransferManager.ShowShareUI();
         }
     }
 }

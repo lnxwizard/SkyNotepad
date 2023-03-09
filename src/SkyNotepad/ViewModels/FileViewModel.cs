@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Controls;
 // Project Folders
 using SkyNotepad.Helpers;
 using SkyNotepad.Models;
+using SkyNotepad.Services;
 
 namespace SkyNotepad.ViewModels
 {
@@ -49,7 +50,7 @@ namespace SkyNotepad.ViewModels
         /// </summary>
         private void CreateNewFile()
         {
-            Document.FileName = "Untitled.txt";
+            Document.FileName = "Untitled";
             Document.FilePath = string.Empty;
             Document.Text = string.Empty;
             Document.IsSaved = false;
@@ -62,7 +63,7 @@ namespace SkyNotepad.ViewModels
         /// </summary>
         private void NewFile()
         {
-            Document.FileName = "Untitled.txt";
+            Document.FileName = "Untitled";
             Document.FilePath = string.Empty;
             Document.Text = string.Empty;
             Document.IsSaved = false;
@@ -84,7 +85,6 @@ namespace SkyNotepad.ViewModels
             {
                 SaveFileAs();
             }
-
         }
 
         /// <summary>
@@ -101,6 +101,7 @@ namespace SkyNotepad.ViewModels
                     DefaultFileExtension = ".txt"
                 };
                 savePicker.FileTypeChoices.Add("Text Document", new List<string>() { ".txt" });
+                savePicker.FileTypeChoices.Add("Markdown Source File", new List<string>() { ".md" });
 
                 StorageFile storageFile = await savePicker.PickSaveFileAsync();
                 if (storageFile != null)
@@ -128,13 +129,12 @@ namespace SkyNotepad.ViewModels
                     Content = "File Couldn't Saved! Try Again.",
                     PrimaryButtonCommand = SaveAsCommand
                 };
-
                 await FileSaveUnsuccesfullDialog.ShowAsync();
             }
         }
 
         /// <summary>
-        /// Open a text file
+        /// Opens file
         /// </summary>
         private async void OpenFile()
         {
@@ -145,7 +145,11 @@ namespace SkyNotepad.ViewModels
                     ViewMode = PickerViewMode.Thumbnail,
                     SuggestedStartLocation = PickerLocationId.DocumentsLibrary
                 };
-                openPicker.FileTypeFilter.Add(".txt");
+                // Adds all supported file extensions to open file dialog
+                foreach (string FileExtension in FileExtensionProvider.SupportedFileExtensions)
+                {
+                    openPicker.FileTypeFilter.Add(FileExtension);
+                }
 
                 StorageFile storageFile = await openPicker.PickSingleFileAsync();
                 if (storageFile != null)
@@ -174,7 +178,6 @@ namespace SkyNotepad.ViewModels
                     Content = "File Couldn't Opened! Try Again.",
                     PrimaryButtonCommand = OpenCommand
                 };
-
                 await FileOpenUnsuccesfullDialog.ShowAsync();
             }
         }

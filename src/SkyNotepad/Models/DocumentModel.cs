@@ -1,7 +1,5 @@
-﻿// Project Librarys
+﻿// Project Folders
 using SkyNotepad.Helpers;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 
 namespace SkyNotepad.Models
 {
@@ -13,6 +11,13 @@ namespace SkyNotepad.Models
             get { return _text; }
             set { OnPropertyChanged(ref _text, value); }
 
+        }
+
+        private string _selectedText;
+        public string SelectedText
+        {
+            get { return _selectedText; }
+            set { OnPropertyChanged(ref _selectedText, value); }
         }
 
         private string _filePath;
@@ -55,7 +60,7 @@ namespace SkyNotepad.Models
         {
             get
             {
-                if (string.IsNullOrEmpty(FileName) || string.IsNullOrEmpty(FilePath) || string.IsNullOrEmpty(AppTitle))
+                if (string.IsNullOrEmpty(FileName) || string.IsNullOrEmpty(FilePath) || string.IsNullOrEmpty(AppTitle) || string.IsNullOrEmpty(SelectedText))
                     return true;
 
                 return false;

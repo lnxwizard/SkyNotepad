@@ -1,27 +1,29 @@
 ﻿// Librarys
 using System.Collections.Generic;
 
-namespace SkyNotepad.DataSource
+namespace SkyNotepad.Services
 {
-    public class SettingsContents
+    public class SettingContentsProvider
     {
         /// <summary>
         /// List of Menu contens in SettingsPage.xaml (A to Z)
         /// </summary>
-        public List<string> MenuContents = new List<string>()
+        public static List<string> MenuContents = new List<string>()
         {
             "About",
             "Bug Report",
+            "Changelog",
             "Contributing",
             "Dependencies and References",
             "Developer",
             "Discussion",
             "Help",
-            "Insider Channel",
+            "Last Updated",
             "License",
             "Other Links",
             "Shortcuts",
-            "Version"
+            "Version",
+            "What's New?"
         };
     }
 }

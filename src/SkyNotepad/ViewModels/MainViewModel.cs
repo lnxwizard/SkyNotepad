@@ -14,6 +14,9 @@ namespace SkyNotepad.ViewModels
         public ScreenViewModel Screen { get; set; }
         public HelpViewModel Help { get; set; }
         public SettingsPageViewModel SettingsPage { get; set; }
+        public EditViewModel Edit { get; set; }
+        public WebSearchViewModel WebSearch { get; set; }
+        public ShareViewModel Share { get; set; }
 
         /// <summary>
         /// Loads View Models
@@ -26,6 +29,9 @@ namespace SkyNotepad.ViewModels
             Screen = new ScreenViewModel();
             Help = new HelpViewModel();
             SettingsPage = new SettingsPageViewModel();
+            Edit = new EditViewModel(Document);
+            WebSearch = new WebSearchViewModel(Document);
+            Share = new ShareViewModel();
         }
     }
 }

@@ -55,7 +55,7 @@
                              Loaded="SettigsNavigationView_Loaded" SelectionChanged="SettigsNavigationView_SelectionChanged">
             <!-- Menu Items -->
             <muxc:NavigationView.MenuItems>
-                
+                <muxc:NavigationViewItem x:Name="NavigationItemWhatsNew" Content="What's New" Tag="NavItemWhatsNew" Icon="Message"/>
             </muxc:NavigationView.MenuItems>
 
             <!-- Footer Menu Items -->

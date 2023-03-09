@@ -16,7 +16,7 @@
                     <RowDefinition Height="128"/>
                     <RowDefinition Height="60"/>
                     <RowDefinition Height="60"/>
-                    <RowDefinition Height="90"/>
+                    <RowDefinition Height="60"/>
                     <RowDefinition Height="60"/>
                     <RowDefinition Height="390"/>
                     <RowDefinition Height="125"/>
@@ -32,29 +32,29 @@
                    TextWrapping="Wrap" FontSize="36"/>
 
                 <!-- Developer -->
-                <StackPanel x:Name="StackPanelDeveloper" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White" CornerRadius="10" Margin="5">
+                <StackPanel x:Name="StackPanelDeveloper" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White" CornerRadius="5" Margin="5">
                     <TextBlock x:Name="TextBlockDeveloper" Text="Developer: AlperAkca79" 
                        HorizontalAlignment="Left"  FontSize="18" Margin="13"/>
                 </StackPanel>
 
-                <!-- Insider Channel -->
-                <StackPanel x:Name="StackPanelInsiderChannel" Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White" CornerRadius="10" Margin="5">
-                    <TextBlock x:Name="TextBlockInsiderChannel" Text="Insider Channel: Preview" 
-                       HorizontalAlignment="Left"  FontSize="18" Margin="13"/>
-
-                    <TextBlock Name="TextBlockInsiderChanellInfo" Margin="13, 0, 0, 0">
-                        SkyNotepad is still in Preview version. So there may be bugs and performance issues. The Stable version is coming soon.
-                    </TextBlock>
-                </StackPanel>
-
                 <!-- Version -->
-                <StackPanel x:Name="StackPanelVersion" Grid.Row="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White" CornerRadius="10" Margin="5">
+                <StackPanel x:Name="StackPanelVersion" Grid.Row="3" 
+                            HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                            Background="White" CornerRadius="5" Margin="5">
                     <TextBlock x:Name="TextBlockVersion" Text="Version: v0.0.0.0" 
                        HorizontalAlignment="Left" Margin="13" FontSize="18"/>
                 </StackPanel>
+                
+                <!-- Last Updated -->
+                <StackPanel x:Name="StackPanelLastUpdated" Grid.Row="4" Orientation="Horizontal"
+                            HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                            Background="White" CornerRadius="5" Margin="5">
+                    <TextBlock x:Name="TextBlockLastUpdated" Text="Last Updated: Saturday, March 4, 2023" 
+                               HorizontalAlignment="Left" Margin="13" FontSize="18"/>
+                </StackPanel>
 
                 <!-- License -->
-                <StackPanel x:Name="StackPanelLicense" Grid.Row="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White" CornerRadius="10" Margin="5">
+                <StackPanel x:Name="StackPanelLicense" Grid.Row="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White" CornerRadius="5" Margin="5">
                     <TextBlock x:Name="TextBlockLicense" Text="License" 
                        HorizontalAlignment="Left" Margin="13" FontSize="18"/>
 
@@ -77,7 +77,7 @@
                 </StackPanel>
 
                 <!-- Dependencies and References -->
-                <StackPanel x:Name="StackPanelDepNRef" Grid.Row="6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White" CornerRadius="10" Margin="5">
+                <StackPanel x:Name="StackPanelDepNRef" Grid.Row="6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White" CornerRadius="5" Margin="5">
                     <TextBlock x:Name="TextBlockDepNRef" Text="Dependencies and References" 
                        HorizontalAlignment="Left" Margin="13" FontSize="18"/>
 

@@ -9,8 +9,9 @@
     RequestedTheme="Light" 
     NavigationCacheMode="Required"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    Loaded="MainPage_Loaded"
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-    xmlns:viewmodel="using:SkyNotepad.ViewModels" Loaded="MainPage_Loaded"
+    xmlns:viewmodel="using:SkyNotepad.ViewModels"
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls" 
     xmlns:animatedvisuals="using:Microsoft.UI.Xaml.Controls.AnimatedVisuals">
 
@@ -51,29 +52,43 @@
             </Grid.ColumnDefinitions>
 
             <!-- Application Title -->
-            <TextBlock x:Name="AppTitle" Text="{Binding File.Document.AppTitle, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" HorizontalTextAlignment="Center"
+            <TextBlock x:Name="AppTitle" 
+                       Text="{Binding File.Document.AppTitle, UpdateSourceTrigger=PropertyChanged}" 
+                       VerticalAlignment="Center" HorizontalTextAlignment="Center"
                        FontWeight="Thin" Grid.Column="1" Margin="0"/>
 
             <!-- Menu Bar -->
-            <muxc:MenuBar x:Name="MenuBar" x:Uid="MenuBar" VerticalAlignment="Stretch" CornerRadius="0" Grid.Column="0" Height="48">
+            <muxc:MenuBar x:Name="MenuBar" x:Uid="MenuBar" VerticalAlignment="Stretch" 
+                          CornerRadius="0" Grid.Column="0" Height="48">
                 <!-- File Menu -->
                 <muxc:MenuBarItem x:Name="MenuFile" x:Uid="MenuFile" Title="File" DataContext="{Binding File}">
-                    <MenuFlyoutItem x:Name="MenuItemNew" x:Uid="MenuItemNew" Text="New" Command="{Binding NewCommand}" Icon="Page2">
+                    <!-- New -->
+                    <MenuFlyoutItem x:Name="MenuItemNew" x:Uid="MenuItemNew" Text="New" 
+                                    Command="{Binding NewCommand}" Icon="Page2">
                         <MenuFlyoutItem.KeyboardAccelerators>
                             <KeyboardAccelerator Key="N" Modifiers="Control" IsEnabled="True"/>
                         </MenuFlyoutItem.KeyboardAccelerators>
                     </MenuFlyoutItem>
-                    <MenuFlyoutItem x:Name="MenuItemOpen" x:Uid="MenuItemOpen" Text="Open..." Command="{Binding OpenCommand}" Icon="OpenFile">
+                    
+                    <!-- Open -->
+                    <MenuFlyoutItem x:Name="MenuItemOpen" x:Uid="MenuItemOpen" Text="Open..." 
+                                    Command="{Binding OpenCommand}" Icon="OpenFile">
                         <MenuFlyoutItem.KeyboardAccelerators>
                             <KeyboardAccelerator Key="O" Modifiers="Control" IsEnabled="True"/>
                         </MenuFlyoutItem.KeyboardAccelerators>
                     </MenuFlyoutItem>
-                    <MenuFlyoutItem x:Name="MenuItemSave" x:Uid="MenuItemSave" Text="Save" Command="{Binding SaveCommand}" Icon="Save">
+                    
+                    <!-- Save -->
+                    <MenuFlyoutItem x:Name="MenuItemSave" x:Uid="MenuItemSave" Text="Save" 
+                                    Command="{Binding SaveCommand}" Icon="Save">
                         <MenuFlyoutItem.KeyboardAccelerators>
                             <KeyboardAccelerator Key="S" Modifiers="Control" IsEnabled="True"/>
                         </MenuFlyoutItem.KeyboardAccelerators>
                     </MenuFlyoutItem>
-                    <MenuFlyoutItem x:Name="MenuItemSaveAs" x:Uid="MenuItemSaveAs" Text="Save As..." Command="{Binding SaveAsCommand}">
+                    
+                    <!-- Save As -->
+                    <MenuFlyoutItem x:Name="MenuItemSaveAs" x:Uid="MenuItemSaveAs" Text="Save As Copy"
+                                    Command="{Binding SaveAsCommand}">
                         <MenuFlyoutItem.KeyboardAccelerators>
                             <KeyboardAccelerator Key="S" Modifiers="Control, Menu" IsEnabled="True"/>
                         </MenuFlyoutItem.KeyboardAccelerators>
@@ -81,8 +96,12 @@
                             <FontIcon Glyph="&#xE792;"/>
                         </MenuFlyoutItem.Icon>
                     </MenuFlyoutItem>
+                    
                     <MenuFlyoutSeparator/>
-                    <MenuFlyoutItem x:Name="MenuItemExit" x:Uid="MenuItemExit" Text="Exit" Command="{Binding ExitCommand}" Icon="Cancel">
+                    
+                    <!-- Exit -->
+                    <MenuFlyoutItem x:Name="MenuItemExit" x:Uid="MenuItemExit" Text="Exit" 
+                                    Command="{Binding ExitCommand}" Icon="Cancel">
                         <MenuFlyoutItem.KeyboardAccelerators>
                             <KeyboardAccelerator Key="F4" Modifiers="Menu" IsEnabled="True"/>
                         </MenuFlyoutItem.KeyboardAccelerators>
@@ -91,50 +110,82 @@
 
                 <!-- Edit Menu -->
                 <muxc:MenuBarItem x:Name="MenuEdit" x:Uid="MenuEdit" Title="Edit">
-                    <MenuFlyoutItem x:Name="MenuItemUndo" x:Uid="MenuItemUndo" Text="Undo" Click="MenuItemUndo_Click" Icon="Undo">
+                    <!-- Undo -->
+                    <MenuFlyoutItem x:Name="MenuItemUndo" x:Uid="MenuItemUndo" Text="Undo" 
+                                    Click="MenuItemUndo_Click" Icon="Undo">
                         <MenuFlyoutItem.KeyboardAccelerators>
                             <KeyboardAccelerator Key="Z" Modifiers="Control" IsEnabled="True"/>
                         </MenuFlyoutItem.KeyboardAccelerators>
                     </MenuFlyoutItem>
-                    <MenuFlyoutItem x:Name="MenuItemRedo" x:Uid="MenuItemRedo" Text="Redo" Click="MenuItemRedo_Click" Icon="Redo">
+
+                    <!-- Redo -->
+                    <MenuFlyoutItem x:Name="MenuItemRedo" x:Uid="MenuItemRedo" Text="Redo" 
+                                    Click="MenuItemRedo_Click" Icon="Redo">
                         <MenuFlyoutItem.KeyboardAccelerators>
                             <KeyboardAccelerator Key="Y" Modifiers="Control" IsEnabled="True"/>
                         </MenuFlyoutItem.KeyboardAccelerators>
                     </MenuFlyoutItem>
                     <MenuFlyoutSeparator/>
-                    <MenuFlyoutItem x:Name="MenuItemCut" x:Uid="MenuItemCut" Text="Cut" Click="MenuItemCut_Click" Icon="Cut">
+
+                    <!-- Cut -->
+                    <MenuFlyoutItem x:Name="MenuItemCut" x:Uid="MenuItemCut" Text="Cut" 
+                                    Click="MenuItemCut_Click" Icon="Cut">
                         <MenuFlyoutItem.KeyboardAccelerators>
                             <KeyboardAccelerator Key="X" Modifiers="Control" IsEnabled="True"/>
                         </MenuFlyoutItem.KeyboardAccelerators>
                     </MenuFlyoutItem>
-                    <MenuFlyoutItem x:Name="MenuItemCopy" x:Uid="MenuItemCopy" Text="Copy" Click="MenuItemCopy_Click" Icon="Copy">
+
+                    <!-- Copy -->
+                    <MenuFlyoutItem x:Name="MenuItemCopy" x:Uid="MenuItemCopy" Text="Copy" 
+                                    Click="MenuItemCopy_Click" Icon="Copy">
                         <MenuFlyoutItem.KeyboardAccelerators>
                             <KeyboardAccelerator Key="C" Modifiers="Control" IsEnabled="True"/>
                         </MenuFlyoutItem.KeyboardAccelerators>
                     </MenuFlyoutItem>
-                    <MenuFlyoutItem x:Name="MenuItemPaste" x:Uid="MenuItemPaste" Text="Paste" Click="MenuItemPaste_Click" Icon="Paste">
+
+                    <!-- Paste -->
+                    <MenuFlyoutItem x:Name="MenuItemPaste" x:Uid="MenuItemPaste" Text="Paste" 
+                                    Click="MenuItemPaste_Click" Icon="Paste">
                         <MenuFlyoutItem.KeyboardAccelerators>
                             <KeyboardAccelerator Key="V" Modifiers="Control" IsEnabled="True"/>
                         </MenuFlyoutItem.KeyboardAccelerators>
                     </MenuFlyoutItem>
                     <MenuFlyoutSeparator/>
+
+                    <!-- Search in Web -->
                     <MenuFlyoutSubItem x:Name="MenuSubItemSearch" x:Uid="MenuSubItemSearch" Text="Search In Web With..." >
                         <MenuFlyoutSubItem.Icon>
                             <FontIcon Glyph="&#xf6fa;"/>
                         </MenuFlyoutSubItem.Icon>
-                        <MenuFlyoutItem x:Name="MenuItemMicrosoftBing" x:Uid="MenuItemMicrosoftBing" Text="Microsoft Bing" Click="MenuItemMicrosoftBing_Click"/>
-                        <MenuFlyoutItem x:Name="MenuItemGoogle" x:Uid="MenuItemGoogle" Text="Google" Click="MenuItemGoogle_Click"/>
-                        <MenuFlyoutItem x:Name="MenuItemDuckDuckGo" x:Uid="MenuItemDuckDuckGo" Text="DuckDuckGo" Click="MenuItemDuckDuckGo_Click"/>
-                        <MenuFlyoutItem x:Name="MenuItemYandex" x:Uid="MenuItemYandex" Text="Yandex" Click="MenuItemYandex_Click"/>
-                        <MenuFlyoutItem x:Name="MenuItemYahoo" x:Uid="MenuItemYahoo" Text="Yahoo" Click="MenuItemYahoo_Click"/>
+                        <!-- Microsoft Bing -->
+                        <MenuFlyoutItem x:Name="MenuItemMicrosoftBing" x:Uid="MenuItemMicrosoftBing" 
+                                        Text="Microsoft Bing" Command="{Binding WebSearch.SearchWithMicrosoftBingCommand}"/>
+                        <!-- Google -->
+                        <MenuFlyoutItem x:Name="MenuItemGoogle" x:Uid="MenuItemGoogle" 
+                                        Text="Google" Command="{Binding WebSearch.SearchWithGoogleCommand}"/>
+                        <!-- DuckDuckGo -->
+                        <MenuFlyoutItem x:Name="MenuItemDuckDuckGo" x:Uid="MenuItemDuckDuckGo" 
+                                        Text="DuckDuckGo" Command="{Binding WebSearch.SearchWithDuckDuckGoCommand}"/>
+                        <!-- Yandex -->
+                        <MenuFlyoutItem x:Name="MenuItemYandex" x:Uid="MenuItemYandex" 
+                                        Text="Yandex" Command="{Binding WebSearch.SearchWithYandexCommand}"/>
+                        <!-- Yahoo -->
+                        <MenuFlyoutItem x:Name="MenuItemYahoo" x:Uid="MenuItemYahoo" 
+                                        Text="Yahoo" Command="{Binding WebSearch.SearchWithYahooCommand}"/>
                     </MenuFlyoutSubItem>
                     <MenuFlyoutSeparator/>
-                    <MenuFlyoutItem x:Name="MenuItemSelectAll" x:Uid="MenuItemSelectAll" Text="SelectAll" Click="MenuItemSelectAll_Click" Icon="SelectAll">
+
+                    <!-- Select All -->
+                    <MenuFlyoutItem x:Name="MenuItemSelectAll" x:Uid="MenuItemSelectAll" Text="SelectAll" 
+                                    Click="MenuItemSelectAll_Click" Icon="SelectAll">
                         <MenuFlyoutItem.KeyboardAccelerators>
                             <KeyboardAccelerator Key="A" Modifiers="Control" IsEnabled="True"/>
                         </MenuFlyoutItem.KeyboardAccelerators>
                     </MenuFlyoutItem>
-                    <MenuFlyoutItem x:Name="MenuItemTimeDate" x:Uid="MenuItemTimeDate" Text="Time/Date" Click="MenuItemTimeDate_Click" Icon="Calendar">
+
+                    <!-- Time/Date -->
+                    <MenuFlyoutItem x:Name="MenuItemTimeDate" x:Uid="MenuItemTimeDate" Text="Time/Date" 
+                                    Command="{Binding Edit.DateTimeCommand}" Icon="Calendar">
                         <MenuFlyoutItem.KeyboardAccelerators>
                             <KeyboardAccelerator Key="F5" IsEnabled="True"/>
                         </MenuFlyoutItem.KeyboardAccelerators>
@@ -143,12 +194,17 @@
 
                 <!-- Format Menu -->
                 <muxc:MenuBarItem x:Name="MenuFormat" x:Uid="MenuFormat" Title="Format" DataContext="{Binding Format}">
-                    <ToggleMenuFlyoutItem x:Name="MenuItemWordWrap" x:Uid="MenuItemWordWrap" Text="Word Wrap" Command="{Binding WordWrap}">
+                    <!-- Word Wrap -->
+                    <ToggleMenuFlyoutItem x:Name="MenuItemWordWrap" x:Uid="MenuItemWordWrap" Text="Word Wrap" 
+                                          Command="{Binding WordWrap}">
                         <ToggleMenuFlyoutItem.KeyboardAccelerators>
                             <KeyboardAccelerator Key="Z" Modifiers="Menu"/>
                         </ToggleMenuFlyoutItem.KeyboardAccelerators>
                     </ToggleMenuFlyoutItem>
-                    <ToggleMenuFlyoutItem x:Name="MenuItemSpellCheck" x:Uid="MenuItemSpellCheck" Text="Spell Check" Click="MenuItemSpellCheck_Click">
+
+                    <!-- Spell Check -->
+                    <ToggleMenuFlyoutItem x:Name="MenuItemSpellCheck" x:Uid="MenuItemSpellCheck" Text="Spell Check" 
+                                          Click="MenuItemSpellCheck_Click">
                         <ToggleMenuFlyoutItem.KeyboardAccelerators>
                             <KeyboardAccelerator Key="X" Modifiers="Menu"/>
                         </ToggleMenuFlyoutItem.KeyboardAccelerators>
@@ -157,36 +213,112 @@
 
                 <!-- View Menu -->
                 <muxc:MenuBarItem x:Name="MenuView" x:Uid="MenuView" Title="View" DataContext="{Binding Screen}">
+                    <!-- Full Screen -->
                     <MenuFlyoutItem x:Name="MenuItemFullScreen" x:Uid="MenuItemFullScreen" Text="Full Screen" 
                                       Command="{Binding FullScreenModeCommand}" Icon="FullScreen">
                         <MenuFlyoutItem.KeyboardAccelerators>
                             <KeyboardAccelerator Key="F11" IsEnabled="True"/>
                         </MenuFlyoutItem.KeyboardAccelerators>
                     </MenuFlyoutItem>
-                    <MenuFlyoutItem x:Name="MenuItemCompactOverlay" x:Uid="MenuItemCompactOverlay" Text="Compact Overlay" Click="MenuItemCompactOverlay_Click"/>
+                    
+                    <!-- Compact Overlay -->
+                    <MenuFlyoutItem x:Name="MenuItemCompactOverlay" x:Uid="MenuItemCompactOverlay" Text="Compact Overlay" 
+                                    Command="{Binding CompactOverlayCommand}"/>
                 </muxc:MenuBarItem>
             </muxc:MenuBar>
 
-            <Grid x:Name="DragRegion" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="48" Background="Transparent" Loaded="DragRegion_Loaded"/>
+            <!-- Drag Region for Title Bar -->
+            <Grid x:Name="DragRegion" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" 
+                  VerticalAlignment="Top" Height="48" Background="Transparent" Loaded="DragRegion_Loaded"/>
         </Grid>
 
 
         <!-- App Bar -->
-        <Grid x:Name="AppBar" Grid.Row="1" Background="Transparent" HorizontalAlignment="Stretch" Height="48">
-            <AppBarButton x:Name="AppBarButtonNew" x:Uid="AppBarButtonNew" Command="{Binding File.NewCommand}" HorizontalAlignment="Left" Grid.Row="1" Icon="Page2" Width="48" VerticalAlignment="Center"/>
-            <AppBarButton x:Name="AppBarButtonOpen" x:Uid="AppBarButtonOpen" Command="{Binding File.OpenCommand}" Grid.Row="1" Icon="OpenFile" Width="48" Margin="48,0,0,0" VerticalAlignment="Center"/>
-            <AppBarButton x:Name="AppBarButtonSave" x:Uid="AppBarButtonSave" Command="{Binding File.SaveCommand}" Grid.Row="1" Icon="Save" Width="48" Margin="96,0,0,0" VerticalAlignment="Center"/>
-            <AppBarButton x:Name="AppBarButtonSaveAs" x:Uid="AppBarButtonSaveAs" Command="{Binding File.SaveAsCommand}" Grid.Row="1" Width="48" Margin="144,0,0,0" VerticalAlignment="Center">
+        <Grid x:Name="CommandBar" Grid.Row="1" Background="Transparent" HorizontalAlignment="Stretch" Height="48">
+            <!-- Column Definitions for Command Bar -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="48"/>
+                <ColumnDefinition Width="48"/>
+                <ColumnDefinition Width="48"/>
+                <ColumnDefinition Width="48"/>
+                <ColumnDefinition Width="48"/>
+                <ColumnDefinition Width="48"/>
+                <ColumnDefinition Width="48"/>
+                <ColumnDefinition Width="48"/>
+                <ColumnDefinition Width="48"/>
+                <ColumnDefinition Width="48"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="96"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- New -->
+            <AppBarButton x:Name="AppBarButtonNew" x:Uid="AppBarButtonNew" 
+                          Command="{Binding File.NewCommand}" Grid.Column="0"
+                          VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                          Icon="Page2" Width="48"/>
+            <!-- Open -->
+            <AppBarButton x:Name="AppBarButtonOpen" x:Uid="AppBarButtonOpen" 
+                          Command="{Binding File.OpenCommand}" Grid.Column="1" 
+                          VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                          Icon="OpenFile" Width="48"/>
+            <!-- Save -->
+            <AppBarButton x:Name="AppBarButtonSave" x:Uid="AppBarButtonSave" 
+                          Command="{Binding File.SaveCommand}" Grid.Column="2" 
+                          VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                          Icon="Save" Width="48"/>
+            <!-- Save As -->
+            <AppBarButton x:Name="AppBarButtonSaveAs" x:Uid="AppBarButtonSaveAs" 
+                          Command="{Binding File.SaveAsCommand}" Grid.Column="3" 
+                          VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                          Width="48">
                 <AppBarButton.Icon>
                     <FontIcon Glyph="&#xE792;"/>
                 </AppBarButton.Icon>
             </AppBarButton>
-            <AppBarButton x:Name="AppBarButtonUndo" x:Uid ="AppBarButtonUndo" Click="MenuItemUndo_Click" Icon="Undo" Width="48" Margin="192,0,0,0" VerticalAlignment="Center"/>
-            <AppBarButton x:Name="AppBarButtonRedo" x:Uid ="AppBarButtonRedo" Click="MenuItemRedo_Click" Icon="Redo" Width="48" Margin="240,0,0,0" VerticalAlignment="Center"/>
-            <AppBarButton x:Name="AppBarButtonCut" x:Uid ="AppBarButtonCut" Click="MenuItemCut_Click" Icon="Cut" Width="48" VerticalAlignment="Center" Margin="288,0,0,0"/>
-            <AppBarButton x:Name="AppBarButtonCopy" x:Uid ="AppBarButtonCopy" Click="MenuItemCopy_Click" Icon="Copy" Width="48" Margin="336,0,0,0" VerticalAlignment="Center"/>
-            <AppBarButton x:Name="AppBarButtonPaste" x:Uid ="AppBarButtonPaste" Click="MenuItemPaste_Click" Icon="Paste" Width="48" Margin="384,0,0,0" VerticalAlignment="Center"/>
-            <AppBarButton x:Name="AppBarButtonSettings" x:Uid ="AppBarButtonAbout" Command="{Binding Help.SettingsCommand}" Width="48" HorizontalAlignment="Right" VerticalAlignment="Center">
+
+            <!-- Undo -->
+            <AppBarButton x:Name="AppBarButtonUndo" x:Uid ="AppBarButtonUndo" 
+                          Click="MenuItemUndo_Click" Grid.Column="4"
+                          VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                          Width="48" Icon="Undo"/>
+            <!-- Redo -->
+            <AppBarButton x:Name="AppBarButtonRedo" x:Uid ="AppBarButtonRedo" 
+                          Click="MenuItemRedo_Click" Grid.Column="5" 
+                          VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                          Icon="Redo" Width="48" />
+            <!-- Cut -->
+            <AppBarButton x:Name="AppBarButtonCut" x:Uid ="AppBarButtonCut" 
+                          Click="MenuItemCut_Click" Grid.Column="6"
+                          VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                          Icon="Cut" Width="48"/>
+            <!-- Copy -->
+            <AppBarButton x:Name="AppBarButtonCopy" x:Uid ="AppBarButtonCopy" 
+                          Click="MenuItemCopy_Click" Grid.Column="7" 
+                          VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                          Icon="Copy" Width="48"/>
+            <!-- Paste -->
+            <AppBarButton x:Name="AppBarButtonPaste" x:Uid ="AppBarButtonPaste" 
+                          Click="MenuItemPaste_Click" Grid.Column="8" 
+                          VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                          Icon="Paste" Width="48"/>
+            <!-- Share -->
+            <AppBarButton x:Name="AppBarButtonShare" x:Uid="AppBarButtonShare" 
+                          Click="AppBarButtonShare_Click" Grid.Column="9"
+                          VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                          Icon="Share" Width="48"/>
+
+            <!-- Markdown Preview -->
+            <AppBarToggleButton x:Name="AppBarButtonMarkdownPreview" x:Uid="AppBarButtonMarkdownPreview"
+                                Click="AppBarButtonMarkdownPreview_Click" Grid.Column="11"
+                                VerticalAlignment="Stretch" HorizontalAlignment="Left"
+                                Icon="ClosePane" Width="48" IsChecked="False"/>
+
+            <!-- Settings -->
+            <AppBarButton x:Name="AppBarButtonSettings" x:Uid ="AppBarButtonSettings" 
+                          Command="{Binding Help.SettingsCommand}" Grid.Column="11" 
+                          VerticalAlignment="Stretch" HorizontalAlignment="Right"
+                          Width="48">
+                <!-- Animated Icon -->
                 <muxc:AnimatedIcon x:Name="SettingsAnimatedIcon" Height="16" Width="16">
                     <muxc:AnimatedIcon.Source>
                         <animatedvisuals:AnimatedSettingsVisualSource/>
@@ -201,15 +333,29 @@
             </AppBarButton>
         </Grid>
 
-        <!-- Text Area -->
-        <Grid x:Name="TextArea" Grid.Row="2">
-            <!-- Text Box -->
-            <TextBox x:Name="TextBox" x:Uid="TextBox" Grid.Row="2" 
-                     DataContext="{Binding Format}" 
-                     Text="{Binding Document.Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
-                     TextWrapping="{Binding Format.Wrap}" IsSpellCheckEnabled="False" 
-                     HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-                     Style="{StaticResource TextBoxStyle}"/>
-        </Grid>
+        <!-- Split View for Markdown preview and text area -->
+        <SplitView x:Name="MainSplitView" DisplayMode="Inline" Grid.Row="2" 
+                   IsPaneOpen="False" OpenPaneLength="450" PanePlacement="Right">
+            <SplitView.Pane>
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                    <Grid x:Name="GridMarkdownPreview">
+                        <controls:MarkdownTextBlock x:Name="MarkdownTextBlock"
+                                                    Header1Foreground="{ThemeResource SystemControlForegroundAccentBrush}"
+                                                    Text="{Binding ElementName=TextBox, Path=Text}" 
+                                                    BorderThickness="0" CornerRadius="0"/>
+                    </Grid>
+                </ScrollViewer>
+            </SplitView.Pane>
+            <Grid x:Name="GridTextBox">
+                <TextBox x:Name="TextBox" x:Uid="TextBox"
+                         DataContext="{Binding Format}"
+                         Text="{Binding Document.Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                         SelectedText="{Binding Document.SelectedText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         TextWrapping="{Binding Format.Wrap}" IsSpellCheckEnabled="False" 
+                         HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                         FontSize="14" FontFamily="Segoe UI" FontStyle="Normal" FontWeight="Normal" Foreground="Black"
+                         AcceptsReturn="True" CornerRadius="0"/>
+            </Grid>
+        </SplitView>
     </Grid>
 </Page>

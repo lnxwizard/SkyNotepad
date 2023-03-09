@@ -7,14 +7,14 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="AlperAkca79.SkyNotepad"
-    Publisher="CN=AlperAkca79"
-    Version="0.9.4.0" />
+    Name="41411AlperAkca79.704697DF414B"
+    Publisher="CN=A0EAEA81-EA76-45FD-AD09-7A84D195F2DA"
+    Version="0.10.3.0" />
 
-  <mp:PhoneIdentity PhoneProductId="778ade44-7283-4a36-a7ba-ecd392206e35" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="8f0ed1fa-47f3-43de-a2b5-990d2e82465e" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>SkyNotepad Preview</DisplayName>
+    <DisplayName>SkyNotepad</DisplayName>
     <PublisherDisplayName>AlperAkca79</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -32,7 +32,7 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="SkyNotepad.Preview.App">
       <uap:VisualElements
-        DisplayName="SkyNotepad Preview"
+        DisplayName="SkyNotepad"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
         Description="Simple, Modern, Free and Open Source Notepad for Windows."
