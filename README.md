@@ -53,7 +53,7 @@ SkyNotepad is Simple, Fluent, Free and Open Source **Text Editor** for Windows. 
 - **(CTRL + N)** Create New File
 - **(CTRL + O)** Open File
 - **(CTRL + S)** Save
-- **(CTRL + ALT + S)** Save As...
+- **(CTRL + ALT + S)** Save As Copy
 - **(ALT + F4)** Exit from SkyNotepad
 - **(CTRL + Z)** Undo Changes
 - **(CTRL + Y)** Redo Changes
