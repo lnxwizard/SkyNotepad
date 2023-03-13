@@ -16,7 +16,8 @@
 | Preview v0.8.8.0   | :x:                |
 | Preview v0.9.4.0   | :x:                |
 | Preview v0.10.3.0  | :x:                |
-| Preview v0.11.1.0  | :white_check_mark: |
+| Preview v0.11.1.0  | :x:                |
+| Preview v0.11.2.0  | :white_check_mark: |
 
 ## Reporting a Vulnerability
 If you find a vulnerability in the **SkyNotepad** project, create a new issue titled "Vulnerability" and describe the security vulnerability in detail.

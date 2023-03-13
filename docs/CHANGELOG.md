@@ -4,7 +4,6 @@ Latest Version: Preview v0.10.3.0
 ### Version Preview v0.1.0.0
 First version of Sky Notepad.
 
-***
 
 
 ### Version Preview v0.4.0.0
@@ -12,25 +11,21 @@ First version of Sky Notepad.
 - Added web search for selected text.
 - Added Icons for menu items.
 
-***
 
 ### Version Preview v0.4.5.0
 - Issue #1 for Web Search Fixed. (You can search in web now with google and microsoft bing.)
 
-***
 
 ### Version Preview v0.6.0.0
 - Added support for DuckDuckGo for Search in Web.
 - Changed menu item icons to fluent.
 - Added shortcuts for menu item commands.
 
-***
 
 ### Version Preview v0.6.2.0
 - #2 In preview v0.6.0.0 it comes out for no reason when clicking on menu items.
 - Changed menu item icons to Segoe MDL2 Assets. (For solve the bug.)
 
-***
 
 ### Version Preview v0.7.0.0
 - Added "Help" menu.
@@ -39,7 +34,6 @@ First version of Sky Notepad.
 - Added "License" item to help menu
 - Added "Report an Issue" item to help menu
 
-***
 
 ### Version Preview v0.7.4.0
 - Added "Yandex" to Search in Web.
@@ -48,7 +42,6 @@ First version of Sky Notepad.
 - Added new "preview" icons.
 - Updated About page contents.
 
-***
 
 ### Version Preview v0.8.3.0
 - Added App Command Bar.
@@ -56,7 +49,6 @@ First version of Sky Notepad.
 - Added file name in title.
 - Added acrylic to background of menu bar and app command bar.
 
-***
 
 ### Version Preview v0.8.5.0
 - Added Yahoo support for Search in Web
@@ -65,7 +57,6 @@ First version of Sky Notepad.
 - Updated About page.
 - Removed Acrylic in title bar.
 
-***
 
 ### Version Preview v0.8.8.0
 - Added new help menu in settings page.
@@ -73,7 +64,6 @@ First version of Sky Notepad.
 - Removed Help menu item. (because moved in settings menu)
 - Added scroll bars to settings menu.
 
-***
 
 ### Version Preview v0.9.4.0
 - Added Compact Overlay mode.
@@ -82,8 +72,20 @@ First version of Sky Notepad.
 - Updated Help menu.
 - Changed Title Bar buttons hover/inactive/default background and foreground colors.
 
+
 ### Version Preview v0.10.3.0
 - Added Markdown Source Files support.
 - Added Markdown preview.
 - Added 'Whats New' menu in settings page.
 - Added 'Share' service.
+
+
+### Version Preview v0.11.1.0
+- Fixed issue by @AlperAkca79 in #8.
+- Added Exit Dialog.
+- Added First Run Dialog.
+- Added What's New Dialog while first run.
+
+
+### Version Preview v0.11.2.0
+- Fixed bundle issue.
