@@ -7,9 +7,9 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="AlperAkca79.SkyNotepad"
+    Name="41411AlperAkca79.704697DF414B"
     Publisher="CN=A0EAEA81-EA76-45FD-AD09-7A84D195F2DA"
-    Version="0.11.1.0" />
+    Version="0.11.2.0" />
 
   <mp:PhoneIdentity PhoneProductId="8f0ed1fa-47f3-43de-a2b5-990d2e82465e" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 

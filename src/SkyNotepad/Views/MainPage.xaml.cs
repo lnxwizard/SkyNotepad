@@ -16,6 +16,9 @@ namespace SkyNotepad.Views
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        /// <summary>
+        /// Constructor for MainPage
+        /// </summary>
         public MainPage()
         {
             InitializeComponent();
