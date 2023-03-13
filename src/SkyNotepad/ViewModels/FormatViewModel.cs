@@ -1,4 +1,4 @@
-﻿// Librarys
+﻿// Imported Librarys
 using Windows.UI.Xaml;
 using System.Windows.Input;
 
@@ -34,10 +34,13 @@ namespace SkyNotepad.ViewModels
         private void Wrap()
         {
             if (Format.Wrap == TextWrapping.Wrap)
+            {
                 Format.Wrap = TextWrapping.NoWrap;
-
+            }
             else
+            {
                 Format.Wrap = TextWrapping.Wrap;
+            }
         }
     }
 }

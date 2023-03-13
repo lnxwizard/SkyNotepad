@@ -1,0 +1,21 @@
+﻿<Page
+    x:Class="SkyNotepad.Views.Dialogs.WhatsNewDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:SkyNotepad.Views.Dialogs"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+
+    <Grid Background="White">
+        <TextBlock x:Name="ChangelogText">
+            <LineBreak />
+            • Fixed issue<Hyperlink NavigateUri="https://github.com/AlperAkca79/SkyNotepad/issues/8">#8</Hyperlink>
+            by<Hyperlink NavigateUri="https://github.com/AlperAkca79/">@AlperAkca79</Hyperlink>
+            <LineBreak />
+            • Added 'Close Dialog'.<LineBreak />
+            • Added 'First Run Dialog'.<LineBreak />
+            • Added 'Whats New Dialog' in First Run Dialog.</TextBlock>
+    </Grid>
+</Page>

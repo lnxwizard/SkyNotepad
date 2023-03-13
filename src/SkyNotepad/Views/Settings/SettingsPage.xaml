@@ -2,85 +2,125 @@
     x:Class="SkyNotepad.Views.Settings.SettingsPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:SkyNotepad.Views.Settings"
+    xmlns:animatedvisuals="using:Microsoft.UI.Xaml.Controls.AnimatedVisuals"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:SkyNotepad.Views.Settings"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-    xmlns:viewmodel="using:SkyNotepad.ViewModels" xmlns:animatedvisuals="using:Microsoft.UI.Xaml.Controls.AnimatedVisuals">
+    xmlns:viewmodel="using:SkyNotepad.ViewModels"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
 
     <Page.DataContext>
-        <viewmodel:MainViewModel/>
+        <viewmodel:MainViewModel />
     </Page.DataContext>
 
     <Grid x:Name="MainGrid">
-        <!-- Row Definitions for Main Grid -->
+        <!--  Row Definitions for Main Grid  -->
         <Grid.RowDefinitions>
-            <RowDefinition Height="48"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="48" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
         <Grid x:Name="AppTitleBar" Background="Transparent">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="48"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="48" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <!-- Back Button  -->
-            <Button x:Name="BackButton" Grid.Column="0" Command="{Binding SettingsPage.GoBackCommand}"
-                    HorizontalAlignment="Center" VerticalAlignment="Center" 
-                    Height="36" Width="36" BorderThickness="0" Background="Transparent">
-                <muxc:AnimatedIcon x:Name="BackAnimatedIcon" Height="16" Width="16">
+            <!--  Back Button  -->
+            <Button
+                x:Name="BackButton"
+                Grid.Column="0"
+                Width="36"
+                Height="36"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Background="Transparent"
+                BorderThickness="0"
+                Command="{Binding SettingsPage.GoBackCommand}">
+                <muxc:AnimatedIcon
+                    x:Name="BackAnimatedIcon"
+                    Width="16"
+                    Height="16">
                     <muxc:AnimatedIcon.Source>
-                        <animatedvisuals:AnimatedBackVisualSource/>
+                        <animatedvisuals:AnimatedBackVisualSource />
                     </muxc:AnimatedIcon.Source>
                     <muxc:AnimatedIcon.FallbackIconSource>
-                        <muxc:SymbolIconSource Symbol="Back"/>
+                        <muxc:SymbolIconSource Symbol="Back" />
                     </muxc:AnimatedIcon.FallbackIconSource>
                 </muxc:AnimatedIcon>
             </Button>
 
-            <!-- Drag Region for Title Bar -->
-            <Grid x:Name="DragRegion" HorizontalAlignment="Stretch" Grid.Column="1" VerticalAlignment="Top" Height="48" Background="Transparent" Loaded="DragRegion_Loaded">
-                <!-- Title -->
-                <TextBlock Text="Settings"
-                           HorizontalAlignment="Left" VerticalAlignment="Center"
-                           FontSize="12"/>
+            <!--  Drag Region for Title Bar  -->
+            <Grid
+                x:Name="DragRegion"
+                Grid.Column="1"
+                Height="48"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Top"
+                Background="Transparent"
+                Loaded="DragRegion_Loaded">
+                <!--  Title  -->
+                <TextBlock
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    FontSize="12"
+                    Text="Settings" />
             </Grid>
         </Grid>
 
-        <!-- Navigation View -->
-        <muxc:NavigationView x:Name="SettigsNavigationView" Grid.Row="1" IsBackEnabled="False" IsBackButtonVisible="Collapsed" IsSettingsVisible="False" 
-                             Loaded="SettigsNavigationView_Loaded" SelectionChanged="SettigsNavigationView_SelectionChanged">
-            <!-- Menu Items -->
+        <!--  Navigation View  -->
+        <muxc:NavigationView
+            x:Name="SettigsNavigationView"
+            Grid.Row="1"
+            IsBackButtonVisible="Collapsed"
+            IsBackEnabled="False"
+            IsSettingsVisible="False"
+            Loaded="SettigsNavigationView_Loaded"
+            SelectionChanged="SettigsNavigationView_SelectionChanged">
+            <!--  Menu Items  -->
             <muxc:NavigationView.MenuItems>
-                <muxc:NavigationViewItem x:Name="NavigationItemWhatsNew" Content="What's New" Tag="NavItemWhatsNew" Icon="Message"/>
+                <muxc:NavigationViewItem
+                    x:Name="NavigationItemWhatsNew"
+                    Content="What's New"
+                    Icon="Message"
+                    Tag="NavItemWhatsNew" />
             </muxc:NavigationView.MenuItems>
 
-            <!-- Footer Menu Items -->
+            <!--  Footer Menu Items  -->
             <muxc:NavigationView.FooterMenuItems>
-                <!-- Navigation Item Help -->
-                <muxc:NavigationViewItem x:Name="NavigationItemHelp" Content="Help" Tag="NavItemHelp" Icon="Help"/>
+                <!--  Navigation Item Help  -->
+                <muxc:NavigationViewItem
+                    x:Name="NavigationItemHelp"
+                    Content="Help"
+                    Icon="Help"
+                    Tag="NavItemHelp" />
 
-                <!-- Navigation Item About -->
-                <muxc:NavigationViewItem x:Name="NavigationItemAbout" Content="About" Tag="NavItemAbout" IsSelected="True">
+                <!--  Navigation Item About  -->
+                <muxc:NavigationViewItem
+                    x:Name="NavigationItemAbout"
+                    Content="About"
+                    IsSelected="True"
+                    Tag="NavItemAbout">
                     <muxc:NavigationViewItem.Icon>
-                        <FontIcon Glyph="&#xE946;"/>
+                        <FontIcon Glyph="&#xE946;" />
                     </muxc:NavigationViewItem.Icon>
                 </muxc:NavigationViewItem>
             </muxc:NavigationView.FooterMenuItems>
 
-            <!-- Auto Suggest Box -->
+            <!--  Auto Suggest Box  -->
             <muxc:NavigationView.AutoSuggestBox>
-                <AutoSuggestBox x:Name="AutoSuggest" PlaceholderText="Search in Settings"
-                                AutomationProperties.Name="Search"
-                                TextChanged="AutoSuggest_TextChanged"
-                                SuggestionChosen="AutoSuggest_SuggestionChosen"/>
+                <AutoSuggestBox
+                    x:Name="AutoSuggest"
+                    AutomationProperties.Name="Search"
+                    PlaceholderText="Search in Settings"
+                    SuggestionChosen="AutoSuggest_SuggestionChosen"
+                    TextChanged="AutoSuggest_TextChanged" />
             </muxc:NavigationView.AutoSuggestBox>
 
-            <!-- Content Frame -->
-            <Frame x:Name="ContentFrame"/>
+            <!--  Content Frame  -->
+            <Frame x:Name="ContentFrame" />
         </muxc:NavigationView>
     </Grid>
 </Page>

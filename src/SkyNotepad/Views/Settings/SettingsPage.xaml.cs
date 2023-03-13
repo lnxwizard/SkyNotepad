@@ -122,49 +122,63 @@ namespace SkyNotepad.Views.Settings
                     // In AboutPage.xaml
                     case "About":
                         ContentFrame.Navigate(typeof(AboutPage));
+                        NavigationItemAbout.IsSelected = true;
                         break;
                     case "Dependencies and References":
                         ContentFrame.Navigate(typeof(AboutPage));
+                        NavigationItemAbout.IsSelected = true;
                         break;
                     case "Developer":
                         ContentFrame.Navigate(typeof(AboutPage));
+                        NavigationItemAbout.IsSelected = true;
                         break;
                     case "License":
                         ContentFrame.Navigate(typeof(AboutPage));
+                        NavigationItemAbout.IsSelected = true;
                         break;
                     case "Last Updated":
                         ContentFrame.Navigate(typeof(AboutPage));
+                        NavigationItemAbout.IsSelected = true;
                         break;
                     case "Version":
                         ContentFrame.Navigate(typeof(AboutPage));
+                        NavigationItemAbout.IsSelected = true;
                         break;
 
                     // In HelpPage.xaml
                     case "Bug Report":
                         ContentFrame.Navigate(typeof(HelpPage));
+                        NavigationItemHelp.IsSelected = true;
                         break;
                     case "Contributing":
                         ContentFrame.Navigate(typeof(HelpPage));
+                        NavigationItemHelp.IsSelected = true;
                         break;
                     case "Discussion":
                         ContentFrame.Navigate(typeof(HelpPage));
+                        NavigationItemHelp.IsSelected = true;
                         break;
                     case "Help":
                         ContentFrame.Navigate(typeof(HelpPage));
+                        NavigationItemHelp.IsSelected = true;
                         break;
                     case "Other Links":
                         ContentFrame.Navigate(typeof(HelpPage));
+                        NavigationItemHelp.IsSelected = true;
                         break;
                     case "Shortcuts":
                         ContentFrame.Navigate(typeof(HelpPage));
+                        NavigationItemHelp.IsSelected = true;
                         break;
 
                     // In WhatsNewPage.xaml
                     case "What's New?":
                         ContentFrame.Navigate(typeof(WhatIsNewPage));
+                        NavigationItemWhatsNew.IsSelected = true;
                         break;
                     case "Changelog":
                         ContentFrame.Navigate(typeof(WhatIsNewPage));
+                        NavigationItemWhatsNew.IsSelected = true;
                         break;
                 }
             }

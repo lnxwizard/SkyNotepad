@@ -1,4 +1,4 @@
-﻿// Librarys
+﻿// Imported Librarys
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -27,6 +27,7 @@ namespace SkyNotepad.ViewModels
         public ICommand SaveCommand { get; }
         public ICommand SaveAsCommand { get; }
         public ICommand OpenCommand { get; }
+        public ICommand ExitRequestCommand { get; }
         public ICommand ExitCommand { get; }
 
         /// <summary>
@@ -40,8 +41,9 @@ namespace SkyNotepad.ViewModels
             SaveCommand = new RelayCommand(SaveFile);
             SaveAsCommand = new RelayCommand(SaveFileAs);
             OpenCommand = new RelayCommand(OpenFile);
-            ExitCommand = new RelayCommand(Exit);
-
+            ExitRequestCommand = new RelayCommand(ExitRequest);
+            ExitCommand = new RelayCommand(Exit); 
+            
             CreateNewFile();
         }
 
@@ -59,7 +61,7 @@ namespace SkyNotepad.ViewModels
         }
 
         /// <summary>
-        /// Create new file
+        /// Creates new file
         /// </summary>
         private void NewFile()
         {
@@ -72,7 +74,7 @@ namespace SkyNotepad.ViewModels
         }
 
         /// <summary>
-        /// Save current file
+        /// Saves current file
         /// </summary>
         private async void SaveFile()
         {
@@ -88,7 +90,7 @@ namespace SkyNotepad.ViewModels
         }
 
         /// <summary>
-        /// Save copy of current file
+        /// Saves copy of current file
         /// </summary>
         private async void SaveFileAs()
         {
@@ -183,7 +185,23 @@ namespace SkyNotepad.ViewModels
         }
 
         /// <summary>
-        /// Exits from application
+        /// Sends request for exit
+        /// </summary>
+        private async void ExitRequest()
+        {
+            ContentDialog saveRememberDialog = new ContentDialog()
+            {
+                Title = "Warning",
+                Content = "Do you want to Exit from SkyNotepad?",
+                CloseButtonText = "Cancel",
+                PrimaryButtonText = "Exit",
+                PrimaryButtonCommand = ExitCommand
+            };
+            await saveRememberDialog.ShowAsync();
+        }
+
+        /// <summary>
+        /// Exits from SkyNotepad
         /// </summary>
         private void Exit()
         {
