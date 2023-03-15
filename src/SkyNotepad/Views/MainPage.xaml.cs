@@ -6,6 +6,7 @@ using Windows.UI.ViewManagement;
 using Windows.ApplicationModel.Core;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.Foundation;
+using SkyNotepad.Services;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -23,6 +24,7 @@ namespace SkyNotepad.Views
         {
             InitializeComponent();
             ShareLoad();
+            ApplicationSettings.GetSettings("SpellCheck");
         }
 
         /// <summary>
@@ -155,6 +157,7 @@ namespace SkyNotepad.Views
         /// <param name="e">Click</param>
         private void MenuItemSpellCheck_Click(object sender, RoutedEventArgs e)
         {
+            ApplicationSettings.SaveSettings("SpellCheck", MenuItemSpellCheck.IsChecked);
             if (MenuItemSpellCheck.IsChecked == true)
             {
                 TextBox.IsSpellCheckEnabled = true;

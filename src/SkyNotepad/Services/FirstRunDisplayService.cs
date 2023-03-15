@@ -18,18 +18,13 @@ namespace SkyNotepad.Services
         internal static async Task ShowIfAppropriateAsync()
         {
             await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(
-                CoreDispatcherPriority.Normal, async () =>
+                CoreDispatcherPriority.Normal, () =>
                 {
                     if (SystemInformation.Instance.IsFirstRun && !IsShown)
                     {
                         IsShown = true;
-                        ContentDialog firstRunDialog = new ContentDialog()
-                        {
-                            Title = "Welcome to SkyNotepad",
-                            Content = "This is SkyNotepad. You can open/edit text documents and markdown source files.",
-                            CloseButtonText = "Close"
-                        };
-                        await firstRunDialog.ShowAsync();
+                        Frame frame = new Frame();
+                        frame.Navigate(typeof(FirstRunDialog));
                     }
                 }
             );

@@ -135,10 +135,12 @@
     <Compile Include="Helpers\RelayCommand.cs" />
     <Compile Include="Models\DocumentModel.cs" />
     <Compile Include="Models\FormatModel.cs" />
+    <Compile Include="Services\ApplicationSettings.cs" />
     <Compile Include="Services\FileExtensionProvider.cs" />
     <Compile Include="Services\FirstRunDisplayService.cs" />
     <Compile Include="Services\SettingContentsProvider.cs" />
     <Compile Include="Services\SharingService.cs" />
+    <Compile Include="Services\WhatsNewDisplayService.cs" />
     <Compile Include="ViewModels\EditViewModel.cs" />
     <Compile Include="ViewModels\FileViewModel.cs" />
     <Compile Include="ViewModels\FormatViewModel.cs" />

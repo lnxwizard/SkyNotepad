@@ -49,7 +49,7 @@
                         HorizontalAlignment="Left"
                         VerticalAlignment="Center"
                         FontSize="18"
-                        Text="New Dialogs Update" />
+                        Text="March 15 Update" />
 
                     <!--  Intro to Changelog  -->
                     <TextBlock
@@ -57,7 +57,7 @@
                         Grid.Row="1"
                         Margin="10"
                         FontSize="14">
-                        In this update we've add new dialogs and fix some bugs.
+                        In this update we've update dialogs and fix some bugs.
                     </TextBlock>
 
                     <!--  Changelog  -->
@@ -67,12 +67,9 @@
                         Margin="10"
                         FontSize="14">
                         <LineBreak />
-                        • Fixed issue<Hyperlink NavigateUri="https://github.com/AlperAkca79/SkyNotepad/issues/8">#8</Hyperlink>
-                        by<Hyperlink NavigateUri="https://github.com/AlperAkca79/">@AlperAkca79</Hyperlink>
-                        <LineBreak />
-                        • Added 'Close Dialog'.<LineBreak />
-                        • Added 'First Run Dialog'.<LineBreak />
-                        • Added 'Whats New Dialog' in First Run Dialog.</TextBlock>
+                        • Fixed Some Bugs.<LineBreak />
+                        • Added Whats New Dialog display service.<LineBreak />
+                        • Updated first run dialog.</TextBlock>
                 </Grid>
             </Grid>
         </ScrollViewer>

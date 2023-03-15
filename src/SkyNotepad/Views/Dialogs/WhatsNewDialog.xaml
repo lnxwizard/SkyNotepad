@@ -11,11 +11,8 @@
     <Grid Background="White">
         <TextBlock x:Name="ChangelogText">
             <LineBreak />
-            • Fixed issue<Hyperlink NavigateUri="https://github.com/AlperAkca79/SkyNotepad/issues/8">#8</Hyperlink>
-            by<Hyperlink NavigateUri="https://github.com/AlperAkca79/">@AlperAkca79</Hyperlink>
-            <LineBreak />
-            • Added 'Close Dialog'.<LineBreak />
-            • Added 'First Run Dialog'.<LineBreak />
-            • Added 'Whats New Dialog' in First Run Dialog.</TextBlock>
+            • Fixed Some Bugs.<LineBreak />
+            • Added What's New Display Service.<LineBreak />
+            • Updated First Run dialog.</TextBlock>
     </Grid>
 </Page>

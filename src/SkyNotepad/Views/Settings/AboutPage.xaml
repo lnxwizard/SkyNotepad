@@ -93,7 +93,7 @@
                         Margin="13"
                         HorizontalAlignment="Left"
                         FontSize="18"
-                        Text="Last Updated: Monday, March 13, 2023" />
+                        Text="Last Updated: Wednesday, March 15, 2023" />
                 </StackPanel>
 
                 <!--  License  -->
