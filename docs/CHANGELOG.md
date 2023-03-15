@@ -89,3 +89,9 @@ First version of Sky Notepad.
 
 ### Version Preview v0.11.2.0
 - Fixed bundle issue.
+
+
+### Version Preview v0.12.0.0
+- Fixed some bugs.
+- Added Whats New Dialog display service.
+- Updated First Run Dialog.
