@@ -18,7 +18,7 @@ SkyNotepad is Simple, Fluent, Free and Open Source **Text Editor** for Windows. 
 - First Build Date: Friday, February 10, 2023
 - Last Update: Wednesday, March 15, 2023 10:03 PM (UTC +03:00)
 - License: [MIT License](https://github.com/AlperAkca79/SkyNotepad#License)
-- Platform Architecture: x86, x64
+- Platform Architecture: x86
 - Supported OS(s): Windows 10/11
 - Minimum Required OS Build: 17763.0 (1809)
 - Supported Language: English (United States)
@@ -74,7 +74,7 @@ See the changelog for all versions [here](docs/changelog.md).
 # How to Download?
 You can download SkyNotepad in 3 ways:
 
-### First Way (Via [Windows Package Manager (aka winget)](https://github.com/microsoft/winget-cli)):
+### Via [Windows Package Manager (aka winget)](https://github.com/microsoft/winget-cli):
 
 To download with winget, your operating system build number must be greater than 17763.0 (1809)
 
@@ -87,10 +87,10 @@ winget install skynotepad
 
 - Done! You can use SkyNotepad now.
 
-### Second Way (Via [Microsoft Store](https://apps.microsoft.com))
+### Via [Microsoft Store](https://apps.microsoft.com)
 Click [here](https://apps.microsoft.com/store/detail/skynotepad/9PN4B4WGKV6H) for download SkyNotepad from Microsoft Store.
 
-### Third Way (Via [GitHub](https://github.com))
+### Via [GitHub](https://github.com)
 - Download **.msixbundle** file from [here](https://github.com/AlperAkca79/SkyNotepad/releases/tag/0.11.2.0).
 - Double click to **.msixbundle** file and install the **SkyNotepad**
 
@@ -120,6 +120,9 @@ Prerequisites:
 
 # Security Policy
 See [here](https://github.com/AlperAkca79/SkyNotepad/blob/master/SECURITY.md) for Version support and more.
+
+# Privacy Policy
+See [here](https://github.com/AlperAkca79/SkyNotepad/blob/master/PRIVACY_PLOICY.md) for our Privacy Policy.
 
 # Code of Conduct
 Click [here](CODE_OF_CONDUCT.md) for view Code of Conduct.
