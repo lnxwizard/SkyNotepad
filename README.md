@@ -1,8 +1,8 @@
 # SkyNotepad
-<a href="https://github.com/AlperAkca79/SkyNotepad/">
+<a href="https://github.com/lnxwizard/SkyNotepad/">
     <img height="440" width="*" src="res/repo-preview-image-sky-notepad.png">
 </a>
-<a href="https://github.com/AlperAkca79/SkyNotepad/releases/tag/0.12.0.0">
+<a href="https://github.com/lnxwizard/SkyNotepad/releases/tag/0.12.0.0">
     <img src="res/badge-github.png" height="85" width="250">
 </a>
 <a href="https://apps.microsoft.com/store/detail/skynotepad/9PN4B4WGKV6H">
@@ -10,14 +10,14 @@
 </a>
 
 # What is SkyNotepad?
-SkyNotepad is Simple, Fluent, Free and Open Source **Text Editor** for Windows. You Can Create/Edit Text Documents and Markdown Source Files. SkyNotepad has a Markdown Preview feature so you can organize your GitHub README files more easily. SkyNotepad is still in development and preview. If you see an bug please create a new issue from [here](https://github.com/AlperAkca79/SkyNotepad/issues/new/choose).
+SkyNotepad is Simple, Fluent, Free and Open Source **Text Editor** for Windows. You Can Create/Edit Text Documents and Markdown Source Files. SkyNotepad has a Markdown Preview feature so you can organize your GitHub README files more easily. SkyNotepad is still in development and preview. If you see an bug please create a new issue from [here](https://github.com/lnxwizard/SkyNotepad/issues/new/choose).
 
 # About
-- Developer: [AlperAkca79](https://github.com/AlperAkca79)
+- Developer: [lnxwizard](https://github.com/lnxwizard)
 - Version: Preview v0.12.0.0
 - First Build Date: Friday, February 10, 2023
 - Last Update: Wednesday, March 15, 2023 10:03 PM (UTC +03:00)
-- License: [MIT License](https://github.com/AlperAkca79/SkyNotepad#License)
+- License: [MIT License](https://github.com/lnxwizard/SkyNotepad#License)
 - Platform Architecture: x86
 - Supported OS(s): Windows 10/11
 - Minimum Required OS Build: 17763.0 (1809)
@@ -91,10 +91,10 @@ winget install skynotepad
 Click [here](https://apps.microsoft.com/store/detail/skynotepad/9PN4B4WGKV6H) for download SkyNotepad from Microsoft Store.
 
 ### Via [GitHub](https://github.com)
-- Download **.msixbundle** file from [here](https://github.com/AlperAkca79/SkyNotepad/releases/tag/0.11.2.0).
+- Download **.msixbundle** file from [here](https://github.com/lnxwizard/SkyNotepad/releases/tag/0.11.2.0).
 - Double click to **.msixbundle** file and install the **SkyNotepad**
 
-NOTE **(Just for Preview v0.6.0.0)**: Download **Segoe.Fluent.Icons.ttf** file from [here](https://github.com/AlperAkca79/SkyNotepad/releases/download/0.6.0.0/Segoe.Fluent.Icons.ttf) for new _fluent_ icons. 
+NOTE **(Just for Preview v0.6.0.0)**: Download **Segoe.Fluent.Icons.ttf** file from [here](https://github.com/lnxwizard/SkyNotepad/releases/download/0.6.0.0/Segoe.Fluent.Icons.ttf) for new _fluent_ icons. 
 
 # Getting Started
 Prerequisites:
@@ -105,12 +105,12 @@ Prerequisites:
     ![](res/getting-started-sky-notepad.png "Visual Studio Installer")
 - Open Command Prompt(CMD) and type this:
     ```shell
-    git clone https://github.com/AlperAkca79/SkyNotepad.git
+    git clone https://github.com/lnxwizard/SkyNotepad.git
     ```
-- Open [src/SkyNotepad.sln](https://github.com/AlperAkca79/SkyNotepad/blob/master/src/SkyNotepad.sln) in Visual Studio 2019 or higher to build and run the SkyNotepad application.
+- Open [src/SkyNotepad.sln](https://github.com/lnxwizard/SkyNotepad/blob/master/src/SkyNotepad.sln) in Visual Studio 2019 or higher to build and run the SkyNotepad application.
 
 # Contributing
-- See [here](https://github.com/AlperAkca79/SkyNotepad/blob/master/CONTRIBUTING.md) for How to Contribute?
+- See [here](https://github.com/lnxwizard/SkyNotepad/blob/master/CONTRIBUTING.md) for How to Contribute?
 
 # Dependencies and References
 - [Windows UI Library (WinUI 2)](https://github.com/Microsoft/microsoft-ui-xaml) <img src="res/microsoft-xaml-ui.png" height="20" width="20">
@@ -119,15 +119,15 @@ Prerequisites:
 - [Windows Community Toolkit🧰](https://github.com/CommunityToolkit/WindowsCommunityToolkit)
 
 # Security Policy
-See [here](https://github.com/AlperAkca79/SkyNotepad/blob/master/SECURITY.md) for Version support and more.
+See [here](https://github.com/lnxwizard/SkyNotepad/blob/master/SECURITY.md) for Version support and more.
 
 # Privacy Policy
-See [here](https://github.com/AlperAkca79/SkyNotepad/blob/master/PRIVACY_PLOICY.md) for our Privacy Policy.
+See [here](https://github.com/lnxwizard/SkyNotepad/blob/master/PRIVACY_PLOICY.md) for our Privacy Policy.
 
 # Code of Conduct
 Click [here](CODE_OF_CONDUCT.md) for view Code of Conduct.
 
 # License
-Copyright © 2023 AlperAkca79
+Copyright © 2023 lnxwizard
 
 SkyNotepad is under licensed [MIT License](https://mit-license.org). See [here](LICENSE.md) for more information.
