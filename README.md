@@ -49,6 +49,12 @@ SkyNotepad is Simple, Fluent, Free and Open Source **Text Editor** for Windows. 
 - Markdown Preview Support (**New**)
 - Sharing Service (**New**)
 
+# TODO
+- Migrate to WinUI 3 (Coming Soon)
+- New Themes
+- Tab Managment
+- Advanced Markdown Support
+
 # Shortcuts
 - **(CTRL + N)** Create New File
 - **(CTRL + O)** Open File
